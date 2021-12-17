@@ -32,6 +32,7 @@ body {
     left: 0;
     width: 100%;
     display: flex;
+    z-index: 10;
 }
 
 .exp_footer .footer {
@@ -126,6 +127,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    display: flex;
+    z-index: 10;
+    background-color: #FFFFFF;
 }
 
 .container-so.main .exp_header .header {
@@ -308,7 +312,7 @@ div.footer-menu-container div.btn-wrap button:focus {
     height: 1px;
     background-color: #CD5052;
     position: relative;
-    z-index: 1;
+    z-index: 0;
 }
 
 .gutter.gutter-vertical:before {
@@ -580,6 +584,7 @@ input[type="range"]::-ms-track {
 .springCanvas {
     display: inline-block;
     position: relative;
+    padding-top: 10px;
 }
 
 .graphContainer {
@@ -599,6 +604,20 @@ input[type="range"]::-ms-track {
     font-family: 'Montserrat-SemiBold';
 }
 
+.yAxisLine {
+    position: absolute;
+    width: 1px;
+    top: -20px;
+    left: 55px;
+    height: 375px;
+}
+
+.y-axis-arrow {
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    height: 100%;
+}
 .xAxisLine {
     position: absolute;
     width: 400px;
@@ -607,7 +626,7 @@ input[type="range"]::-ms-track {
     height: 1px;
 }
 
-.right-arrow {
+.x-axis-arrow {
     position: absolute;
     top: -10px;
     left: 0px;
@@ -616,7 +635,7 @@ input[type="range"]::-ms-track {
 
 .x-axis-text {
     position: absolute;
-    right: -25px;
+    right: -30px;
     top: 14px;
     text-align: center;
     font-size: 14px;

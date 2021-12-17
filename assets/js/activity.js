@@ -74,8 +74,8 @@ $(".springWeight").draggable({
       springOscillationPaused = false;
       clearInterval(springAnnimInterval);
       springAnnimInterval = 0;
-      var scaleval = 1//Number($("#bk6ch15ss2").attr("data-scaley"))
-      ui.position.top = ui.position.top / scaleval
+      //var scaleval = 1//Number($("#bk6ch15ss2").attr("data-scaley"))
+      //ui.position.top = ui.position.top / scaleval
       if (ui.position.top < Math.max((weightInitialTop/2), ui.position.top)) {
         ui.position.top = Math.max((weightInitialTop/2), ui.position.top);
         //$(".springWeight").css({"top":ui.position.top})
