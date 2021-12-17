@@ -352,7 +352,7 @@ div.footer-menu-container div.btn-wrap button:focus {
 }
 
 .popup .container {
-    padding-bottom: 50px;
+    /*padding-bottom: 50px;*/
 }
 
 .popup .container h2 {
@@ -365,7 +365,7 @@ div.footer-menu-container div.btn-wrap button:focus {
 
 div.closepopup {
     position: absolute;
-    right: 15px;
+    right: 20px;
     top: 15px;
 }
 
@@ -506,19 +506,24 @@ input[type="range"]::-ms-thumb {
     transform: scale(4.2);
 }
 
-/*
-  input[type="range"]::-webkit-slider-thumb:hover {
-    background: #ff0200;
-  }
-  
-  input[type="range"]::-moz-range-thumb:hover {
-    background: #ff0200;
-  }
-  
-  input[type="range"]::-ms-thumb:hover {
-    background: #ff0200;
-  }
-  */
+.popup.procedure input[type="range"] {
+    opacity: 0.6;
+    cursor: default;
+}
+
+
+.popup.procedure input[type="range"]::-webkit-slider-thumb {
+    cursor: default;
+}
+
+.popup.procedure input[type="range"]::-moz-range-thumb {
+    cursor: default;
+}
+
+.popup.procedure input[type="range"]::-ms-thumb {
+    cursor: default;
+}
+
 
 /* Input Track */
 
@@ -618,6 +623,7 @@ input[type="range"]::-ms-track {
     left: 0px;
     height: 100%;
 }
+
 .xAxisLine {
     position: absolute;
     width: 400px;

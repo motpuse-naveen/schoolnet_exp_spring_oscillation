@@ -7,12 +7,12 @@
 }
 
 .container-so.main .exp_header .header h1 .title {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .container-so.main .exp_header .header h1 .sub-title {
     font-size: 14px;
-
+    padding-top: 5px;
 }
 
 .popup.settings .popupcontent {
@@ -166,6 +166,10 @@ img.weightImage{
     .springCanvas {
         padding-top: 20px;
     }
+    .weightDispText{
+        left: 85px;
+        top: 34px;
+    }
 
 }
 
@@ -202,5 +206,8 @@ img.weightImage{
     }
     .springWeight{
         top: 284px;
+    }
+    .graphContainer{
+        height: auto;
     }
 }
