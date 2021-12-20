@@ -24,6 +24,7 @@ var springAnnimInterval = 0;
 var tabSwitched = false;
 var pausedMillSec = 0;
 var pausedStartDate;
+var IsDesktop = false;
 
 var SpringOscillation = (function () {
   return {
@@ -48,7 +49,13 @@ var SpringOscillation = (function () {
         Split(['#split-0', '#split-1'], {
           direction: 'vertical',
           gutterSize: 1,
+          onDrag: function (sizes) {
+            console.log('split-sizes', JSON.stringify(sizes))
+          },
         })
+      }
+      else{
+        IsDesktop = true;
       }
       var graphWt = $(".graphContainer").width();
       var graphHt = $(".graphContainer").height();
@@ -237,8 +244,8 @@ function OnSpringAnnimation() {
 function StopOscillation() {
   clearInterval(springAnnimInterval);
   springAnnimInterval = 0;
-  $(".springWrapper").css({ "height": 200 })
-  $(".springWeight").css({ "top": 232 })
+  $(".springWrapper").css({ "height": springOrigHeight })
+  $(".springWeight").css({ "top": weightInitialTop })
 }
 
 function toTrunc(value, n) {
