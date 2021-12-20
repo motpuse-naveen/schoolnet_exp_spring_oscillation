@@ -71,7 +71,7 @@ var SpringOscillation = (function () {
       }
       var graphWt = $(".graphContainer").width();
       var graphHt = $(".graphContainer").height();
-      SpringOscillationChart.init([{ "x": 0, "y": 0 }], 420, 320);
+      SpringOscillationChart.init([{ "x": 0, "y": 0 }], 380, 320);
       weightInitialTop = $(".springWeight").position().top;
       springOrigHeight = $(".springWrapper").height();
       divisionfactor = (weightInitialTop / 2) / 60.0;

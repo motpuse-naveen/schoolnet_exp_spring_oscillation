@@ -628,7 +628,7 @@ input[type="range"]::-ms-track {
 .highcharts-axis-title {
     font-family: 'Montserrat-SemiBold';
 }
-
+#myChart{margin-left: 40px;}
 .yAxisLine {
     position: absolute;
     width: 1px;
@@ -654,8 +654,8 @@ input[type="range"]::-ms-track {
 
 .x-axis-arrow {
     position: absolute;
-    top: -11px;
-    left: 0px;
+    top: -12px;
+    left: 10px;
     width: 100%;
 }
 
@@ -664,6 +664,14 @@ input[type="range"]::-ms-track {
     right: -30px;
     top: 14px;
     text-align: center;
+    font-size: 14px;
+    font-family: 'Montserrat-SemiBold';
+}
+.y-axis-text{
+    transform: rotate(270deg);
+    position: absolute;
+    left: -111px;
+    top: -99px;
     font-size: 14px;
     font-family: 'Montserrat-SemiBold';
 }

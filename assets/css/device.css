@@ -227,35 +227,33 @@ img.weightImage{
         width: 60%;
     }
     .graphContainer .graphWrapper{
-        margin-top: 70px;
+        margin-top: 50px;
         margin-left: 0px;
     }
     img.hookImage {
-        height: 71px;
+        height: 64px;
     }
     .springWrapper {
-        height: 212px;
+        height: 180px;
     }
     img.springImage {
         height: 100%;
-        width: 42px;
-        margin-top: -29px;
-        margin-left: 6px;
+        width: 36px;
+        margin-top: -25px;
+        margin-left: 5px;
     }
     .springWeight {
-        height: auto;
+        height: 64px;
         position: absolute;
-        top: 264px;
-        left: 65px;
+        top: 229px;
+        left: 58px;
         cursor: pointer;
         opacity: 1;
     }
     .springCanvas{
-        padding-top: 40px;
+        padding-top: 20px;
     }
-    .springWeight{
-        top: 284px;
-    }
+    
     .graphContainer{
         height: auto;
     }
@@ -268,9 +266,11 @@ img.weightImage{
         width: 69% !important;
     }
     .forceSplit0{
-        width: 27% !important;
+        width: 25% !important;
     }
-    .forceSplit1{}
+    .forceSplit1{
+        width: 74% !important;
+    }
     .forcePopup{
         width: 30%;
         height: 100%;

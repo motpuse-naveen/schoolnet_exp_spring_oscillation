@@ -39,7 +39,7 @@ var SpringOscillationChart = (function () {
                 yAxis: {
                     title: {
                         text: 'Displacement (cm)',
-                        enabled: true,
+                        enabled: false,
                         align: 'high',
                         style: {
                             color: "#545454",
@@ -86,7 +86,23 @@ var SpringOscillationChart = (function () {
             });
 
             $("text.highcharts-axis-title").attr("x",35);
-
+            var yaxishtml = '<div class="yAxisLine"><img class="y-axis-arrow" src="assets/images/arrow-y-axis.svg"></div>'
+            var xaxishtml = '<div class="xAxisLine">' +
+            '<img class="x-axis-arrow" src="assets/images/arrow-x-axis.svg">' +
+            '<div class="y-axis-text">Displacement (cm)</div>'+
+            '<div class="x-axis-text">Time (sec)</div>'+
+            '<div class="x-axis-minlimit">00</div>'+
+            '<div class="x-axis-maxlimit">150</div>'+
+            '<div class="x-axis-minlimit-hider"></div>'+
+            '</div>'
+            $("#myChart").append(yaxishtml)
+            $("#myChart").append(xaxishtml)
+            //NM: Add custom axis Lines
+            var yaxispath = $("g.highcharts-axis.highcharts-yaxis path.highcharts-axis-line").attr("d")
+            var axisLeft = yaxispath.split(" ")[1];
+            
+            $(".yAxisLine").css({"left": (axisLeft -10 + 40) + "px"})
+            $(".xAxisLine").css({"left": (axisLeft -10 + 40) + "px"})
         },
         update: function (datapoint) {
             //chart.series[0].addPoint([datapoint.x, datapoint.y], true);
