@@ -39,11 +39,20 @@ $(document).on("click", "#btn_reset", function (event) {
 });
 $(document).on("click", "#btn_settings", function (event) {
     $(".popup").hide();
+    $(".forceSplit").removeClass("forceSplit");
+    $(".forceSplit0").removeClass("forceSplit0");
+    $(".forceSplit1").removeClass("forceSplit1");
+    $(".forcePopup").removeClass("forcePopup");
     $(".popup.settings").fadeIn();
 });
 $(document).on("click", "#btn_sheet", function (event) {
     $(".popup").hide();
+    $(".forceSplit").removeClass("forceSplit");
+    $(".forceSplit0").removeClass("forceSplit0");
+    $(".forceSplit1").removeClass("forceSplit1");
+    $(".forcePopup").removeClass("forcePopup");
     $(".popup.worksheet").fadeIn();
+    
 });
 $(document).on("click", "#btn_calculations", function (event) {
     $(".popup").hide();

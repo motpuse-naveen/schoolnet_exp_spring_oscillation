@@ -313,7 +313,7 @@ div.footer-menu-container div.btn-wrap button:focus {
     height: 1px;
     background-color: #CD5052;
     position: relative;
-    z-index: 0;
+    z-index: 1;
 }
 
 .gutter.gutter-vertical:before {
@@ -335,6 +335,7 @@ div.footer-menu-container div.btn-wrap button:focus {
 #split-0, #split-1 {
     min-height: 100px;
     max-height: 85%;
+    overflow: auto;
 }
 
 .linksheet {
@@ -350,6 +351,7 @@ div.footer-menu-container div.btn-wrap button:focus {
     position: absolute;
     bottom: 0px;
     border-top: 1px solid #808FA5;
+    z-index: 2;
 }
 
 .popup .container {
@@ -465,6 +467,10 @@ div.closepopup {
     float: left;
 }
 
+.popup.procedure .popupcontent ul li{
+    display: inline-block;
+}
+
 /*Slider CSS*/
 
 input[type="range"] {
@@ -557,9 +563,9 @@ input[type="range"]::-ms-track {
 /*End Settings Panel*/
 /*Procedure Panel*/
 .procSliderWrapper {
-    float: left;
     width: 100%;
     padding-bottom: 20px;
+    display: inline-block;
 }
 
 .procInnerSliderWrapper {
@@ -594,7 +600,7 @@ input[type="range"]::-ms-track {
 .springCanvas {
     display: inline-block;
     position: relative;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 .graphContainer {
@@ -667,7 +673,7 @@ input[type="range"]::-ms-track {
 .x-axis-maxlimit {
     position: absolute;
     right: -25px;
-    top: 35px;
+    top: 40px;
     font-size: 12px;
     width: 70px;
     text-align: center;

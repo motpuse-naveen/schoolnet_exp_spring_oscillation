@@ -9,7 +9,6 @@ var SpringOscillationChart = (function () {
                     width: pwidth,
                     height: pheight,
                     animation: false
-
                 },
                 plotOptions: {
                     series: {
@@ -78,7 +77,7 @@ var SpringOscillationChart = (function () {
                 },
                 series: [{
                     name: "",
-                    color: "#0505ff",
+                    color: "#CD5052",
                     marker: {
                         enabled: false
                     },
@@ -93,9 +92,11 @@ var SpringOscillationChart = (function () {
             //chart.series[0].addPoint([datapoint.x, datapoint.y], true);
             chart.series[0].addPoint(datapoint, true, false);
             //chart.redraw();
+            $("text.highcharts-axis-title").attr("x",35);
         },
         clearSeriesData: function () {
             chart.series[0].setData([]);
+            $("text.highcharts-axis-title").attr("x",35);
         }
     }
 })();
