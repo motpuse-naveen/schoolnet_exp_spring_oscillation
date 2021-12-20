@@ -172,14 +172,23 @@ body {
     background-position-x: 5px;
     background-position-y: 5px;
 }
-
-.btn_stop:active, .btn_stop:hover, .btn_stop:focus {
+/*
+.btn_stop:active, .btn_stop:focus {
     background: url(../images/stop-btn-active.svg);
     background-repeat: no-repeat;
     background-position-x: 5px;
     background-position-y: 5px;
     background-color: #FFFFFF;
 }
+
+.btn_stop:hover{
+    background: url(../images/stop-btn-active.svg);
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: 5px;
+    background-color: #FFFFFF;
+}
+*/
 
 .btn_settings {
     background: url(../images/setting-btn-normal.svg);
