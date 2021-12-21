@@ -25,6 +25,7 @@ var tabSwitched = false;
 var pausedMillSec = 0;
 var pausedStartDate;
 var IsDesktop = false;
+var split_instance;
 
 var SpringOscillation = (function () {
   return {
@@ -46,7 +47,7 @@ var SpringOscillation = (function () {
       var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       //if (deviceWidth < 540) {
       if (deviceWidth < 990) {
-        Split(['#split-0', '#split-1'], {
+        split_instance = Split(['#split-0', '#split-1'], {
           sizes: [47, 53],
           direction: 'vertical',
           gutterSize: 1,

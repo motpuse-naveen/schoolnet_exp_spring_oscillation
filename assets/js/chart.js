@@ -31,7 +31,7 @@ var SpringOscillationChart = (function () {
                     lineWidth: 0,
                     minorTickLength: 0,
                     tickLength: 0,
-                    gridLineColor: '#F9E9E9',
+                    gridLineColor: '#e0d1d3',
                     gridLineDashStyle: 'longdash'
                 },
                 title: false,
@@ -65,8 +65,8 @@ var SpringOscillationChart = (function () {
                     minorTickInterval: 10,
                     minorTickLength: 10,
                     minorTickWidth: 1,
-                    minorTickColor: '#F9E9E9',
-                    gridLineColor: '#F9E9E9',
+                    minorTickColor: '#e0d1d3',
+                    gridLineColor: '#e0d1d3',
                     gridLineDashStyle: 'longdash'
                 },
                 legend: {
@@ -89,7 +89,7 @@ var SpringOscillationChart = (function () {
             var yaxishtml = '<div class="yAxisLine"><img class="y-axis-arrow" src="assets/images/arrow-y-axis.svg"></div>'
             var xaxishtml = '<div class="xAxisLine">' +
             '<img class="x-axis-arrow" src="assets/images/arrow-x-axis.svg">' +
-            '<div class="y-axis-text">Displacement (cm)</div>'+
+            '<div class="y-axis-text"><span class="vText">Displacement (cm)<span></div>'+
             '<div class="x-axis-text">Time (sec)</div>'+
             '<div class="x-axis-minlimit">00</div>'+
             '<div class="x-axis-maxlimit">150</div>'+

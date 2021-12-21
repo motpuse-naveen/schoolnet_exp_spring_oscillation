@@ -93,12 +93,36 @@ $(document).on("click", ".btn-close-popup", function (event) {
 });
 
 window.addEventListener("orientationchange", function(event) {
-    console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+    //console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
     var headerHt = $(".container-so.main .exp_header").outerHeight();
     var footerHt = $(".container-so.main .exp_footer").outerHeight();
     $(".exp_body_header").css({ "height": headerHt + "px" });
     $(".exp_body_footer").css({ "height": footerHt + "px" });
     var mainHt = $(".container-so.main").height();
     $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt)) })
+    //alert(event.target.screen.orientation.angle)
+    split_instance.destroy()
+    this.setTimeout(function(){
+        split_instance = Split(['#split-0', '#split-1'], {
+            sizes: [47, 53],
+            direction: 'vertical',
+            gutterSize: 1,
+            onDrag: function (sizes) {
+              console.log($("#split-0").height() + " : " + $("#split-1").height())
+              var split0_ht = Number($("#split-0").height());
+              var split0_orig_ht = Number($("#split-0").attr("orig-ht"));
+              var split1_ht = Number($("#split-1").height());
+              var split1_orig_ht = Number($("#split-1").attr("orig-ht"));
+              var sp0perc = (split0_ht - split0_orig_ht) / split0_orig_ht * 100;
+              var sp1perc = (split1_ht - split1_orig_ht) / split1_orig_ht * 100;
+              console.log(sp0perc + " : " + sp1perc)
+              $(".springCanvas").css({ "zoom": (100 + sp0perc) + "%" });
+              $(".graphWrapper").css({ "zoom": (100 + sp1perc) + "%" });
+            },
+          })
+          $("#split-0").attr("orig-ht", $("#split-0").height());
+          $("#split-1").attr("orig-ht", $("#split-1").height());
+    },1000);
+    
 });
   

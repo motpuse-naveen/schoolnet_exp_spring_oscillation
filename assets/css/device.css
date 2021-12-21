@@ -18,25 +18,31 @@
 .popup.settings .popupcontent {
     font-size: 11px;
 }
-.graphContainer, .spingContainer{
+
+.graphContainer, .spingContainer {
     /*overflow: auto;*/
 }
-.springholder{
+
+.springholder {
     /*text-align: center;*/
 }
-img.hookImage{
+
+img.hookImage {
     height: 30px;
 }
+
 .springWrapper {
     height: 95px;
 }
-img.springImage{
+
+img.springImage {
     height: 100%;
     width: 20px;
     margin-top: -13px;
     margin-left: 2px;
 }
-.springWeight{
+
+.springWeight {
     height: 33px;
     position: absolute;
     top: 112px;
@@ -44,26 +50,33 @@ img.springImage{
     cursor: pointer;
     opacity: 1;
 }
-img.weightImage{
+
+img.weightImage {
     height: 100%;
 }
+
 .weightDispText {
     position: absolute;
     left: 40px;
     top: 16px;
-    color: #007bff;
+    color: #CD5052;
+    font-size: 14px;
+    font-family: 'Montserrat-SemiBold';
+
 }
+
 .graphContainer .graphWrapper {
     transform: scale(0.56);
     margin: -40px -80px;
 }
-.forceSplit{
-}
-.forceSplit0{
-}
-.forceSplit1{}
-.forcePopup{
-}
+
+.forceSplit {}
+
+.forceSplit0 {}
+
+.forceSplit1 {}
+
+.forcePopup {}
 
 @media only screen and (min-width: 321px) {
     .container-so.main .exp_header .header h1 .sub-title {
@@ -99,29 +112,35 @@ img.weightImage{
     .sliderContainer .max {
         right: -36px;
     }
+
     .graphContainer .graphWrapper {
         transform: scale(0.6);
         margin: -40px -80px;
     }
 }
+
 @media only screen and (min-width: 374px) {
     .graphContainer .graphWrapper {
         transform: scale(0.7);
         margin: -20px -58px;
     }
-    img.hookImage{
+
+    img.hookImage {
         height: 35px;
     }
+
     .springWrapper {
         height: 110px;
     }
-    img.springImage{
+
+    img.springImage {
         height: 100%;
         width: 22px;
         margin-top: -14px;
         margin-left: 3px;
     }
-    .springWeight{
+
+    .springWeight {
         height: 40px;
         position: absolute;
         top: 135px;
@@ -130,6 +149,7 @@ img.weightImage{
         opacity: 1;
     }
 }
+
 @media only screen and (min-width: 410px) {
     .popup.settings .popupcontent {
         font-size: 16px;
@@ -154,6 +174,7 @@ img.weightImage{
     .sliderContainer .max {
         right: -40px;
     }
+
     .graphContainer .graphWrapper {
         transform: scale(0.75);
         margin: 0px -48px;
@@ -166,20 +187,27 @@ img.weightImage{
         margin: 0px -18px;
     }
 }
+
 @media only screen and (min-width: 530px) {
-    .gutter.gutter-vertical{display: none;}
+    .gutter.gutter-vertical {
+        display: none;
+    }
+
     img.hookImage {
         height: 61px;
     }
+
     .springWrapper {
         height: 202px;
     }
+
     img.springImage {
         height: 100%;
         width: 36px;
         margin-top: -27px;
         margin-left: 4px;
     }
+
     .springWeight {
         height: 60px;
         position: absolute;
@@ -188,15 +216,22 @@ img.weightImage{
         cursor: pointer;
         opacity: 1;
     }
+
     .graphContainer .graphWrapper {
         transform: scale(1);
         margin: auto;
         width: 506px;
     }
+
     .springCanvas {
         padding-top: 10px;
     }
-    .weightDispText{
+    .graphContainer {
+        height: 100%;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .weightDispText {
         left: 60px;
         top: 28px;
     }
@@ -214,34 +249,42 @@ img.weightImage{
     .container-so.main .exp_footer .footer .footer-menu-container.right {
         float: right;
     }
+
     #split-0, #split-1 {
         min-height: 100px;
         height: 100%;
         max-height: 100%;
         float: left;
     }
-    #split-0{
+
+    #split-0 {
         width: 40%;
     }
+
     #split-1 {
         width: 60%;
     }
-    .graphContainer .graphWrapper{
+
+    .graphContainer .graphWrapper {
         margin-top: 50px;
         margin-left: 0px;
     }
+
     img.hookImage {
         height: 64px;
     }
+
     .springWrapper {
         height: 180px;
     }
+
     img.springImage {
         height: 100%;
         width: 36px;
         margin-top: -25px;
         margin-left: 5px;
     }
+
     .springWeight {
         height: 64px;
         position: absolute;
@@ -250,31 +293,54 @@ img.weightImage{
         cursor: pointer;
         opacity: 1;
     }
-    .springCanvas{
+
+    .springCanvas {
         padding-top: 20px;
     }
-    
-    .graphContainer{
+
+    .graphContainer {
         height: auto;
     }
-    .weightDispText{
-        left: 30px;
-        top: 80px;
+
+    .weightDispText {
+        left: 20px;
+        top: 70px;
+        font-size: 14px;
     }
 
-    .forceSplit{
+    .forceSplit {
         width: 69% !important;
     }
-    .forceSplit0{
+
+    .forceSplit0 {
         width: 25% !important;
     }
-    .forceSplit1{
+
+    .forceSplit1 {
         width: 74% !important;
     }
-    .forcePopup{
+
+    .forcePopup {
         width: 30%;
         height: 100%;
         right: 0px;
     }
 
+}
+
+@media only screen and (orientation: landscape) and (max-height:470px) and (min-width:730px){
+    .wrapper {
+        min-height: 990px;
+    }
+    .popup{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin-top: 65px;
+        padding-bottom: 120px;
+        top: 0px;
+    }
+    .graphContainer{
+        margin-top: 50px;
+    }
 }
