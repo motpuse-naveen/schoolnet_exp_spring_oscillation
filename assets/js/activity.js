@@ -47,21 +47,27 @@ var SpringOscillation = (function () {
       var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       //if (deviceWidth < 540) {
       if (deviceWidth < 990) {
+        $(".gutter.gutter-vertical").remove();
         split_instance = Split(['#split-0', '#split-1'], {
           sizes: [47, 53],
           direction: 'vertical',
           gutterSize: 1,
           onDrag: function (sizes) {
-            console.log($("#split-0").height() + " : " + $("#split-1").height())
+            //console.log($("#split-0").height() + " : " + $("#split-1").height())
             var split0_ht = Number($("#split-0").height());
             var split0_orig_ht = Number($("#split-0").attr("orig-ht"));
             var split1_ht = Number($("#split-1").height());
             var split1_orig_ht = Number($("#split-1").attr("orig-ht"));
             var sp0perc = (split0_ht - split0_orig_ht) / split0_orig_ht * 100;
             var sp1perc = (split1_ht - split1_orig_ht) / split1_orig_ht * 100;
-            console.log(sp0perc + " : " + sp1perc)
+            //console.log(sp0perc + " : " + sp1perc)
+            var sp0scale = (100 + sp0perc) / 100;
+            var sp1scale = (100 + sp1perc) / 100;
             $(".springCanvas").css({ "zoom": (100 + sp0perc) + "%" });
-            $(".graphWrapper").css({ "zoom": (100 + sp1perc) + "%" });
+            //$(".graphWrapper").css({ "zoom": zoomperc + "%" });
+            //$(".spingContainer").css({"transform":"scale(" + sp0scale + ")", "transform-origin": "top"})
+            $(".graphContainer").css({ "transform": "scale(" + sp1scale + ")", "transform-origin": "left top" })
+
           },
         })
         $("#split-0").attr("orig-ht", $("#split-0").height());
