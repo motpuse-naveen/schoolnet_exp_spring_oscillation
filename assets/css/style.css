@@ -717,3 +717,7 @@ input[type="range"]::-ms-track {
 }
 
 /**/
+
+.springWrapper {
+    position: relative;
+}

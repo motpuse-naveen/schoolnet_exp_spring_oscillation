@@ -43,22 +43,24 @@ img.springImage {
 }
 
 .springWeight {
-    height: 33px;
+    height: 0px;
     position: absolute;
-    top: 112px;
-    left: 26px;
+    top: 95px;
     cursor: pointer;
     opacity: 1;
+    width: 100%;
+    text-align: center;
 }
-
-img.weightImage {
-    height: 100%;
+img.weightImage{
+    height: 33px;
+    margin-top: -28px;
+    margin-left: 2px;
 }
 
 .weightDispText {
     position: absolute;
-    left: 40px;
-    top: 16px;
+    right: -20px;
+    top: 0px;
     color: #CD5052;
     font-size: 14px;
     font-family: 'Montserrat-SemiBold';
@@ -141,12 +143,18 @@ img.weightImage {
     }
 
     .springWeight {
-        height: 40px;
+        height: 0px;
         position: absolute;
-        top: 135px;
-        left: 31px;
+        top: 110px;
         cursor: pointer;
         opacity: 1;
+        width: 100%;
+        text-align: center;
+    }
+    img.weightImage{
+        height: 40px;
+        margin-top: -26px;
+        margin-left: 4px;
     }
 }
 
@@ -209,12 +217,18 @@ img.weightImage {
     }
 
     .springWeight {
-        height: 50px;
+        height: 0px;
         position: absolute;
-        top: 227px;
-        left: 59px;
+        top: 190px;
         cursor: pointer;
         opacity: 1;
+        width: 100%;
+        text-align: center;
+    }
+    img.weightImage{
+        height: 50px;
+        margin-top: -46px;
+        margin-left: 4px;
     }
 
     .graphContainer .graphWrapper {
@@ -232,8 +246,8 @@ img.weightImage {
         padding-top: 50px;
     }
     .weightDispText {
-        left: 60px;
-        top: 28px;
+        right: -30px;
+        top: 0px;
     }
 }
 
@@ -286,12 +300,18 @@ img.weightImage {
     }
 
     .springWeight {
-        height: 64px;
+        height: 0px;
         position: absolute;
-        top: 229px;
-        left: 58px;
+        top: 180px;
         cursor: pointer;
         opacity: 1;
+        width: 100%;
+        text-align: center;
+    }
+    img.weightImage{
+        height: 64px;
+        margin-top: -35px;
+        margin-left: 4px;
     }
 
     .springCanvas {
@@ -345,7 +365,7 @@ img.weightImage {
     }
 }
 
-/*
+
 @media only screen and (max-height: 575.98px) and (orientation: landscape) {
     .container-so.main .exp_header .header h1 .title, .container-so.main .exp_header .header h1 .sub-title{
         display: inline;
@@ -358,35 +378,61 @@ img.weightImage {
         padding-bottom: 10px;
     }
     #split-0, #split-1{
-        height: calc(100% - 48px) !important;
+        height: 100% !important;
         max-height: 100%;
-        width: 49%;
         display: inline-block;
+    }
+    #split-0{
+        width: 39%;
+    }
+    #split-1{
+        width:59%;
     }
     img.hookImage {
         height: 35px;
     }
-
     .springWrapper {
-        height: 110px;
+        height: 95px;
     }
+    
     img.springImage {
         height: 100%;
-        width: 22px;
-        margin-top: -14px;
-        margin-left: 3px;
+        width: 20px;
+        margin-top: -13px;
+        margin-left: 2px;
     }
-
+    
     .springWeight {
-        height: 40px;
+        height: 0px;
         position: absolute;
-        top: 135px;
-        left: 31px;
-        bottom: -40px;
+        top: 95px;
         cursor: pointer;
         opacity: 1;
         width: 100%;
+        text-align: center;
+    }
+    img.weightImage{
+        height: 33px;
+        margin-top: -28px;
+        margin-left: 2px;
     }
     
+    .weightDispText {
+        position: absolute;
+        right: -20px;
+        top: 0px;
+        color: #CD5052;
+        font-size: 14px;
+        font-family: 'Montserrat-SemiBold';
+    
+    }
+    
+    .graphContainer .graphWrapper {
+        transform: scale(0.6);
+        transform-origin: left top;
+    }
+    .wrapper{
+        min-height: auto;
+        max-height: 100%;
+    }
 }
-*/

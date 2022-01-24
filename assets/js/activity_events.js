@@ -13,29 +13,7 @@ $(document).on("click", "#btn_stop", function (event) {
     RunningOscillation = false;
 });
 $(document).on("click", "#btn_reset", function (event) {
-    myMass = 0.5;
-    myElasticity = 3;
-    myConstant = 3;
-    myDamping = 0;
-    ResetOscillation();
-    $("#sliderMass").val(0.5).css({ "background-size": "44.44% 100%" })
-    $(".inputMass").text(0.5);
-
-    $("#sliderSpringConstant").val(3).css({ "background-size": "50% 100%" })
-    $(".inputSpringConstant").text(3)
-
-    $("#sliderDamping").val(0).css({ "background-size": "0 100%" });
-    $(".inputDamping").text(0);
-
-    $(".inputTimePeriod").text("")
-    $(".springWeight").draggable('enable')
-
-    $(".resetDiv").hide();
-    $(".stopDiv").hide();
-
-    ResetPopupValues();
-    RunningOscillation = false;
-    $("text.highcharts-axis-title").attr("x", 35);
+    OnResetButton();
 });
 $(document).on("click", "#btn_settings", function (event) {
     $(".popup").hide();
@@ -95,11 +73,9 @@ $(document).on("click", ".btn-close-popup", function (event) {
 //window.addEventListener("orientationchange", function(event) {
 $(window).bind('orientationchange', function () {
     this.setTimeout(function () {
-        //alert(window.innerHeight);
         $(".wrapper").css({
             "height": screen.availHeight + "px"
         })
-        //console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
         var headerHt = $(".container-so.main .exp_header").outerHeight();
         var footerHt = $(".container-so.main .exp_footer").outerHeight();
         $(".exp_body_header").css({ "height": headerHt + "px" });
@@ -133,8 +109,12 @@ $(window).bind('orientationchange', function () {
                 },
             })
         }
-        $("#split-0").attr("orig-ht", $("#split-0").height());
-        $("#split-1").attr("orig-ht", $("#split-1").height());
+        //$("#split-0").attr("orig-ht", $("#split-0").height());
+        //$("#split-1").attr("orig-ht", $("#split-1").height());
+        //weightInitialTop = $(".springWeight").position().top;
+        //springOrigHeight = $(".springWrapper").height();
+        //divisionfactor = (weightInitialTop / 2) / 60.0;
+
     }, 200);
 });
 
