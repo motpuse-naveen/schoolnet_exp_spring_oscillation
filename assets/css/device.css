@@ -344,3 +344,49 @@ img.weightImage {
         padding-top: 50px;
     }
 }
+
+/*
+@media only screen and (max-height: 575.98px) and (orientation: landscape) {
+    .container-so.main .exp_header .header h1 .title, .container-so.main .exp_header .header h1 .sub-title{
+        display: inline;
+    }
+    .container-md, .container-sm, .container{
+        max-width: 100%;
+    }
+    .container-so.main .exp_header .header h1{
+        padding: 0px;
+        padding-bottom: 10px;
+    }
+    #split-0, #split-1{
+        height: calc(100% - 48px) !important;
+        max-height: 100%;
+        width: 49%;
+        display: inline-block;
+    }
+    img.hookImage {
+        height: 35px;
+    }
+
+    .springWrapper {
+        height: 110px;
+    }
+    img.springImage {
+        height: 100%;
+        width: 22px;
+        margin-top: -14px;
+        margin-left: 3px;
+    }
+
+    .springWeight {
+        height: 40px;
+        position: absolute;
+        top: 135px;
+        left: 31px;
+        bottom: -40px;
+        cursor: pointer;
+        opacity: 1;
+        width: 100%;
+    }
+    
+}
+*/
