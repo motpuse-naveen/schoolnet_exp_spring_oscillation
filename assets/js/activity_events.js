@@ -1,11 +1,5 @@
 
-$(document).ready(function () {
-    Activity.Init();
-});
 
-$(document).on("click", "#btn_launch", function (event) {
-    Activity.LaunchActivity();
-});
 
 $(document).on("click", "#btn_stop", function (event) {
     //$(".popup").hide();

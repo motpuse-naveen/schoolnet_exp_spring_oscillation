@@ -27,29 +27,7 @@ var pausedStartDate;
 var IsDesktop = false;
 var split_instance;
 
-var Activity = (function(){
-  return {
-    Init: function () {
-      $(".wrapper").css({
-        "height": window.innerHeight + "px"
-      })
-      SpringOscillation.Init();
-    },
-    LaunchActivity: function () {
-      $(".container-so.launch").fadeOut();
-      $(".container-so.main").show();
-      var headerHt = $(".container-so.main .exp_header").outerHeight();
-      var footerHt = $(".container-so.main .exp_footer").outerHeight();
-      $(".exp_body_header").css({ "height": headerHt + "px" });
-      $(".exp_body_footer").css({ "height": footerHt + "px" });
-      var mainHt = $(".container-so.main").height();
-      $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt)) })
 
-      SpringOscillation.LaunchActivity();
-      //GuidedTour.Init();
-    }
-  }
-})();
 
 var SpringOscillation = (function () {
   return {
