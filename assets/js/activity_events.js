@@ -1,10 +1,10 @@
 
 $(document).ready(function () {
-    SpringOscillation.Init();
+    Activity.Init();
 });
 
 $(document).on("click", "#btn_launch", function (event) {
-    SpringOscillation.LaunchActivity();
+    Activity.LaunchActivity();
 });
 
 $(document).on("click", "#btn_stop", function (event) {

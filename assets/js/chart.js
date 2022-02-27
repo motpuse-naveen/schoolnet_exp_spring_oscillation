@@ -8,7 +8,8 @@ var SpringOscillationChart = (function () {
                     type: 'spline',
                     width: pwidth,
                     height: pheight,
-                    animation: false
+                    animation: false,
+                    backgroundColor: 'transparent'
                 },
                 plotOptions: {
                     series: {
@@ -31,7 +32,7 @@ var SpringOscillationChart = (function () {
                     lineWidth: 0,
                     minorTickLength: 0,
                     tickLength: 0,
-                    gridLineColor: '#e0d1d3',
+                    gridLineColor: '#AFAFAF',
                     gridLineDashStyle: 'longdash'
                 },
                 title: false,
@@ -42,7 +43,7 @@ var SpringOscillationChart = (function () {
                         enabled: false,
                         align: 'high',
                         style: {
-                            color: "#545454",
+                            color: "#E0E0E0",
                             fontSize: '14px',
                             fontWeight: 'bold',
                             margin: -10
@@ -65,8 +66,8 @@ var SpringOscillationChart = (function () {
                     minorTickInterval: 10,
                     minorTickLength: 10,
                     minorTickWidth: 1,
-                    minorTickColor: '#e0d1d3',
-                    gridLineColor: '#e0d1d3',
+                    minorTickColor: '#AFAFAF',
+                    gridLineColor: '#AFAFAF',
                     gridLineDashStyle: 'longdash'
                 },
                 legend: {
@@ -101,8 +102,9 @@ var SpringOscillationChart = (function () {
             var yaxispath = $("g.highcharts-axis.highcharts-yaxis path.highcharts-axis-line").attr("d")
             var axisLeft = yaxispath.split(" ")[1];
             
-            $(".yAxisLine").css({"left": (axisLeft -10 + 40) + "px"})
-            $(".xAxisLine").css({"left": (axisLeft -10 + 40) + "px"})
+            $(".yAxisLine").css({"left": (axisLeft -10 + 40) + "px"});
+            $(".xAxisLine").css({"left": (axisLeft -10 + 40) + "px"});
+            //$(".highcharts-background").attr({"fill":"transparent"});
         },
         update: function (datapoint) {
             //chart.series[0].addPoint([datapoint.x, datapoint.y], true);

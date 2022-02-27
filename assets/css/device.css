@@ -1,9 +1,9 @@
 .launch .exp_body h1 {
-    font-size: 50px;
+    font-size: 54px;
 }
 
-.launch .exp_body h1 .sub-title {
-    font-size: 16px;
+.launch .exp_body h1 .sub-title, .launch .exp_header .sub-title {
+    font-size: 18px;
 }
 
 .container-so.main .exp_header .header h1 .title {
@@ -197,6 +197,10 @@ img.weightImage{
 }
 
 @media only screen and (min-width: 530px) {
+    .container {
+       width: 100%;
+       max-width:100%;
+    }
     .gutter.gutter-vertical {
         display: none;
     }
@@ -250,9 +254,37 @@ img.weightImage{
         top: 0px;
     }
 }
+@media only screen and (min-width: 731px) {
+    .container-so.main .exp_header .header {
+        display: block;
+    }
+    .launch .exp_footer .footer {
+        position: relative;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .launch .copyrighttext {
+        font-size: 11px;
+        color: var(--theme-copy-text);
+        position: absolute;
+        right: 10px;
+        bottom: 3px;
+        justify-content: right;
+        width: auto;
+        background: transparent;
+        padding: 0;
+    }
+    .launch .exp_body .launch-bg{
+        padding-top: 58px;
+    }
+    .container-so.main .exp_footer .footer .copyrighttext{
+        display: block;
+    }
+}
 
 @media only screen and (min-width: 990px) {
-    .container-so.main .exp_footer .footer {
+    /*.container-so.main .exp_footer .footer {
         display: inline-block;
     }
 
@@ -263,6 +295,7 @@ img.weightImage{
     .container-so.main .exp_footer .footer .footer-menu-container.right {
         float: right;
     }
+    */
 
     #split-0, #split-1 {
         min-height: 100px;
@@ -346,6 +379,21 @@ img.weightImage{
         right: 0px;
     }
 
+}
+
+@media screen and (orientation:landscape)
+    and (min-device-width: 480px) {
+    .titledesktop{display: none !important;}
+    .titlemobile{display: block !important;}
+    .launch .exp_header .title{
+        padding: 0.5em 0.5em 0.1em 0.5em;
+    }
+    .launch .exp_header .sub-title{
+        margin-bottom: 0.5em;
+    }
+    .launch .exp_header img.logo{
+        width: 180px;
+    }
 }
 
 @media only screen and (orientation: landscape) and (max-height:470px) and (min-width:730px){

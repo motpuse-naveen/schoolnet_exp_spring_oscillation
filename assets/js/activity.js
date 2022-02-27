@@ -27,23 +27,33 @@ var pausedStartDate;
 var IsDesktop = false;
 var split_instance;
 
-var SpringOscillation = (function () {
+var Activity = (function(){
   return {
     Init: function () {
       $(".wrapper").css({
         "height": window.innerHeight + "px"
       })
+      SpringOscillation.Init();
     },
     LaunchActivity: function () {
       $(".container-so.launch").fadeOut();
       $(".container-so.main").show();
-
       var headerHt = $(".container-so.main .exp_header").outerHeight();
       var footerHt = $(".container-so.main .exp_footer").outerHeight();
       $(".exp_body_header").css({ "height": headerHt + "px" });
       $(".exp_body_footer").css({ "height": footerHt + "px" });
       var mainHt = $(".container-so.main").height();
       $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt)) })
+
+      SpringOscillation.LaunchActivity();
+      //GuidedTour.Init();
+    }
+  }
+})();
+
+var SpringOscillation = (function () {
+  return {
+    LaunchActivity: function () {
       var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       //if (deviceWidth < 540) {
       if (deviceWidth < 990) {
@@ -82,11 +92,6 @@ var SpringOscillation = (function () {
       weightInitialTop = $(".springWeight").position().top;
       springOrigHeight = $(".springWrapper").height();
       divisionfactor = (weightInitialTop / 2) / 60.0;
-    },
-    DownloadSheet: function () {
-      var mylink = document.getElementById("linksheet");
-      mylink.setAttribute("href", "assets/docs/oscillations_word.doc");
-      mylink.click();
     }
   }
 })();
