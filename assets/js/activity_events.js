@@ -66,6 +66,7 @@ $(document).on("click", ".btn-close-popup", function (event) {
 
 //window.addEventListener("orientationchange", function(event) {
 $(window).bind('orientationchange', function () {
+    
     this.setTimeout(function () {
         $(".wrapper").css({
             "height": screen.availHeight + "px"
@@ -110,5 +111,6 @@ $(window).bind('orientationchange', function () {
         //divisionfactor = (weightInitialTop / 2) / 60.0;
 
     }, 200);
+    
 });
 

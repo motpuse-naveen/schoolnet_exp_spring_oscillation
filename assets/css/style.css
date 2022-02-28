@@ -196,12 +196,7 @@ body {
     position: relative;
     display: none;
 }
-.btn-theme-wrap{
-    position: absolute;
-    right: 0px;
-    top: 8px;
-    z-index: 11;
-}
+
 .container-so.main .exp_header .header .head-pan-container{
     display: flex;
 }
@@ -252,6 +247,17 @@ body {
     margin: 1px;
     padding: 0px;
 }
+.btn-theme-wrap{
+    position: absolute;
+    right: 0px;
+    top: 8px;
+    z-index: 3;
+}
+.btn_themes{
+    background-image: url(../images/theme-icon-outline-right.svg);
+    background-repeat: no-repeat;
+    background-size: 86px 44px;
+}
 .btn_stop:active, .btn_settings:active, .btn_sheet:active, .btn_calculations:active, .btn_info:active, .btn_procedure:active, .btn_reset:active,
 .btn_stop:hover, .btn_settings:hover, .btn_sheet:hover, .btn_calculations:hover, .btn_info:hover, .btn_procedure:hover, .btn_reset:hover,
 .btn_stop:focus, .btn_settings:focus, .btn_sheet:focus, .btn_calculations:focus, .btn_info:focus, .btn_procedure:focus, .btn_reset:focus {
@@ -284,26 +290,39 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
 }
 
 .gutter.gutter-vertical {
-    height: 1px;
+    width: 100%;
     background-color: var(--theme-popup-border);
     position: relative;
     z-index: 1;
 }
-
-.gutter.gutter-vertical:before {
+.gutter.gutter-horizontal{
+    height: 100%;
+    width: 1px;
+    float: left;
+    background-color: var(--theme-popup-border);
+    position: relative;
+    z-index: 1;
+}
+.gutter.gutter-horizontal .h-handle {
     content: '';
     position: absolute;
-    background-image: url('../images/drag-btn-normal.svg');
+    background-image: url(../images/drag-btn-horizontal.svg);
+    cursor: row-resize;
+    height: 36px;
+    width: 36px;
+    bottom: 30px;
+    right: -17px;
+}
+
+.gutter.gutter-vertical .v-handle {
+    content: '';
+    position: absolute;
+    background-image: url(../images/drag-btn-vertical.svg);
     cursor: row-resize;
     height: 36px;
     width: 36px;
     top: -18px;
     right: 20px;
-}
-
-.gutter.gutter-vertical:hover:before {
-    background-image: url('../images/drag-btn-active.svg');
-    background-repeat: no-repeat;
 }
 
 #split-0, #split-1 {
@@ -751,6 +770,14 @@ svg:focus .cls-2,svg:hover .cls-2, svg:active .cls-2{stroke:var(--theme-pri-colo
 .btn-close-popup:active svg .cls-3, .btn-close-popup:hover svg .cls-3, .btn-close-popup:focus svg .cls-3{
     stroke:var(--theme-pri-color);
 }
+
+svg .cls-100{fill:var(--theme-pri-color);}
+svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;}
+
+/*
+.cls-100{fill:#333333;}
+.cls-101{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;}
+*/
 
 /* Guided Tour */
 

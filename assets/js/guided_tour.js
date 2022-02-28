@@ -32,10 +32,9 @@ const g_tour_steps = [
         informationText: `this is step 8 to identify element`,
     },
     {
-        sourceElmIdQS: ".weightImage",
+        sourceElmIdQS: ".gutter .gutter_handle",
         informationText: `this is step 9 to identify element`,
     }
-    
 ]
 
 var GuidedTour = (function () {

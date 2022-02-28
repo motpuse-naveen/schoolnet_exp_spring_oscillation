@@ -33,7 +33,6 @@ var SpringOscillation = (function () {
   return {
     LaunchActivity: function () {
       var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-      //if (deviceWidth < 540) {
       if (deviceWidth < 990) {
         $(".gutter.gutter-vertical").remove();
         split_instance = Split(['#split-0', '#split-1'], {
