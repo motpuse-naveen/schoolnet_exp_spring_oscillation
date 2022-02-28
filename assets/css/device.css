@@ -72,13 +72,6 @@ img.weightImage{
     margin: -40px -80px;
 }
 
-.forceSplit {}
-
-.forceSplit0 {}
-
-.forceSplit1 {}
-
-.forcePopup {}
 
 @media only screen and (min-width: 321px) {
     .container-so.main .exp_header .header h1 .sub-title {
@@ -338,33 +331,12 @@ img.weightImage{
         padding-top: 20px;
     }
 
-    .graphContainer {
-        /*height: auto;*/
-    }
-
     .weightDispText {
         left: 20px;
         top: 70px;
         font-size: 14px;
     }
 
-    .forceSplit {
-        width: 69% !important;
-    }
-
-    .forceSplit0 {
-        width: 25% !important;
-    }
-
-    .forceSplit1 {
-        width: 74% !important;
-    }
-
-    .forcePopup {
-        width: 30%;
-        height: 100%;
-        right: 0px;
-    }
     .btn-theme-wrap{
         z-index: 11;
     }

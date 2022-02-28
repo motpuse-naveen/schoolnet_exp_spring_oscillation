@@ -27,9 +27,11 @@ var ScreenSplitter = (function () {
     return {
         InitSplitter: function () {
             if (window.matchMedia("(orientation: portrait)").matches) {
+                $(".split-main").addClass("v-split-main")
                 this.VerticalSplit();
             }
             else {
+                $(".split-main").addClass("h-split-main")
                 this.HorizontalSplit();
             }
         },

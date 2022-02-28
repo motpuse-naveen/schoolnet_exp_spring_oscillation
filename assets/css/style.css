@@ -307,7 +307,7 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     content: '';
     position: absolute;
     background-image: url(../images/drag-btn-horizontal.svg);
-    cursor: row-resize;
+    cursor: col-resize;
     height: 36px;
     width: 36px;
     bottom: 30px;

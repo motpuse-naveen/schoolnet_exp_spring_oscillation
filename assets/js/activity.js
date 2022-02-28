@@ -27,8 +27,6 @@ var pausedStartDate;
 var IsDesktop = false;
 var split_instance;
 
-
-
 var SpringOscillation = (function () {
   return {
     LaunchActivity: function () {
@@ -168,7 +166,7 @@ function ResetOscillation() {
   $(".x-axis-maxlimit").text(Xvalue2 * 10)
 }
 
-function OnResetButton(){
+function OnResetButton() {
   myMass = 0.5;
   myElasticity = 3;
   myConstant = 3;
@@ -355,4 +353,23 @@ document.addEventListener('visibilitychange', function () {
     }
   }
 });
+
+$(document).on("click", "#btn_stop", function (event) {
+  //$(".popup").hide();
+  StopOscillation();
+  RunningOscillation = false;
+});
+$(document).on("click", "#btn_reset", function (event) {
+  OnResetButton();
+});
+$(document).on("click", "#btn_settings", function (event) {
+  $(".popup").hide();
+  $(".popup.settings").fadeIn();
+});
+$(document).on("click", "#btn_calculations", function (event) {
+  $(".popup").hide();
+  $(".popup.calculations").fadeIn();
+  
+});
+
 
