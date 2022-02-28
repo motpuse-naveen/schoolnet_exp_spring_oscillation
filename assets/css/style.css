@@ -196,7 +196,6 @@ body {
     position: relative;
     display: none;
 }
-
 .container-so.main .exp_header .header .head-pan-container{
     display: flex;
 }
@@ -241,12 +240,13 @@ body {
     height: 100%;
     position: relative;
 }
-.btn_stop, .btn_settings, .btn_sheet, .btn_calculations, .btn_info, .btn_procedure, .btn_reset, .btn_themes {
+.btn_stop, .btn_settings, .btn_sheet, .btn_calculations, .btn_info, .btn_procedure, .btn_reset,.btn_themes {
     height: 46px;
     width: 46px;
     margin: 1px;
     padding: 0px;
 }
+
 .btn-theme-wrap{
     position: absolute;
     right: 0px;
@@ -258,11 +258,14 @@ body {
     background-repeat: no-repeat;
     background-size: 86px 44px;
 }
+
 .btn_stop:active, .btn_settings:active, .btn_sheet:active, .btn_calculations:active, .btn_info:active, .btn_procedure:active, .btn_reset:active,
 .btn_stop:hover, .btn_settings:hover, .btn_sheet:hover, .btn_calculations:hover, .btn_info:hover, .btn_procedure:hover, .btn_reset:hover,
 .btn_stop:focus, .btn_settings:focus, .btn_sheet:focus, .btn_calculations:focus, .btn_info:focus, .btn_procedure:focus, .btn_reset:focus {
     background-color: var(--theme-pri-text-color);
 }
+
+
 
 div.footer-menu-container {}
 
@@ -344,8 +347,15 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     position: absolute;
     bottom: 0px;
     border-top: 1px solid var(--theme-popup-border);
-    z-index: 2;
+    z-index: 4;
     outline: 1px solid var(--theme-popup-border);
+}
+.right_align_popup{
+    width: 300px;
+    height: 100%;
+    padding-bottom: 46px;
+    top: 0px;
+    right: 0px;
 }
 
 .popup .container {

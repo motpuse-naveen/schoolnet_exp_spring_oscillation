@@ -24,43 +24,10 @@ var springAnnimInterval = 0;
 var tabSwitched = false;
 var pausedMillSec = 0;
 var pausedStartDate;
-var IsDesktop = false;
-var split_instance;
 
 var SpringOscillation = (function () {
   return {
     LaunchActivity: function () {
-      var deviceWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-      if (deviceWidth < 990) {
-        $(".gutter.gutter-vertical").remove();
-        split_instance = Split(['#split-0', '#split-1'], {
-          sizes: [47, 53],
-          direction: 'vertical',
-          gutterSize: 1,
-          onDrag: function (sizes) {
-            //console.log($("#split-0").height() + " : " + $("#split-1").height())
-            var split0_ht = Number($("#split-0").height());
-            var split0_orig_ht = Number($("#split-0").attr("orig-ht"));
-            var split1_ht = Number($("#split-1").height());
-            var split1_orig_ht = Number($("#split-1").attr("orig-ht"));
-            var sp0perc = (split0_ht - split0_orig_ht) / split0_orig_ht * 100;
-            var sp1perc = (split1_ht - split1_orig_ht) / split1_orig_ht * 100;
-            //console.log(sp0perc + " : " + sp1perc)
-            var sp0scale = (100 + sp0perc) / 100;
-            var sp1scale = (100 + sp1perc) / 100;
-            $(".springCanvas").css({ "zoom": (100 + sp0perc) + "%" });
-            //$(".graphWrapper").css({ "zoom": zoomperc + "%" });
-            //$(".spingContainer").css({"transform":"scale(" + sp0scale + ")", "transform-origin": "top"})
-            $(".graphContainer").css({ "transform": "scale(" + sp1scale + ")", "transform-origin": "left top" })
-
-          },
-        })
-        $("#split-0").attr("orig-ht", $("#split-0").height());
-        $("#split-1").attr("orig-ht", $("#split-1").height());
-      }
-      else {
-        IsDesktop = true;
-      }
       var graphWt = $(".graphContainer").width();
       var graphHt = $(".graphContainer").height();
       SpringOscillationChart.init([{ "x": 0, "y": 0 }], 380, 320);
@@ -364,12 +331,13 @@ $(document).on("click", "#btn_reset", function (event) {
 });
 $(document).on("click", "#btn_settings", function (event) {
   $(".popup").hide();
+  ActivityShell.AdjustSplitPanelsOnClosePopup()
   $(".popup.settings").fadeIn();
 });
 $(document).on("click", "#btn_calculations", function (event) {
   $(".popup").hide();
+  ActivityShell.AdjustSplitPanelsOnClosePopup()
   $(".popup.calculations").fadeIn();
-  
 });
 
 
