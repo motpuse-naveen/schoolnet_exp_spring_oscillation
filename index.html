@@ -112,86 +112,7 @@
                                         id="link-worksheet" href="assets/docs/oscillations_word.doc">Worksheet</a></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="popup settings">
-                        <div class="container">
-                            <div class="popuphead">
-                                <h2 aria-hidden="true">&nbsp;</h2>
-                                <div class="closepopup">
-                                    <button class="btn-close-popup" title="Close">
-                                        <svg class="circle circle-1" width="16.14" height="16.14">
-                                            <use xlink:href="#closebutton">
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="popupcontent">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-12 col-sm-12">
-                                        <div class="sliderWrapper sliderMassWrapper">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Mass</div>
-                                                <div class="sliderContainer">
-                                                    <span class="min">0.1</span>
-                                                    <input class="slider" type="range" id="sliderMass" name="mass"
-                                                        min="0.1" max="1" step="0.1" value="0.5"
-                                                        style="background-size: 44.4444% 100%;">
-                                                    <span class="max">1</span>
-                                                </div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputMass">0.5</span><span
-                                                        class="unit">kg</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="sliderWrapper sliderSCContainer">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Spring Constant</div>
-                                                <div class="sliderContainer">
-                                                    <span class="min">1</span>
-                                                    <input class="slider" type="range" id="sliderSpringConstant"
-                                                        name="springconstant" min="1" max="5" step="0.1" value="3"
-                                                        style="background-size: 50% 100%;">
-                                                    <span class="max">5</span>
-                                                </div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputSpringConstant">3</span><span
-                                                        class="unit">N/m</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12">
-                                        <div class="sliderWrapper sliderDampingContainer">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Damping</div>
-                                                <div class="sliderContainer">
-                                                    <span class="min">0</span>
-                                                    <input class="slider" type="range" id="sliderDamping" name="damping"
-                                                        min="0" max="0.5" step="0.1" value="0"
-                                                        style="background-size: 0% 100%;">
-                                                    <span class="max">0.5</span>
-                                                </div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputDamping">0</span><span
-                                                        class="unit">N/m</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="sliderWrapper sliderTPContainer">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Time Period</div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputTimePeriod"></span><span
-                                                        class="unit">Sec</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>\
                     <div class="popup calculations">
                         <div class="container">
                             <div class="popuphead">
@@ -417,6 +338,85 @@
                                     </div>
                                 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cust-popup settings">
+                        <div class="container">
+                            <div class="popuphead">
+                                <h2 aria-hidden="true">&nbsp;</h2>
+                                <div class="closepopup">
+                                    <button class="btn-close-cust-popup" title="Close">
+                                        <svg class="circle circle-1" width="16.14" height="16.14">
+                                            <use xlink:href="#closebutton">
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="popupcontent">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="sliderWrapper sliderMassWrapper">
+                                            <div class="sliderInnerWrapper">
+                                                <div class="slider-label">Mass</div>
+                                                <div class="sliderContainer">
+                                                    <span class="min">0.1</span>
+                                                    <input class="slider" type="range" id="sliderMass" name="mass"
+                                                        min="0.1" max="1" step="0.1" value="0.5"
+                                                        style="background-size: 44.4444% 100%;">
+                                                    <span class="max">1</span>
+                                                </div>
+                                                <div class="inputContainer">
+                                                    <span class="input_box inputMass">0.5</span><span
+                                                        class="unit">kg</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sliderWrapper sliderSCContainer">
+                                            <div class="sliderInnerWrapper">
+                                                <div class="slider-label">Spring Constant</div>
+                                                <div class="sliderContainer">
+                                                    <span class="min">1</span>
+                                                    <input class="slider" type="range" id="sliderSpringConstant"
+                                                        name="springconstant" min="1" max="5" step="0.1" value="3"
+                                                        style="background-size: 50% 100%;">
+                                                    <span class="max">5</span>
+                                                </div>
+                                                <div class="inputContainer">
+                                                    <span class="input_box inputSpringConstant">3</span><span
+                                                        class="unit">N/m</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="sliderWrapper sliderDampingContainer">
+                                            <div class="sliderInnerWrapper">
+                                                <div class="slider-label">Damping</div>
+                                                <div class="sliderContainer">
+                                                    <span class="min">0</span>
+                                                    <input class="slider" type="range" id="sliderDamping" name="damping"
+                                                        min="0" max="0.5" step="0.1" value="0"
+                                                        style="background-size: 0% 100%;">
+                                                    <span class="max">0.5</span>
+                                                </div>
+                                                <div class="inputContainer">
+                                                    <span class="input_box inputDamping">0</span><span
+                                                        class="unit">N/m</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sliderWrapper sliderTPContainer">
+                                            <div class="sliderInnerWrapper">
+                                                <div class="slider-label">Time Period</div>
+                                                <div class="inputContainer">
+                                                    <span class="input_box inputTimePeriod"></span><span
+                                                        class="unit">Sec</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

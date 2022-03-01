@@ -53,7 +53,26 @@ var ActivityShell = (function () {
       }
     },
     AdjustSplitPanelsOnClosePopup: function ($popup) {
-      $("#split-main").css({ "width": $(".wrapper").width() })
+      var deviceType = ActivityShell.DeviceType();
+      if (deviceType != "mobile") {
+        $("#split-main").css({ "width": $(".wrapper").width() })
+      }
+    }, 
+    TogglePopup: function($popup){
+      if (!$popup.is(":visible")) {
+        $(".popup").hide();
+        $popup.fadeIn();
+        ActivityShell.AdjustSplitPanelsOnOpenPopup($popup)
+      }
+      else {
+        $popup.hide();
+        ActivityShell.AdjustSplitPanelsOnClosePopup($popup)
+      }
+    
+      /* Scale Spring to fit */
+      ScreenSplitter.ScaleToFit($("#split-0"))
+      /* Scale Graph to fit */
+      ScreenSplitter.ScaleToFit($("#split-1"))
     }
   }
 })();
@@ -66,7 +85,7 @@ $(window).bind('orientationchange', function () {
   this.setTimeout(function () {
     ActivityShell.AdjustContainerHeight();
     ScreenSplitter.InitSplitter();
-    if($(".popup").is(":visible")){
+    if ($(".popup").is(":visible")) {
       ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
     }
     /* Scale Spring to fit */
@@ -81,53 +100,19 @@ $(document).on("click", "#btn_launch", function (event) {
 });
 /*Common Popup*/
 $(document).on("click", "#btn_sheet", function (event) {
-  if (!$(".popup.worksheet").is(":visible")) {
-    $(".popup").hide();
-    $(".popup.worksheet").fadeIn();
-    ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.worksheet"))
-  }
-  else {
-    $(".popup.worksheet").hide();
-    ActivityShell.AdjustSplitPanelsOnClosePopup($(".popup.worksheet"))
-  }
-
-  /* Scale Spring to fit */
-  ScreenSplitter.ScaleToFit($("#split-0"))
-  /* Scale Graph to fit */
-  ScreenSplitter.ScaleToFit($("#split-1"))
+  ActivityShell.TogglePopup($(".popup.worksheet"));
 });
 $(document).on("click", "#btn_info", function (event) {
-  if (!$(".popup.info").is(":visible")) {
-    $(".popup").hide();
-    $(".popup.info").fadeIn();
-    ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.info"))
-  }
-  else {
-    $(".popup.info").hide();
-    ActivityShell.AdjustSplitPanelsOnClosePopup($(".popup.info"))
-  }
-
-  /* Scale Spring to fit */
-  ScreenSplitter.ScaleToFit($("#split-0"))
-  /* Scale Graph to fit */
-  ScreenSplitter.ScaleToFit($("#split-1"))
+  ActivityShell.TogglePopup($(".popup.info"));
 });
 $(document).on("click", "#btn_procedure", function (event) {
-  if (!$(".popup.procedure").is(":visible")) {
-    $(".popup").hide();
-    $(".popup.procedure").fadeIn();
-    ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.procedure"))
-  }
-  else {
-    $(".popup.procedure").hide();
-    ActivityShell.AdjustSplitPanelsOnClosePopup($(".popup.procedure"))
-  }
-
-  /* Scale Spring to fit */
-  ScreenSplitter.ScaleToFit($("#split-0"))
-  /* Scale Graph to fit */
-  ScreenSplitter.ScaleToFit($("#split-1"))
+  ActivityShell.TogglePopup($(".popup.procedure"));
 });
+
+$(document).on("click", "#btn_calculations", function (event) {
+  ActivityShell.TogglePopup($(".popup.calculations"));
+});
+
 $(document).on("click", ".btn-close-popup", function (event) {
   $(this).closest(".popup").hide();
   ActivityShell.AdjustSplitPanelsOnClosePopup($(this).closest(".popup"))
@@ -135,5 +120,14 @@ $(document).on("click", ".btn-close-popup", function (event) {
   ScreenSplitter.ScaleToFit($("#split-0"))
   /* Scale Graph to fit */
   ScreenSplitter.ScaleToFit($("#split-1"))
+});
+
+$(document).on("click", "#btn_settings", function (event) {
+  $(".cust-popup").hide();
+  //ActivityShell.AdjustSplitPanelsOnClosePopup()
+  $(".cust-popup.settings").fadeIn();
+});
+$(document).on("click", ".btn-close-cust-popup", function (event) {
+  $(this).closest(".cust-popup").hide();
 });
 /*End Common Popup Script */

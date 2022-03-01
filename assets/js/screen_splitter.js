@@ -26,7 +26,7 @@ var ScreenSplitter = (function () {
 
     return {
         InitSplitter: function () {
-            $("#split-main").removeClass("v-split-main").addClass("h-split-main");
+            $("#split-main").removeClass("v-split-main").removeClass("h-split-main");
             $("#split-main").removeAttr("style")
             if (window.matchMedia("(orientation: portrait)").matches) {
                 $("#split-main").addClass("v-split-main");

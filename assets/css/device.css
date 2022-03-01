@@ -15,10 +15,10 @@
     padding-top: 5px;
 }
 
-.popup.settings .popupcontent {
+.cust-popup.settings .popupcontent {
     font-size: 11px;
 }
-
+/*BOB Style*/
 img.hookImage {
     height: 30px;
 }
@@ -51,20 +51,21 @@ img.weightImage{
 
 .weightDispText {
     position: absolute;
-    right: -20px;
+    right: -40px;
     top: 0px;
     color: #CD5052;
     font-size: 14px;
     font-family: 'Montserrat-SemiBold';
 
 }
+/*END BOB Style*/
 
 @media only screen and (min-width: 321px) {
     .container-so.main .exp_header .header h1 .sub-title {
         font-size: 16px;
     }
 
-    .popup.settings .popupcontent {
+    .cust-popup.settings .popupcontent {
         font-size: 14px;
     }
 
@@ -96,7 +97,7 @@ img.weightImage{
 }
 
 @media only screen and (min-width: 374px) {
-   
+    /*BOB Style*/
     img.hookImage {
         height: 35px;
     }
@@ -122,14 +123,15 @@ img.weightImage{
         text-align: center;
     }
     img.weightImage{
-        height: 40px;
+        height: 35px;
         margin-top: -26px;
         margin-left: 4px;
     }
+     /*End BOB Style*/
 }
 
 @media only screen and (min-width: 410px) {
-    .popup.settings .popupcontent {
+    .cust-popup.settings .popupcontent {
         font-size: 16px;
     }
 
@@ -159,22 +161,25 @@ img.weightImage{
        width: 100%;
        max-width:100%;
     }
+    /*BOB Style*/
     img.hookImage {
-        height: 61px;
+        height: 50px;
     }
+
     .springWrapper {
-        height: 190px;
+        height: 160px;
     }
+
     img.springImage {
         height: 100%;
-        width: 36px;
-        margin-top: -27px;
-        margin-left: 4px;
+        width: 30px;
+        margin-top: -21px;
+        margin-left: 5px;
     }
     .springWeight {
         height: 0px;
         position: absolute;
-        top: 190px;
+        top: 166px;
         cursor: pointer;
         opacity: 1;
         width: 100%;
@@ -185,15 +190,14 @@ img.weightImage{
         margin-top: -46px;
         margin-left: 4px;
     }
-
     .springCanvas {
-        padding-top: 10px;
+        padding-top: 20px;
     }
-    
     .weightDispText {
-        right: -30px;
+        right: -40px;
         top: 0px;
     }
+    /*END BOB Style*/
 }
 @media only screen and (min-width: 731px) {
     .container-so.main .exp_header .header {
@@ -234,51 +238,14 @@ img.weightImage{
         max-height: 100%;
         float: left;
     }
-    
-    img.hookImage {
-        height: 50px;
-    }
-
-    .springWrapper {
-        height: 160px;
-    }
-
-    img.springImage {
-        height: 100%;
-        width: 30px;
-        margin-top: -21px;
-        margin-left: 5px;
-    }
-
-    .springWeight {
-        height: 0px;
-        position: absolute;
-        top: 166px;
-        cursor: pointer;
-        opacity: 1;
-        width: 100%;
-        text-align: center;
-    }
-    img.weightImage{
-        height: 50px;
-        margin-top: -46px;
-        margin-left: 4px;
-    }
-
-    .springCanvas {
-        padding-top: 20px;
-    }
-
     .weightDispText {
         left: 20px;
         top: 30px;
         font-size: 14px;
     }
-
     .btn-theme-wrap{
         z-index: 11;
     }
-
 }
 
 @media screen and (orientation:landscape)
@@ -351,10 +318,46 @@ img.weightImage{
     div.footer-menu-container.left div.btn-wrap{
         border-bottom: 1px solid var(--theme-menu-icon-sepr);
     }
-    .popup {
+    .popup, .cust-popup {
         margin-right: 46px;
         width: auto;
     }
+    /*BOB Style*/
+    img.hookImage {
+        height: 35px;
+    }
+
+    .springWrapper {
+        height: 110px;
+    }
+
+    img.springImage {
+        height: 100%;
+        width: 22px;
+        margin-top: -14px;
+        margin-left: 3px;
+    }
+
+    .springWeight {
+        height: 0px;
+        position: absolute;
+        top: 110px;
+        cursor: pointer;
+        opacity: 1;
+        width: 100%;
+        text-align: center;
+    }
+    img.weightImage{
+        height: 35px;
+        margin-top: -26px;
+        margin-left: 4px;
+    }
+    .weightDispText {
+        left: 20px;
+        top: 30px;
+        font-size: 14px;
+    }
+    /*END BOB Style*/
 }
 /*
 @media only screen and (orientation: landscape) and (max-height:470px) and (min-width:730px){
