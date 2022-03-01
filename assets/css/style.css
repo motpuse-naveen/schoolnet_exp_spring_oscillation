@@ -327,12 +327,13 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     top: -18px;
     right: 20px;
 }
-
+/*
 #split-0, #split-1 {
     min-height: 100px;
     max-height: 85%;
-    overflow: auto;
+    overflow: hidden;
 }
+*/
 
 .linksheet {
     display: none;
@@ -351,7 +352,7 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     outline: 1px solid var(--theme-popup-border);
 }
 .right_align_popup{
-    width: 300px;
+    width: 280px;
     height: 100%;
     padding-bottom: 46px;
     top: 0px;
@@ -419,7 +420,7 @@ div.closepopup {
     top: 15px;
 }
 
-.btn-close-popup {
+.btn-close-popup, .btn-close-theme-popup {
     border-style: none;
     background-color: transparent;
 }
@@ -641,27 +642,33 @@ input[type="range"]::-ms-track {
     overflow-x: hidden;
 }
 
-.spingContainer {
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-
 .springCanvas {
     display: inline-block;
     position: relative;
     padding-top: 5px;
 }
-
-.graphContainer {
+.spingContainer {
     height: 100%;
     width: 100%;
+    text-align: center;
+    transform-origin: center top;
+}
+
+.graphContainer {
+    width: 510px;
+    height: 410px;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    transform-origin: left top;
+    margin: 0 auto;
 }
 
 .graphWrapper {
     position: relative;
+    /*
     min-width: 420px;
     min-height: 320px;
+    */
 }
 
 /*End Spring Styles*/
@@ -778,6 +785,9 @@ svg:focus .cls-2,svg:hover .cls-2, svg:active .cls-2{stroke:var(--theme-pri-colo
 
 
 .btn-close-popup:active svg .cls-3, .btn-close-popup:hover svg .cls-3, .btn-close-popup:focus svg .cls-3{
+    stroke:var(--theme-pri-color);
+}
+.btn-close-theme-popup:active svg .cls-3, .btn-close-theme-popup:hover svg .cls-3, .btn-close-theme-popup:focus svg .cls-3{
     stroke:var(--theme-pri-color);
 }
 

@@ -1,3 +1,4 @@
+const POPUP_WIDTH = 280;
 var ActivityShell = (function () {
   return {
     Init: function () {
@@ -10,8 +11,13 @@ var ActivityShell = (function () {
       $(".container-so.main").show();
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
-      GuidedTour.Init();
+      //GuidedTour.Init();
       SpringOscillation.LaunchActivity();
+
+      /* Scale Spring to fit */
+      ScreenSplitter.ScaleToFit($("#split-0"))
+      /* Scale Graph to fit */
+      ScreenSplitter.ScaleToFit($("#split-1"))
     },
     AdjustContainerHeight: function () {
       $(".wrapper").css({
@@ -36,30 +42,38 @@ var ActivityShell = (function () {
       }
       return "desktop";
     },
-    AdjustSplitPanelsOnOpenPopup: function($popup){
+    AdjustSplitPanelsOnOpenPopup: function ($popup) {
       var deviceType = ActivityShell.DeviceType();
-      if(deviceType!="mobile"){
-        if($("#split-main").length>0){
+      if (deviceType != "mobile") {
+        if ($("#split-main").length > 0) {
           var spltWdt = $(".wrapper").width();
-          $("#split-main").css({"width": spltWdt- POPUP_WDT})
+          $("#split-main").css({ "width": spltWdt - POPUP_WIDTH })
         }
         $popup.addClass("right_align_popup")
       }
     },
-    AdjustSplitPanelsOnClosePopup: function($popup){
-      $("#split-main").css({"width": $(".wrapper").width()})
+    AdjustSplitPanelsOnClosePopup: function ($popup) {
+      $("#split-main").css({ "width": $(".wrapper").width() })
     }
   }
 })();
 
 $(document).ready(function () {
   ActivityShell.Init();
-  
 });
 
 $(window).bind('orientationchange', function () {
-  ActivityShell.AdjustContainerHeight();
-  ScreenSplitter.InitSplitter();
+  this.setTimeout(function () {
+    ActivityShell.AdjustContainerHeight();
+    ScreenSplitter.InitSplitter();
+    if($(".popup").is(":visible")){
+      ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
+    }
+    /* Scale Spring to fit */
+    ScreenSplitter.ScaleToFit($("#split-0"))
+    /* Scale Graph to fit */
+    ScreenSplitter.ScaleToFit($("#split-1"))
+  }, 200);
 });
 
 $(document).on("click", "#btn_launch", function (event) {
@@ -67,22 +81,59 @@ $(document).on("click", "#btn_launch", function (event) {
 });
 /*Common Popup*/
 $(document).on("click", "#btn_sheet", function (event) {
-  $(".popup").hide();
-  $(".popup.worksheet").fadeIn();
-  ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.worksheet"))
+  if (!$(".popup.worksheet").is(":visible")) {
+    $(".popup").hide();
+    $(".popup.worksheet").fadeIn();
+    ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.worksheet"))
+  }
+  else {
+    $(".popup.worksheet").hide();
+    ActivityShell.AdjustSplitPanelsOnClosePopup($(".popup.worksheet"))
+  }
+
+  /* Scale Spring to fit */
+  ScreenSplitter.ScaleToFit($("#split-0"))
+  /* Scale Graph to fit */
+  ScreenSplitter.ScaleToFit($("#split-1"))
 });
 $(document).on("click", "#btn_info", function (event) {
-  $(".popup").hide();
-  $(".popup.info").fadeIn();
-  ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.info"))
+  if (!$(".popup.info").is(":visible")) {
+    $(".popup").hide();
+    $(".popup.info").fadeIn();
+    ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.info"))
+  }
+  else {
+    $(".popup.info").hide();
+    ActivityShell.AdjustSplitPanelsOnClosePopup($(".popup.info"))
+  }
+
+  /* Scale Spring to fit */
+  ScreenSplitter.ScaleToFit($("#split-0"))
+  /* Scale Graph to fit */
+  ScreenSplitter.ScaleToFit($("#split-1"))
 });
 $(document).on("click", "#btn_procedure", function (event) {
-  $(".popup").hide();
-  $(".popup.procedure").fadeIn();
-  ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.procedure"))
+  if (!$(".popup.procedure").is(":visible")) {
+    $(".popup").hide();
+    $(".popup.procedure").fadeIn();
+    ActivityShell.AdjustSplitPanelsOnOpenPopup($(".popup.procedure"))
+  }
+  else {
+    $(".popup.procedure").hide();
+    ActivityShell.AdjustSplitPanelsOnClosePopup($(".popup.procedure"))
+  }
+
+  /* Scale Spring to fit */
+  ScreenSplitter.ScaleToFit($("#split-0"))
+  /* Scale Graph to fit */
+  ScreenSplitter.ScaleToFit($("#split-1"))
 });
 $(document).on("click", ".btn-close-popup", function (event) {
-  $(this).closest(".popup").fadeOut();
+  $(this).closest(".popup").hide();
   ActivityShell.AdjustSplitPanelsOnClosePopup($(this).closest(".popup"))
+  /* Scale Spring to fit */
+  ScreenSplitter.ScaleToFit($("#split-0"))
+  /* Scale Graph to fit */
+  ScreenSplitter.ScaleToFit($("#split-1"))
 });
 /*End Common Popup Script */

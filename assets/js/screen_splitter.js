@@ -26,38 +26,93 @@ var ScreenSplitter = (function () {
 
     return {
         InitSplitter: function () {
+            $("#split-main").removeClass("v-split-main").addClass("h-split-main");
+            $("#split-main").removeAttr("style")
             if (window.matchMedia("(orientation: portrait)").matches) {
-                $(".split-main").addClass("v-split-main")
+                $("#split-main").addClass("v-split-main");
                 this.VerticalSplit();
             }
             else {
-                $(".split-main").addClass("h-split-main")
+                $("#split-main").addClass("h-split-main");
                 this.HorizontalSplit();
             }
+            //NM: Specific to SpringOscillation.
+            var sprcontht = $(".spingContainer").height();
+            $(".spingContainer").css({"height":sprcontht + "px"})
         },
         HorizontalSplit: function () {
             $(".gutter").remove();
-            Split(['#split-0', '#split-1'], {
+            $("#split-0").removeAttr("style");
+            $("#split-1").removeAttr("style");
+            split_instance = Split(['#split-0', '#split-1'], {
                 minSize: 200,
-                sizes: [50, 50],
+                sizes: [40, 60],
                 gutterSize: 1,
                 onDrag: function (sizes) {
-
+                    /* Scale Spring to fit */
+                    ScreenSplitter.ScaleToFit($("#split-0"))
+                    /* Scale Graph to fit */
+                    ScreenSplitter.ScaleToFit($("#split-1"))
                 },
             })
             $(".gutter").append(horizontalHandle)
         },
         VerticalSplit: function () {
             $(".gutter").remove();
+            $("#split-0").removeAttr("style");
+            $("#split-1").removeAttr("style");
             split_instance = Split(['#split-0', '#split-1'], {
                 sizes: [50, 50],
                 direction: 'vertical',
                 gutterSize: 1,
                 onDrag: function (sizes) {
-
+                    /* Scale Spring to fit */
+                    ScreenSplitter.ScaleToFit($("#split-0"))
+                    /* Scale Graph to fit */
+                    ScreenSplitter.ScaleToFit($("#split-1"))
                 },
             })
             $(".gutter").append(verticalHandle)
+        },
+        ScaleToFit: function ($wrapper,$element, deltaWidth, deltaHeight) {
+            if($element==null || $element == undefined){
+                $element = $wrapper.find(".content-container")
+            }
+            if(deltaWidth==null || deltaWidth == undefined){
+                deltaWidth = 0;
+            }
+            if(deltaHeight==null || deltaHeight == undefined){
+                deltaHeight = 0;
+            }
+            /*
+            var elmSize = {
+                width: $element.get(0).scrollWidth + deltaWidth,
+                height: $element.get(0).scrollHeight + deltaHeight
+            }*/
+            var elmSize = {
+                width: $element.outerWidth() + deltaWidth,
+                height: $element.outerHeight() + deltaHeight
+            }
+            var scale;
+            var wrapperSize = {
+                width: $wrapper.width(),
+                height: $wrapper.height()
+            }
+            scale = Math.min(
+                wrapperSize.width/elmSize.width,
+                wrapperSize.height/elmSize.height
+            );
+            if (scale < 1) {
+                $element.css({
+                    transform: "scale(" + scale + ")"
+                });
+            }
+            else{
+                scale = 1;
+                $element.css({
+                    "transform": "scale(" + scale + ")"
+                });
+            }
         }
     }
 })();
