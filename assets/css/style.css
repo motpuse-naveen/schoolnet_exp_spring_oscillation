@@ -351,6 +351,15 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     z-index: 4;
     outline: 1px solid var(--theme-popup-border);
 }
+.cust-popup.settings {
+    display: block;
+}
+.cust-popup.settings .popuphead {
+    display: none;
+}
+.btn-wrap.btn-wrap-settings{
+    display: none;
+}
 .right_align_popup{
     width: 280px;
     height: 100%;
@@ -455,19 +464,24 @@ div.closepopup {
 }
 
 /*Settings Panel*/
-
 .sliderWrapper {
-    width: 50%;
     float: left;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
 }
 
 .sliderWrapper .sliderInnerWrapper {
     padding: 0px 30px;
+    float: left;
+    width: 160px;
 }
-
-.sliderSCContainer .sliderInnerWrapper {
-    padding: 0px 24px;
+.sliderTPContainer .sliderInnerWrapper{
+    width: auto;
+    padding: 4px 6px 0px 10px;
+}
+.sliderWrapper .inputContainer{
+    float: left;
 }
 
 .sliderContainer {
@@ -498,21 +512,28 @@ div.closepopup {
 .slider-label {
     font-family: 'Montserrat-SemiBold';
     padding-bottom: 3px;
+    text-align: center;
 }
 
 .inputContainer .input_box {
-    width: 50px;
-    height: 28px;
-    border: 1px solid var(--theme-pri-color);
+    /*width: 50px;*/
+    height: 30px;
+    border: 0px solid var(--theme-pri-color);
     font-family: 'Montserrat-SemiBold';
     border-radius: 5px;
     text-align: center;
-    padding: 5px;
+    padding: 3px 3px 3px 10px;
     float: left;
+    color: var(--theme-pri-color);
+}
+.inputContainer .input_box.inputTimePeriod {
+    width: 50px;
+    border: 1px solid var(--theme-pri-color);
 }
 
 .inputContainer .unit {
-    padding: 5px;
+    color: var(--theme-pri-color);
+    padding: 3px;
     float: left;
 }
 

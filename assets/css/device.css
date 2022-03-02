@@ -64,23 +64,8 @@ img.weightImage{
     .container-so.main .exp_header .header h1 .sub-title {
         font-size: 16px;
     }
-
     .cust-popup.settings .popupcontent {
         font-size: 14px;
-    }
-
-    .inputContainer .input_box {
-        width: 60px;
-        height: 30px;
-        padding: 4px;
-    }
-
-    .sliderInnerWrapper {
-        padding: 0px 34px;
-    }
-
-    .sliderSCContainer .sliderInnerWrapper {
-        padding: 0px 30px;
     }
 
     .sliderContainer .min, .sliderContainer .max {
@@ -134,15 +119,6 @@ img.weightImage{
     .cust-popup.settings .popupcontent {
         font-size: 16px;
     }
-
-    .sliderInnerWrapper {
-        padding: 0px 40px;
-    }
-
-    .sliderSCContainer .sliderInnerWrapper {
-        padding: 0px 30px;
-    }
-
     .sliderContainer .min, .sliderContainer .max {
         width: 40px;
     }

@@ -112,7 +112,7 @@
                                         id="link-worksheet" href="assets/docs/oscillations_word.doc">Worksheet</a></p>
                             </div>
                         </div>
-                    </div>\
+                    </div>
                     <div class="popup calculations">
                         <div class="container">
                             <div class="popuphead">
@@ -301,7 +301,7 @@
                                         the
                                         bob will start oscillating</p>
                                     <div class="procSliderWrapper">
-                                        <img src="assets/images/weight.svg">
+                                        <img src="assets/images/weight.svg" style="width: 50px;">
                                     </div>
                                 </div>
                                 <hr>
@@ -355,63 +355,71 @@
                             </div>
                             <div class="popupcontent">
                                 <div class="row">
-                                    <div class="col-lg-6 col-md-12 col-sm-12">
-                                        <div class="sliderWrapper sliderMassWrapper">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Mass</div>
-                                                <div class="sliderContainer">
-                                                    <span class="min">0.1</span>
-                                                    <input class="slider" type="range" id="sliderMass" name="mass"
-                                                        min="0.1" max="1" step="0.1" value="0.5"
-                                                        style="background-size: 44.4444% 100%;">
-                                                    <span class="max">1</span>
-                                                </div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputMass">0.5</span><span
-                                                        class="unit">kg</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="sliderWrapper sliderSCContainer">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Spring Constant</div>
-                                                <div class="sliderContainer">
-                                                    <span class="min">1</span>
-                                                    <input class="slider" type="range" id="sliderSpringConstant"
-                                                        name="springconstant" min="1" max="5" step="0.1" value="3"
-                                                        style="background-size: 50% 100%;">
-                                                    <span class="max">5</span>
-                                                </div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputSpringConstant">3</span><span
-                                                        class="unit">N/m</span>
+                                    <div class="col settingsCol">
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <div class="sliderWrapper sliderMassWrapper">
+                                                    <div class="slider-label">Mass</div>
+                                                    <div class="sliderInnerWrapper">
+                                                        <div class="sliderContainer">
+                                                            <span class="min">0.1</span>
+                                                            <input class="slider" type="range" id="sliderMass" name="mass"
+                                                                min="0.1" max="1" step="0.1" value="0.5"
+                                                                style="background-size: 44.4444% 100%;">
+                                                            <span class="max">1</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inputContainer">
+                                                        <span class="input_box inputMass">0.5</span><span
+                                                            class="unit">kg</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-12 col-sm-12">
-                                        <div class="sliderWrapper sliderDampingContainer">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Damping</div>
-                                                <div class="sliderContainer">
-                                                    <span class="min">0</span>
-                                                    <input class="slider" type="range" id="sliderDamping" name="damping"
-                                                        min="0" max="0.5" step="0.1" value="0"
-                                                        style="background-size: 0% 100%;">
-                                                    <span class="max">0.5</span>
-                                                </div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputDamping">0</span><span
-                                                        class="unit">N/m</span>
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <div class="sliderWrapper sliderSCContainer">
+                                                    <div class="slider-label">Spring Constant</div>
+                                                    <div class="sliderInnerWrapper">
+                                                        <div class="sliderContainer">
+                                                            <span class="min">1</span>
+                                                            <input class="slider" type="range" id="sliderSpringConstant"
+                                                                name="springconstant" min="1" max="5" step="0.1" value="3"
+                                                                style="background-size: 50% 100%;">
+                                                            <span class="max">5</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inputContainer">
+                                                        <span class="input_box inputSpringConstant">3</span><span
+                                                            class="unit">N/m</span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="sliderWrapper sliderTPContainer">
-                                            <div class="sliderInnerWrapper">
-                                                <div class="slider-label">Time Period</div>
-                                                <div class="inputContainer">
-                                                    <span class="input_box inputTimePeriod"></span><span
-                                                        class="unit">Sec</span>
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <div class="sliderWrapper sliderDampingContainer">
+                                                    <div class="slider-label">Damping</div>
+                                                    <div class="sliderInnerWrapper">
+                                                        <div class="sliderContainer">
+                                                            <span class="min">0</span>
+                                                            <input class="slider" type="range" id="sliderDamping" name="damping"
+                                                                min="0" max="0.5" step="0.1" value="0"
+                                                                style="background-size: 0% 100%;">
+                                                            <span class="max">0.5</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inputContainer">
+                                                        <span class="input_box inputDamping">0</span><span
+                                                            class="unit">N/m</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                                <div class="sliderWrapper sliderTPContainer">
+                                                    <div class="sliderInnerWrapper">
+                                                        <div class="slider-label">Time Period</div>
+                                                    </div>
+                                                    <div class="inputContainer">
+                                                        <span class="input_box inputTimePeriod"></span><span
+                                                            class="unit">Sec</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -426,7 +434,7 @@
             <div class="exp_footer">
                 <div class="footer">
                     <div class="footer-menu-container left">
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-info">
                             <button id="btn_info" class="btn btn_info" title="Info">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-5 -6 50 50">
                                     <g id="Layer_2" data-name="Layer 2">
@@ -443,7 +451,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-settings">
                             <button id="btn_settings" class="btn btn_settings" title="Settings">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-6 -8 46 46">
                                     <g id="Layer_2" data-name="Layer 2">
@@ -462,7 +470,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-calculations">
                             <button id="btn_calculations" class="btn btn_calculations" title="Calculations">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-10 -8 46 46">
                                     <g id="Layer_2" data-name="Layer 2">
@@ -482,7 +490,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-stop">
                             <button id="btn_stop" class="btn btn_stop" title="Stop">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-5 -5 46 46">
                                     <g id="Layer_2" data-name="Layer 2">
@@ -494,7 +502,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-reset">
                             <button id="btn_reset" class="btn btn_reset" title="Reset">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-5 -5 46 46">
                                     
@@ -510,7 +518,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-sheet">
                             <button id="btn_sheet" class="btn btn_sheet" title="Worksheet">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-8 -7 46 46">
                                     <g id="Layer_2" data-name="Layer 2">
@@ -526,7 +534,7 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="btn-wrap">
+                        <div class="btn-wrap btn-wrap-procedure">
                             <button id="btn_procedure" class="btn btn_procedure" title="Procedure">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="-5 -5 46 46">
                                     <g id="Layer_2" data-name="Layer 2">
