@@ -116,7 +116,6 @@
                     <div class="popup calculations">
                         <div class="container">
                             <div class="popuphead">
-                                <h2>Calculations</h2>
                                 <div class="closepopup">
                                     <button class="btn-close-popup" title="Close">
                                         <svg class="circle circle-1" width="16.14" height="16.14">
@@ -126,17 +125,22 @@
                                 </div>
                             </div>
                             <div class="popupcontent">
-                                <p>Note: The calculations given below are applicable only for zero damping</p>
-                                <p>Amplitude (A) = <span class="spancalculate txtamplitude"></span>m</p>
-                                <p>Mass (m) = <span class="spancalculate txtmass"></span>kg</p>
-                                <p>Spring constant (k) = <span class="spancalculate txtspringconst"></span>N/m</p>
+                                <div class="row">
+                                    <div class="col calculationsCol">
+                                        <h2>Calculations</h2>
+                                        <p>Note: The calculations given below are applicable only for zero damping</p>
+                                        <p>Amplitude (A) = <span class="spancalculate txtamplitude"></span>m</p>
+                                        <p>Mass (m) = <span class="spancalculate txtmass"></span>kg</p>
+                                        <p>Spring constant (k) = <span class="spancalculate txtspringconst"></span>N/m</p>
 
-                                <p>
-                                <div class="inlblock">Time Period,</div>&nbsp;<div class="inlblock"> T = 2π
-                                    <span>√</span><span class="squarerootbar"> (m / k) </span> =
-                                    <span class="spancalculate txttimeperiod"></span>sec
+                                        <p>
+                                        <div class="inlblock">Time Period,</div>&nbsp;<div class="inlblock"> T = 2π
+                                            <span>√</span><span class="squarerootbar"> (m / k) </span> =
+                                            <span class="spancalculate txttimeperiod"></span>sec
+                                        </div>
+                                        </p>
+                                    </div>
                                 </div>
-                                </p>
                             </div>
                         </div>
                     </div>
@@ -343,6 +347,7 @@
                     </div>
                     <div class="cust-popup settings">
                         <div class="container">
+                            <!--
                             <div class="popuphead">
                                 <h2 aria-hidden="true">&nbsp;</h2>
                                 <div class="closepopup">
@@ -353,11 +358,12 @@
                                     </button>
                                 </div>
                             </div>
+                            -->
                             <div class="popupcontent">
                                 <div class="row">
                                     <div class="col settingsCol">
                                         <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                            <div class="col-lg-3 col-md-12 col-sm-12">
                                                 <div class="sliderWrapper sliderMassWrapper">
                                                     <div class="slider-label">Mass</div>
                                                     <div class="sliderInnerWrapper">
@@ -375,7 +381,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                            <div class="col-lg-3 col-md-12 col-sm-12">
                                                 <div class="sliderWrapper sliderSCContainer">
                                                     <div class="slider-label">Spring Constant</div>
                                                     <div class="sliderInnerWrapper">
@@ -393,7 +399,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                            <div class="col-lg-3 col-md-12 col-sm-12">
                                                 <div class="sliderWrapper sliderDampingContainer">
                                                     <div class="slider-label">Damping</div>
                                                     <div class="sliderInnerWrapper">
@@ -411,7 +417,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
+                                            <div class="col-lg-3 col-md-12 col-sm-12">
                                                 <div class="sliderWrapper sliderTPContainer">
                                                     <div class="sliderInnerWrapper">
                                                         <div class="slider-label">Time Period</div>

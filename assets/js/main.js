@@ -11,7 +11,7 @@ var ActivityShell = (function () {
       $(".container-so.main").show();
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
-      //GuidedTour.Init();
+      GuidedTour.Init();
       SpringOscillation.LaunchActivity();
 
       /* Scale Spring to fit */
@@ -38,8 +38,18 @@ var ActivityShell = (function () {
           settingPanelHt = $(".cust-popup.settings").outerHeight();
         }
         else{
+          $(".wrapper").attr("device","mobile");
+          $(".cust-popup.settings").addClass("mobileview")
           $(".cust-popup.settings").hide();
           $(".btn-wrap.btn-wrap-settings").show();
+
+          var calc_html = $(".popup.calculations .popupcontent .row").html()
+          if($(".cust-popup.settings .calculationsCol").length<=0){
+            $(".cust-popup.settings .settingsCol").after(calc_html);
+            $(".cust-popup.settings .settingsCol").hide();
+            $(".cust-popup.settings .calculationsCol").hide();
+          }
+          $(".popup.calculations").remove();
         }
         $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt))})
         $(".exp_body_content").css({"padding-bottom": settingPanelHt})
@@ -74,9 +84,34 @@ var ActivityShell = (function () {
         $("#split-main").css({ "width": $(".wrapper").width() })
       }
     }, 
+    AdjustSplitPanelsOnOpenCustomPopup: function () {
+      var deviceType = ActivityShell.DeviceType();
+      var settingPanelHt = 0;
+      if (deviceType == "mobile") {
+        if ($("#split-main").length > 0) {
+          var spltHeight = $(".wrapper").height();
+          settingPanelHt = $(".cust-popup.settings").outerHeight();
+          var footerHt = 0;
+          if($(".gutter.gutter-vertical").length>0){
+            footerHt = 46;
+          }
+          $("#split-main").css({ "height": spltHeight - (settingPanelHt + footerHt) })
+        }
+      }
+    },
+    AdjustSplitPanelsOnCloseCustomPopup: function () {
+      var deviceType = ActivityShell.DeviceType();
+      if (deviceType == "mobile") {
+        $("#split-main").css({ "height": "100%" })
+      }
+    }, 
     TogglePopup: function($popup){
       if (!$popup.is(":visible")) {
         $(".popup").hide();
+        var deviceType = ActivityShell.DeviceType();
+        if (deviceType == "mobile") {
+          $(".cust-popup").hide();
+        }
         $popup.fadeIn();
         ActivityShell.AdjustSplitPanelsOnOpenPopup($popup)
       }
@@ -89,15 +124,38 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
     },
-    ToggleCustomPopup: function($popup){
-      if (!$popup.is(":visible")) {
-        $(".cust-popup").hide();
-        $popup.fadeIn();
-        
+    ToggleCustomPopup: function($popup, panel_identifier){
+      if(panel_identifier == "calculations"){
+        if (!$(".calculationsCol").is(":visible")) {
+          $(".popup").hide();
+          $(".calculationsCol").fadeIn();
+          if (!$popup.is(":visible")) {
+            $popup.fadeIn();
+          }
+        }
+        else{
+          $(".calculationsCol").hide();
+        }
       }
-      else {
+      if(panel_identifier == "settings"){
+        if (!$(".settingsCol").is(":visible")) {
+          $(".popup").hide();
+          $(".settingsCol").fadeIn();
+          if (!$popup.is(":visible")) {
+            $popup.fadeIn();
+          }
+        }
+        else{
+          $(".settingsCol").hide();
+        }
+      }
+
+      if ($popup.is(":visible") && (!$(".settingsCol").is(":visible") && (!$(".calculationsCol").is(":visible")))) {
         $popup.hide();
-        
+        ActivityShell.AdjustSplitPanelsOnCloseCustomPopup();
+      }
+      else{
+        ActivityShell.AdjustSplitPanelsOnOpenCustomPopup();
       }
       /* Scale Spring to fit */
       ScreenSplitter.ScaleToFit($("#split-0"))
@@ -142,10 +200,6 @@ $(document).on("click", "#btn_procedure", function (event) {
   ActivityShell.TogglePopup($(".popup.procedure"));
 });
 
-$(document).on("click", "#btn_calculations", function (event) {
-  ActivityShell.TogglePopup($(".popup.calculations"));
-});
-
 $(document).on("click", ".btn-close-popup", function (event) {
   $(this).closest(".popup").hide();
   ActivityShell.AdjustSplitPanelsOnClosePopup($(this).closest(".popup"))
@@ -155,10 +209,29 @@ $(document).on("click", ".btn-close-popup", function (event) {
   ScreenSplitter.ScaleToFit($("#split-1"))
 });
 
-$(document).on("click", "#btn_settings", function (event) {
-  ActivityShell.ToggleCustomPopup($(".cust-popup.settings"));
+$(document).on("click", "#btn_calculations", function (event) {
+  var deviceType = ActivityShell.DeviceType();
+  if (deviceType != "mobile") {
+    ActivityShell.TogglePopup($(".popup.calculations"));
+  }
+  else{
+    //NM: $(".cust-popup.settings") is parent popup as for mobile 
+    //Calculations popup is moved into settings popup.
+    ActivityShell.ToggleCustomPopup($(".cust-popup.settings"), "calculations");
+  }
 });
+
+$(document).on("click", "#btn_settings", function (event) {
+  var deviceType = ActivityShell.DeviceType();
+  if (deviceType != "mobile") {
+  }
+  else{
+    ActivityShell.ToggleCustomPopup($(".cust-popup.settings"), "settings");
+  }
+});
+/*
 $(document).on("click", ".btn-close-cust-popup", function (event) {
   $(this).closest(".cust-popup").hide();
 });
+*/
 /*End Common Popup Script */

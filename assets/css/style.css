@@ -285,6 +285,53 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
 
 /*End Main Screen*/
 
+/* MobileView Style */
+.mobileview .sliderTPContainer .sliderInnerWrapper{
+    padding: 4px 6px 0px 0px;
+}
+.mobileview .sliderWrapper {
+    float: left;
+    padding-top: 4px;
+    padding-bottom: 0px;
+    width: 100%;
+}
+.mobileview.cust-popup.settings .popupcontent{
+    font-size: 12px;
+}
+.mobileview.cust-popup.settings .calculationsCol h2{
+    padding: 6px 0px;
+}
+.mobileview.cust-popup.settings .calculationsCol p{
+    margin-bottom: 0.3rem;
+}
+.mobileview .inputContainer .input_box.inputTimePeriod{
+    padding: 2px 2px 2px 3px;
+    height: 25px;
+}
+.mobileview .settingsCol{
+    padding-bottom:10px;
+    border-right: 0.5px solid var(--theme-popup-border);
+}
+.mobileview .calculationsCol{
+    border-left: 0.5px solid var(--theme-popup-border);
+}
+.mobileview .sliderInnerWrapper{
+    padding: 0px 28px;
+    float: left;
+    width: 130px !important;
+}
+.mobileview .sliderTPContainer .sliderInnerWrapper{
+    width: auto !important;
+}
+.mobileview .sliderWrapper .slider-label{
+    float: left;
+    padding-right: 0px;
+}
+.wrapper[device="mobile"] .popup{
+    height: 100%;
+}
+/*End MobileView Style*/
+
 /*Split*/
 .gutter {
     background-color: #eee;
@@ -440,7 +487,7 @@ div.closepopup {
 .spancalculate {
     color: var(--theme-pri-color);
     text-align: center;
-    min-width: 35px;
+    min-width: 20px;
     display: inline-block;
     margin: 0 5px;
     font-family: 'Montserrat-SemiBold';
