@@ -987,5 +987,12 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
     position: absolute;
     z-index: 1002;
 }
+.btn_info.gt-clone, .btn_calculations.gt-clone, .btn_stop.gt-clone, .btn_reset.gt-clone, .btn_sheet.gt-clone, .btn_procedure.gt-clone, .btn_settings.gt-clone{
+    background-color: var(--theme-pri-color);
+    pointer-events: none;
+}
+.btn_themes.gt-clone{
+    pointer-events: none;
+}
 
 /* Guided Tour */

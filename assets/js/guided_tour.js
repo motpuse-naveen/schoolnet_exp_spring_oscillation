@@ -1,39 +1,39 @@
 const g_tour_steps = [
     {
         sourceElmIdQS: "#btn_info",
-        informationText: `this is step 1 to identify element`,
+        informationText: `Aim - Describes the experiment.`,
     },
     {
         sourceElmIdQS: "#btn_settings",
-        informationText: `this is step 2 to identify element`,
+        informationText: `Settings - Select different values as input to experiment.`,
     },
     {
         sourceElmIdQS: "#btn_calculations",
-        informationText: `this is step 3 to identify element`,
+        informationText: `Calculations - Evaluates the formulas for selected values.`,
     },
     {
         sourceElmIdQS: "#btn_stop",
-        informationText: `this is step 4 to identify element`,
+        informationText: `Stop - Stops the experiment.`,
     },
     {
         sourceElmIdQS: "#btn_reset",
-        informationText: `this is step 5 to identify element`,
+        informationText: `Reset - Reset experiment values and state.`,
     },
     {
         sourceElmIdQS: "#btn_sheet",
-        informationText: `this is step 6 to identify element`,
+        informationText: `Sheet - Download the experiment shhet to input observations.`,
     },
     {
         sourceElmIdQS: "#btn_procedure",
-        informationText: `this is step 7 to identify element`,
+        informationText: `Procedure - Describes the different steps of experiment.`,
     },
     {
         sourceElmIdQS: "#btn_themes",
-        informationText: `this is step 8 to identify element`,
+        informationText: `Theme - Provides different user interface color themes.`,
     },
     {
         sourceElmIdQS: ".gutter .gutter_handle",
-        informationText: `this is step 9 to identify element`,
+        informationText: `Slider - Slide to adjust view area.`,
     }
 ]
 
@@ -59,7 +59,7 @@ var GuidedTour = (function () {
             $(".gt-instr-box .gt-instr").html(g_tour_steps[dt_step_count].informationText);
             var myposition = this.getPosition($(g_tour_steps[dt_step_count].sourceElmIdQS));
             $(".gt-clone").remove();
-            $(".gt-instr-box").after($(g_tour_steps[dt_step_count].sourceElmIdQS).clone().addClass("gt-clone"));
+            $(".gt-instr-box").after($(g_tour_steps[dt_step_count].sourceElmIdQS).clone().addClass("gt-clone").removeAttr("id").removeAttr("data-bs-toggle").removeAttr("data-bs-target"));
             $(".gt-clone").css({ "left": myposition.left, "top": myposition.top });
             var horSide = "left";
             var verSide = "top";
