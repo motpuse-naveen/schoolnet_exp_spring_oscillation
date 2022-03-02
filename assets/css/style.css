@@ -330,6 +330,9 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
 .wrapper[device="mobile"] .popup{
     height: 100%;
 }
+.mobileview .settingsCol .row .col-lg-3.col-md-3.col-sm-12{
+    width: 100% !important;
+}
 /*End MobileView Style*/
 
 /*Split*/
@@ -513,15 +516,15 @@ div.closepopup {
 /*Settings Panel*/
 .sliderWrapper {
     float: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     width: 100%;
 }
 
 .sliderWrapper .sliderInnerWrapper {
     padding: 0px 30px;
     float: left;
-    width: 160px;
+    width: 150px;
 }
 .sliderTPContainer .sliderInnerWrapper{
     width: auto;
@@ -949,6 +952,7 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
     height: 60px;
     width: 18px;
     right: -33px;
+    top: 20px;
 }
 .gt-instr-box[halign="left"][valign="top"] .gt-instr{
     float: right;
