@@ -31,6 +31,10 @@ var SpringOscillation = (function () {
       var graphWt = $(".graphContainer").width();
       var graphHt = $(".graphContainer").height();
       SpringOscillationChart.init([{ "x": 0, "y": 0 }], 380, 320);
+      this.SetDivisionFactor();
+    },
+    SetDivisionFactor: function(){
+      //var scaleval = Number($(".springWeight").closest(".content-container").attr("scale"))
       weightInitialTop = $(".springWeight").position().top;
       springOrigHeight = $(".springWrapper").height();
       divisionfactor = (weightInitialTop / 2) / 60.0;
@@ -47,7 +51,7 @@ $(".springWeight").draggable({
     springOscillationPaused = false;
     clearInterval(springAnnimInterval);
     springAnnimInterval = 0;
-    //var scaleval = 1//Number($("#bk6ch15ss2").attr("data-scaley"))
+    //var scaleval = Number($(".springWeight").closest(".content-container").attr("scale"))
     //ui.position.top = ui.position.top / scaleval
     if (ui.position.top < Math.max((weightInitialTop / 2), ui.position.top)) {
       ui.position.top = Math.max((weightInitialTop / 2), ui.position.top);
@@ -283,6 +287,8 @@ $(".springWeight").on('mousedown', function () {
     springOscillationPaused = true
   }
   //var weightTop = Number(document.getElementById('springWeightDiv').style.top.replace("px", ""))
+  //var scaleval = Number($(".springWeight").closest(".content-container").attr("scale"))
+  //ui.position.top = ui.position.top / scaleval
   var weightTop = Number($(".springWeight").position().top)
   var displacementMass = weightTop - weightInitialTop
   myAmplitude = displacementMass;

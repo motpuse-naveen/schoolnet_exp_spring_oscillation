@@ -259,13 +259,14 @@ body {
     background-size: 86px 44px;
 }
 
-.btn_stop:active, .btn_settings:active, .btn_sheet:active, .btn_calculations:active, .btn_info:active, .btn_procedure:active, .btn_reset:active,
-.btn_stop:hover, .btn_settings:hover, .btn_sheet:hover, .btn_calculations:hover, .btn_info:hover, .btn_procedure:hover, .btn_reset:hover,
-.btn_stop:focus, .btn_settings:focus, .btn_sheet:focus, .btn_calculations:focus, .btn_info:focus, .btn_procedure:focus, .btn_reset:focus {
+.btn_stop.active, .btn_settings.active, .btn_sheet.active, .btn_calculations.active, .btn_info.active, .btn_procedure.active, .btn_reset.active,
+.btn_stop:hover, .btn_settings:hover, .btn_sheet:hover, .btn_calculations:hover, .btn_info:hover, .btn_procedure:hover, .btn_reset:hover{
     background-color: var(--theme-pri-text-color);
 }
-
-
+.btn_stop:active, .btn_settings:active, .btn_sheet:active, .btn_calculations:active, .btn_info:active, .btn_procedure:active, .btn_reset:active,
+.btn_stop:focus, .btn_settings:focus, .btn_sheet:focus, .btn_calculations:focus, .btn_info:focus, .btn_procedure:focus, .btn_reset:focus {
+    outline: 2px solid var(--theme-btn-border);
+}
 
 div.footer-menu-container {}
 
@@ -831,25 +832,22 @@ svg .cls-2{fill:none;stroke:var(--theme-sec-text-color);stroke-linecap:round;str
 svg .cls-3{fill:none;stroke:var(--theme-pri-color);stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;}
 svg .cls-4{fill: var(--theme-header-bg);stroke:var(--theme-sec-text-color);stroke-linecap:round;stroke-miterlimit:10;}
 
-svg:focus .cls-1,svg:hover .cls-1, svg:active .cls-1{stroke:var(--theme-pri-color);}
-svg:focus .cls-2,svg:hover .cls-2, svg:active .cls-2{stroke:var(--theme-pri-color);}
-.btn-wrap button:active svg .cls-1,
-.btn-wrap button:focus svg .cls-1,
-.btn-wrap button:hover svg .cls-1
+svg:hover .cls-1{stroke:var(--theme-pri-color);}
+svg:hover .cls-2{stroke:var(--theme-pri-color);}
+
+svg:active .cls-1, svg:active .cls-2
+svg:focus .cls-1, svg:focus .cls-2{}
+
+.btn-wrap button:active svg .cls-1,.btn-wrap button:active svg .cls-2{}
+.btn-wrap button:focus svg .cls-1,.btn-wrap button:focus svg .cls-2{}
+
+.btn-wrap button.active svg .cls-1,.btn-wrap button.active svg .cls-2,
+.btn-wrap button:hover svg .cls-1,.btn-wrap button:hover svg .cls-2
 {stroke:var(--theme-pri-color);}
-.btn-wrap button:active svg .cls-2,
-.btn-wrap button:focus svg .cls-2,
-.btn-wrap button:hover svg .cls-2
-{stroke:var(--theme-pri-color);}
-.btn-theme-wrap button:active svg .cls-1,
-.btn-theme-wrap button:focus svg .cls-1,
-.btn-theme-wrap button:hover svg .cls-1,
-.btn-theme-wrap button:active svg .cls-2,
-.btn-theme-wrap button:focus svg .cls-2,
-.btn-theme-wrap button:hover svg .cls-2,
-.btn-theme-wrap button:active svg .cls-4,
-.btn-theme-wrap button:focus svg .cls-4,
-.btn-theme-wrap button:hover svg .cls-4
+
+.btn-theme-wrap button:active svg .cls-1,.btn-theme-wrap button:active svg .cls-2,.btn-theme-wrap button:active svg .cls-4{}
+.btn-theme-wrap button:focus svg .cls-1,.btn-theme-wrap button:focus svg .cls-2,.btn-theme-wrap button:focus svg .cls-4{}
+.btn-theme-wrap button:hover svg .cls-1,.btn-theme-wrap button:hover svg .cls-2,.btn-theme-wrap button:hover svg .cls-4
 {stroke:var(--theme-pri-color);}
 
 

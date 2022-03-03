@@ -113,6 +113,7 @@ var ScreenSplitter = (function () {
                     "transform": "scale(" + scale + ")"
                 });
             }
+            $element.attr("scale",scale);
         }
     }
 })();
