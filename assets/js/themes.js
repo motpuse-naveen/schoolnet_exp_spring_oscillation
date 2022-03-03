@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'green';
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'blue';
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
         $('input[name=radioTheme][data-theme-id="' + currentTheme + '"]').prop('checked', true);
