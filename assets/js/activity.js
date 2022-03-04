@@ -72,7 +72,7 @@ $(".springWeight").draggable({
     displacementMass = (ui.position.top - weightInitialTop)
     myAmplitude = displacementMass;
     var l_displacement = GetMaxValue(Math.abs(Number(toTrunc((displacementMass / divisionfactor), 3))))
-    $(".weightDispText").text(l_displacement + "" + "m").show();
+    $(".weightDispText").text(l_displacement + "" + "cm").show();
     $(".springWrapper").css({ "height": springOrigHeight + (displacementMass) })
   },
   start: function (event, ui) {
@@ -102,7 +102,7 @@ function StartOscillation(weightTopPos) {
   }
   $(".x-axis-maxlimit").text(Xvalue2 * 10)
   //NM: hide drag label
-  $(".weightDispText").text("0m").hide()
+  $(".weightDispText").text("0cm").hide()
   //$(this).draggable('disable')
   $(".stopDiv").show();
   //console.log(myAmplitude);
@@ -258,7 +258,7 @@ $(".springWeight").on('mousedown', function () {
   var displacementMass = Number(weightTop - weightInitialTop);
   myAmplitude = displacementMass;
   var lval = Math.abs(Number(toTrunc((displacementMass / divisionfactor), 3)))
-  $(".weightDispText").text(lval + "m").show();
+  $(".weightDispText").text(lval + "cm").show();
 });
 $(".springWeight").on('mouseup', function () {
   $(".weightDispText").hide();

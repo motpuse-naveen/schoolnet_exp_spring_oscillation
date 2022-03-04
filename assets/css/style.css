@@ -327,6 +327,7 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
 .mobileview .sliderWrapper .slider-label{
     float: left;
     padding-right: 0px;
+    margin-top: 2px;
 }
 .wrapper[device="mobile"] .popup{
     height: 100%;

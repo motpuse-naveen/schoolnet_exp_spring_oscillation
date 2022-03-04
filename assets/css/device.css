@@ -170,6 +170,28 @@ img.weightImage{
     .container-so.main .exp_header .header {
         display: block;
     }
+    .launch .copyrighttext {
+        font-size: 11px;
+        color: var(--theme-copy-text);
+        position: absolute;
+        right: 10px;
+        bottom: 3px;
+        justify-content: right;
+        width: auto;
+        background: transparent;
+        padding: 0;
+    }
+    .container-so.main .exp_footer .footer .copyrighttext {
+        font-size: 11px;
+        color: var(--theme-copy-text);
+        position: absolute;
+        right: 10px;
+        bottom: 3px;
+        justify-content: right;
+        display: block;
+        width: 130px;
+        text-align: right;
+    }
 }
 @media only screen and (min-width: 731px) {
     .container-so.main .exp_header .header {
@@ -197,7 +219,9 @@ img.weightImage{
     }
     .container-so.main .exp_footer .footer .copyrighttext{
         display: block;
+        width: auto;
     }
+    
     .btn-theme-wrap{
         z-index: 11;
     }
