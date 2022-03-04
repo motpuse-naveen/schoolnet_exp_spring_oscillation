@@ -294,7 +294,7 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     float: left;
     padding-top: 4px;
     padding-bottom: 0px;
-    width: 100%;
+    /*width: 100%;*/
 }
 .mobileview.cust-popup.settings .popupcontent{
     font-size: 12px;
@@ -378,14 +378,6 @@ div.footer-menu-container div.btn-wrap button:focus, div.btn-theme-wrap .btn_the
     top: -18px;
     right: 20px;
 }
-/*
-#split-0, #split-1 {
-    min-height: 100px;
-    max-height: 85%;
-    overflow: hidden;
-}
-*/
-
 .linksheet {
     display: none;
 }
@@ -476,6 +468,7 @@ div.closepopup {
     position: absolute;
     right: 20px;
     top: 15px;
+    margin-top: -5px;
 }
 
 .btn-close-popup, .btn-close-theme-popup, .btn-close-cust-popup {
@@ -519,7 +512,7 @@ div.closepopup {
     float: left;
     padding-top: 8px;
     padding-bottom: 8px;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 .sliderWrapper .sliderInnerWrapper {
@@ -690,7 +683,7 @@ input[type="range"]::-ms-track {
 }
 
 .procInnerSliderWrapper {
-    width: 200px;
+    width: 170px;
     padding-left: 30px;
 }
 
@@ -876,7 +869,7 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
     bottom: 0;
     right: 0;
     background: #000;
-    opacity: 0.8;
+    opacity: 0.9;
     z-index: 1000;
 }
 .gt-instr-box{

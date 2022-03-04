@@ -21,7 +21,7 @@ const g_tour_steps = [
     },
     {
         sourceElmIdQS: "#btn_sheet",
-        informationText: `Sheet - Download the experiment shhet to input observations.`,
+        informationText: `Sheet - Download the experiment sheet to input observations.`,
     },
     {
         sourceElmIdQS: "#btn_procedure",
@@ -60,7 +60,8 @@ var GuidedTour = (function () {
             var myposition = this.getPosition($(g_tour_steps[dt_step_count].sourceElmIdQS));
             $(".gt-clone").remove();
             $(".gt-instr-box").after($(g_tour_steps[dt_step_count].sourceElmIdQS).clone().addClass("gt-clone").removeAttr("id").removeAttr("data-bs-toggle").removeAttr("data-bs-target"));
-            $(".gt-clone").css({ "left": myposition.left, "top": myposition.top });
+            $(".gt-clone").css({ "left": myposition.left-5, "top": myposition.top-5 });
+            
             var horSide = "left";
             var verSide = "top";
             if (myposition.left < (window.innerWidth / 2)) {
@@ -69,7 +70,27 @@ var GuidedTour = (function () {
             if (myposition.top < (window.innerHeight / 2)) {
                 verSide = "bottom";
             }
-            $(".gt-instr-box").css({ "left": myposition.left, "top": myposition.top });
+            if(horSide == "right"){
+                if((myposition.left + 250)>window.innerWidth){
+                    $(".gt-instr-box").css({ "left": myposition.left -((myposition.left + 250)-window.innerWidth) -10 , "top": myposition.top });
+                }
+                else{
+                    $(".gt-instr-box").css({ "left": myposition.left, "top": myposition.top });
+                }
+            }
+            else if(horSide == "left"){
+                if((myposition.left - 250)<0){
+                    var marleft = myposition.left + (250 - myposition.left) + 10
+                    $(".gt-instr-box").css({"left": + marleft + "px"})
+                }
+                else{
+                    $(".gt-instr-box").css({ "left": myposition.left, "top": myposition.top });
+                }
+            }
+            else{
+                $(".gt-instr-box").css({ "left": myposition.left, "top": myposition.top });
+            }
+            
             $(".gt-instr-box").attr("halign", horSide);
             $(".gt-instr-box").attr("valign", verSide);
             var nextElm = undefined;

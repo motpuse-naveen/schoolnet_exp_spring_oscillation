@@ -11,7 +11,7 @@ var ActivityShell = (function () {
       $(".container-so.main").show();
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
-      GuidedTour.Init();
+      //GuidedTour.Init();
       SpringOscillation.LaunchActivity();
 
       /* Scale Spring to fit */
@@ -58,7 +58,12 @@ var ActivityShell = (function () {
     DeviceType: function () {
       const ua = navigator.userAgent;
       if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        return "tablet";
+        if(window.screen.availWidth<530 || window.screen.availHeight<530){
+          return "mobile";
+        }
+        else{
+          return "tablet";
+        }
       }
       else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
         return "mobile";
@@ -181,6 +186,12 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
+    },
+    OnWindowResize: function(){
+      var deviceType = this.DeviceType();
+      if(deviceType == "desktop"){
+        
+      }
     }
   }
 })();
@@ -193,6 +204,10 @@ $(window).bind('orientationchange', function () {
   this.setTimeout(function () {
     ActivityShell.OnOrientationChange();
   }, 200);
+});
+
+$(window).resize(function() {
+  ActivityShell.OnWindowResize();
 });
 
 $(document).on("click", "#btn_launch", function (event) {
