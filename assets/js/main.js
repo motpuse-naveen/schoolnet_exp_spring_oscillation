@@ -5,6 +5,21 @@ var ActivityShell = (function () {
       $(".wrapper").css({
         "height": window.innerHeight + "px"
       })
+      var deviceType = ActivityShell.DeviceType();
+      $(".wrapper").attr("device",deviceType);
+      if(this.IsIOSDevice()){
+        
+        $("body").attr("platform","ios")
+      }
+      //alert("height:" + window.innerHeight + "width:" + window.innerWidth);
+      if(deviceType=="mobile"){
+        if (window.matchMedia("(orientation: landscape)").matches) {
+          $("#bestviewed_popup_msg").show();
+        }
+        else{
+          $("#bestviewed_popup_msg").hide();
+        }
+      }
     },
     LaunchActivity: function () {
       $(".container-so.launch").fadeOut();
@@ -56,6 +71,8 @@ var ActivityShell = (function () {
       }
     },
     DeviceType: function () {
+      /* This function needs changes in device detection logic 
+      below code is not working for ipad it returns desktop */
       const ua = navigator.userAgent;
       if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
         if(window.screen.availWidth<530 || window.screen.availHeight<530){
@@ -186,11 +203,37 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
+      var deviceType = ActivityShell.DeviceType();
+      if(deviceType=="mobile"){
+        if (window.matchMedia("(orientation: landscape)").matches) {
+          $("#bestviewed_popup_msg").show();
+        }
+        else{
+          $("#bestviewed_popup_msg").hide();
+        }
+      }
+    },
+    IsIOSDevice: function(){
+      if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+        return true;
+      } else {
+        return navigator.maxTouchPoints &&
+          navigator.maxTouchPoints > 2 &&
+          /MacIntel/.test(navigator.platform);
+      }
     },
     OnWindowResize: function(){
       var deviceType = this.DeviceType();
       if(deviceType == "desktop"){
-        
+        this.AdjustContainerHeight();
+        ScreenSplitter.InitSplitter();
+        if ($(".popup").is(":visible")) {
+          this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
+        }
+        /* Scale Spring to fit */
+      ScreenSplitter.ScaleToFit($("#split-0"))
+      /* Scale Graph to fit */
+      ScreenSplitter.ScaleToFit($("#split-1"))
       }
     }
   }
@@ -199,6 +242,9 @@ var ActivityShell = (function () {
 $(document).ready(function () {
   ActivityShell.Init();
 });
+document.ontouchmove = function(event){
+  event.preventDefault();
+}
 
 $(window).bind('orientationchange', function () {
   this.setTimeout(function () {

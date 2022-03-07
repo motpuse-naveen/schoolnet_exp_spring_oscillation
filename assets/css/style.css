@@ -3,6 +3,11 @@ body {
     font-size: 16px;
     color: var(--primary-text);
 }
+body[platform="ios"]{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
 
 .bold {
     font-family: 'Montserrat-Bold';
@@ -988,3 +993,12 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
 }
 
 /* Guided Tour */
+
+/* Best View Message*/
+#bestviewed_popup_msg{
+    opacity: 1;
+    display: block;
+    background: #FFF;
+    display: none;
+}
+/**/
