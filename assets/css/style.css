@@ -1073,3 +1073,11 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
     text-align: center;
 }
 /**/
+.tooltip-arrow{
+    display: none !important;
+}
+.tooltip-inner{
+    border: 1px solid #fff !important;
+    box-shadow: rgb(0 0 0 / 80%) 1px 1px 4px 1px;
+    font-family: 'Montserrat-Regular';
+}

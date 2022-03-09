@@ -24,13 +24,14 @@ var ActivityShell = (function () {
           $("#bestviewed_popup_msg").hide();
         }
       }
+      this.InitToolTip();
     },
     LaunchActivity: function () {
       $(".container-so.launch").fadeOut();
       $(".container-so.main").show();
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
-      GuidedTour.Init();
+      //GuidedTour.Init();
       SpringOscillation.LaunchActivity();
       /* Scale Spring to fit */
       ScreenSplitter.ScaleToFit($("#split-0"))
@@ -238,6 +239,9 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       }
+    },
+    InitToolTip: function(){
+      $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper") })
     }
   }
 })();
