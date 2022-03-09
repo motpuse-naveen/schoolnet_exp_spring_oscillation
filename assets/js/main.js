@@ -31,7 +31,7 @@ var ActivityShell = (function () {
       $(".container-so.main").show();
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
-      //GuidedTour.Init();
+      GuidedTour.Init();
       SpringOscillation.LaunchActivity();
       /* Scale Spring to fit */
       ScreenSplitter.ScaleToFit($("#split-0"))
@@ -230,7 +230,7 @@ var ActivityShell = (function () {
       var deviceType = this.DeviceType();
       if(deviceType == "desktop"){
         this.AdjustContainerHeight();
-        ScreenSplitter.InitSplitter();
+        ScreenSplitter.InitSplitter(true);
         if ($(".popup").is(":visible")) {
           this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
         }

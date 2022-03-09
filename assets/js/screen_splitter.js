@@ -25,16 +25,28 @@ var ScreenSplitter = (function () {
     </div>`;
 
     return {
-        InitSplitter: function () {
+        InitSplitter: function (whenresize) {
             $("#split-main").removeClass("v-split-main").removeClass("h-split-main");
             $("#split-main").removeAttr("style")
-            if (window.matchMedia("(orientation: portrait)").matches) {
-                $("#split-main").addClass("v-split-main");
-                this.VerticalSplit();
+            if(whenresize!=undefined && whenresize!=null && whenresize==true){
+                if(window.screen.availWidth<730){
+                    $("#split-main").addClass("v-split-main");
+                    this.VerticalSplit();
+                }
+                else{
+                    $("#split-main").addClass("h-split-main");
+                    this.HorizontalSplit();
+                }
             }
-            else {
-                $("#split-main").addClass("h-split-main");
-                this.HorizontalSplit();
+            else{
+                if (window.matchMedia("(orientation: portrait)").matches) {
+                    $("#split-main").addClass("v-split-main");
+                    this.VerticalSplit();
+                }
+                else {
+                    $("#split-main").addClass("h-split-main");
+                    this.HorizontalSplit();
+                }
             }
             //NM: Specific to SpringOscillation.
             var sprcontht = $(".spingContainer").height();
