@@ -63,6 +63,12 @@ img.weightImage{
     width: auto;
 }
 /**/
+.center-screen #split-0, .center-screen #split-1 {
+    min-height: 100px;
+    height: calc(50% - 0.5px);
+    /* max-height: 100%; */
+    float: inherit;
+}
 
 @media only screen and (min-width: 321px) {
     .container-so.main .exp_header .header h1 .sub-title {
@@ -176,6 +182,7 @@ img.weightImage{
     .popup .popupcontent{
         
     }
+    
 }
 @media only screen and (min-width: 731px) {
     body{
@@ -257,6 +264,12 @@ img.weightImage{
     .weightDispText {
         right: -40px;
         top: 0px;
+    }
+    .center-screen #split-0, .center-screen #split-1 {
+        min-height: 100px;
+        height: 100% !important;
+        max-height: 100%;
+        float: left;
     }
     
 }
