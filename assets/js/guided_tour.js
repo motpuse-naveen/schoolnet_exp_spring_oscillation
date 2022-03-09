@@ -41,12 +41,14 @@ var GuidedTour = (function () {
     var dt_step_count = 0;
     var gt_instr_box_html = `
         <div class="gt-instr-box">
-            <div class="gt-instr"></div>
-            <div class="gt-button-next">
-                <button id="btn_Next_gt" class="btn_Next_gt">Next</button>
-                <button id="btn_Done_gt" class="btn_Done_gt disnone">Done</button>
+            <div class="gt-instr-wrapper">
+                <div class="gt-instr"></div>
+                <div class="gt-button-next">
+                    <button id="btn_Next_gt" class="btn_Next_gt">Next</button>
+                    <button id="btn_Done_gt" class="btn_Done_gt disnone">Done</button>
+                </div>
             </div>
-            <div class="gt-arrow"></div>
+            <!--<div class="gt-arrow"></div>-->
         </div>
     `;
     return {
@@ -60,7 +62,7 @@ var GuidedTour = (function () {
             var myposition = this.getPosition($(g_tour_steps[dt_step_count].sourceElmIdQS));
             $(".gt-clone").remove();
             $(".gt-instr-box").after($(g_tour_steps[dt_step_count].sourceElmIdQS).clone().addClass("gt-clone").removeAttr("id").removeAttr("data-bs-toggle").removeAttr("data-bs-target"));
-            $(".gt-clone").css({ "left": myposition.left-5, "top": myposition.top-5 });
+            $(".gt-clone").css({ "left": myposition.left-2, "top": myposition.top-2 });
             
             var horSide = "left";
             var verSide = "top";

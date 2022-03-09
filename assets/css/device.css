@@ -115,7 +115,7 @@ img.weightImage{
         color: var(--theme-copy-text);
         position: absolute;
         right: 10px;
-        bottom: 10px;
+        bottom: 5px;
         justify-content: right;
         width: auto;
         background: transparent;
@@ -129,7 +129,7 @@ img.weightImage{
         color: var(--theme-copy-text);
         position: absolute;
         right: 10px;
-        bottom: 3px;
+        bottom: 5px;
         justify-content: right;
         display: block;
         width: 130px;
@@ -198,7 +198,7 @@ img.weightImage{
         color: var(--theme-copy-text);
         position: absolute;
         right: 10px;
-        bottom: 10px;
+        bottom: 5px;
         justify-content: right;
         width: auto;
         background: transparent;
@@ -206,6 +206,7 @@ img.weightImage{
     }
     .launch .exp_body .launch-bg{
         padding-top: 58px;
+        padding-bottom: 50px;
     }
     .container-so.main .exp_footer .footer .copyrighttext{
         display: block;

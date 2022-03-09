@@ -8,8 +8,12 @@ var ActivityShell = (function () {
       var deviceType = ActivityShell.DeviceType();
       $(".wrapper").attr("device",deviceType);
       if(this.IsIOSDevice()){
-        
         $("body").attr("platform","ios")
+      }
+      else{
+        if(deviceType == "desktop"){
+          $(".wrapper").addClass("center-screen");
+        }
       }
       //alert("height:" + window.innerHeight + "width:" + window.innerWidth);
       if(deviceType=="mobile"){
@@ -28,7 +32,6 @@ var ActivityShell = (function () {
       ScreenSplitter.InitSplitter();
       GuidedTour.Init();
       SpringOscillation.LaunchActivity();
-
       /* Scale Spring to fit */
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
