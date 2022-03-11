@@ -218,7 +218,7 @@ var ActivityShell = (function () {
     },
     OnWindowResize: function(){
       var deviceType = this.DeviceType();
-      if(deviceType == "desktop"){
+      //if(deviceType == "desktop"){
         this.AdjustContainerHeight();
         ScreenSplitter.InitSplitter(true);
         if ($(".popup").is(":visible")) {
@@ -228,7 +228,7 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
-      }
+      //}
     },
     InitToolTip: function(){
       var deviceType = ActivityShell.DeviceType();

@@ -87,3 +87,8 @@
     font-family: 'Montserrat-ThinItalic';
     src: local('poppins-black'), url('Montserrat/Montserrat-ThinItalic.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'segoesc-regular';
+    src: local('poppins-black'), url('SegoeScript/segoesc.ttf') format('truetype');
+}
