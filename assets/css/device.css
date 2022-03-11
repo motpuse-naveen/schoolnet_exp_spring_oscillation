@@ -407,7 +407,9 @@ img.weightImage{
     .popup{
         width: calc(100% - 46px);
     }
-    
+    #bestviewed_popup_msg{
+        display: block;
+    }
     /*End Settings Panel*/
 }
 
@@ -457,9 +459,5 @@ img.weightImage{
         width: 64px;
         margin: 0em 0.5em;
     }
-}
-
-@media screen and (orientation:landscape){
-    
 }
 

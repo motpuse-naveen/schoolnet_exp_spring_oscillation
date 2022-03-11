@@ -15,15 +15,6 @@ var ActivityShell = (function () {
           $(".wrapper").addClass("center-screen");
         }
       }
-      //alert("height:" + window.innerHeight + "width:" + window.innerWidth);
-      if(deviceType=="mobile"){
-        if (window.matchMedia("(orientation: landscape)").matches) {
-          $("#bestviewed_popup_msg").show();
-        }
-        else{
-          $("#bestviewed_popup_msg").hide();
-        }
-      }
       this.InitToolTip();
     },
     LaunchActivity: function () {
@@ -132,12 +123,18 @@ var ActivityShell = (function () {
       }
     }, 
     TogglePopup: function($popup, $button){
+      //debugger;
       if (!$popup.is(":visible")) {
         $(".popup").hide();
         $(".active").removeClass("active")
         var deviceType = ActivityShell.DeviceType();
         if (deviceType == "mobile") {
-          $(".cust-popup").hide();
+          if($(".cust-popup").is(":visible")){
+            $(".cust-popup").hide();
+            $(".calculationsCol").hide();
+            $(".settingsCol").hide();
+            ActivityShell.AdjustSplitPanelsOnCloseCustomPopup()
+          }
         }
         $popup.fadeIn();
         $button.addClass("active")
@@ -158,10 +155,11 @@ var ActivityShell = (function () {
       if(panel_identifier == "calculations"){
         if (!$(".calculationsCol").is(":visible")) {
           $(".popup").hide();
+          $("#btn_info.active, #btn_sheet.active, #btn_procedure.active").removeClass("active");
           $(".calculationsCol").fadeIn();
+          $button.addClass("active");
           if (!$popup.is(":visible")) {
             $popup.fadeIn();
-            $button.addClass("active");
           }
         }
         else{
@@ -172,10 +170,11 @@ var ActivityShell = (function () {
       if(panel_identifier == "settings"){
         if (!$(".settingsCol").is(":visible")) {
           $(".popup").hide();
+          $("#btn_info.active, #btn_sheet.active, #btn_procedure.active").removeClass("active");
           $(".settingsCol").fadeIn();
+          $button.addClass("active");
           if (!$popup.is(":visible")) {
             $popup.fadeIn();
-            $button.addClass("active");
           }
         }
         else{
@@ -207,15 +206,6 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
-      var deviceType = ActivityShell.DeviceType();
-      if(deviceType=="mobile"){
-        if (window.matchMedia("(orientation: landscape)").matches) {
-          $("#bestviewed_popup_msg").show();
-        }
-        else{
-          $("#bestviewed_popup_msg").hide();
-        }
-      }
     },
     IsIOSDevice: function(){
       if (/iPad|iPhone|iPod/.test(navigator.platform)) {
@@ -241,7 +231,12 @@ var ActivityShell = (function () {
       }
     },
     InitToolTip: function(){
-      $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper") })
+      var deviceType = ActivityShell.DeviceType();
+      if (deviceType == "desktop") {
+        if(!this.IsIOSDevice()){
+          $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper"), trigger: "hover" })
+        }
+      }
     }
   }
 })();
