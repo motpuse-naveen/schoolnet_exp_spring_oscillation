@@ -72,6 +72,7 @@ function imagePreloaded(){
     $(".preloader .progress-text").text("Loading..." + percentageload + "%")
     if(imagePreCount == imgPreloadArray.length)
     {
+        $(".wrapper").removeClass("disnone");
         setTimeout(function(){
           $(".preloader").remove();
         },50);
