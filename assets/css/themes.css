@@ -139,27 +139,25 @@
     vertical-align: middle;
     cursor: pointer;
     border-radius: 50%;
-    border: 1px solid var(--primary-text);
+    border: 1px solid var(--theme-popup-border);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
     line-height: 44px;
-
 }
 .custom-radios input[type="radio"] + label span img {
-    opacity: 0.8;
+    opacity: 0;
     transition: all 0.3s ease;
     margin-top: -24px;
     width: 12px;
 }
 .custom-radios input[type="radio"] + label span {
-    background-color: #D1D1D1;
-    border: 2px solid #D1D1D1;
+    background-color: var(--theme-sec-background);
+    border: 2px solid var(--theme-popup-border);
 }
 .custom-radios input[type="radio"]:checked + label span {
-    background-color: #4B4B4B;
-    border: 2px solid #4B4B4B;
+    background-color: var(--theme-pri-color);
 }
 .custom-radios input[type="radio"]:checked + label span img {
     opacity: 1;
