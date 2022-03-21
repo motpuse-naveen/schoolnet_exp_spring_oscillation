@@ -278,7 +278,7 @@ body[platform="ios"]{
     position: absolute;
     right: 0px;
     top: 8px;
-    z-index: 3;
+    z-index: 20;
 }
 .btn_themes{
     background-image: url(../images/theme-icon-outline-right.svg);
