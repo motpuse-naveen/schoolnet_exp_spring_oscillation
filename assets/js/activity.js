@@ -222,6 +222,13 @@ rangeInputs.forEach(input => {
   input.addEventListener('input', handleInputChange)
 })
 function handleInputChange(e) {
+  SpringOscillationChart.clearSeriesData();
+  Xvalue = 0;
+  Xvalue2 = 15;
+  myStartTime = new Date().getTime();
+  timeMultiple = 0;
+  pausedMillSec = 0;
+
   let target = e.target
   if (e.target.type !== 'range') {
     target = document.getElementById('range')

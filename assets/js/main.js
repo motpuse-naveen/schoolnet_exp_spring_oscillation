@@ -60,6 +60,10 @@ var ActivityShell = (function () {
             $(".cust-popup.settings .calculationsCol").hide();
           }
           $(".popup.calculations").remove();
+          $(".popup.worksheet").addClass("cust-popup").removeClass("popup");
+          $(".popup.procedure").addClass("cust-popup").removeClass("popup");
+          $(".btn.btn_sheet").addClass("cust");
+          $(".btn.btn_procedure").addClass("cust")
         }
         $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt))})
         $(".exp_body_content").css({"padding-bottom": settingPanelHt})
@@ -117,6 +121,27 @@ var ActivityShell = (function () {
       }
     },
     AdjustSplitPanelsOnCloseCustomPopup: function () {
+      var deviceType = ActivityShell.DeviceType();
+      if (deviceType == "mobile") {
+        $("#split-main").css({ "height": "100%" })
+      }
+    }, 
+    AdjustSplitPanelsOnOpenLikeCustomPopup: function ($popup) {
+      var deviceType = ActivityShell.DeviceType();
+      var settingPanelHt = 0;
+      if (deviceType == "mobile") {
+        if ($("#split-main").length > 0) {
+          var spltHeight = $(".wrapper").height();
+          settingPanelHt = $popup.outerHeight();
+          var footerHt = 0;
+          if($(".gutter.gutter-vertical").length>0){
+            footerHt = 46;
+          }
+          $("#split-main").css({ "height": spltHeight - (settingPanelHt + footerHt) })
+        }
+      }
+    },
+    AdjustSplitPanelsOnCloseLikeCustomPopup: function ($popup) {
       var deviceType = ActivityShell.DeviceType();
       if (deviceType == "mobile") {
         $("#split-main").css({ "height": "100%" })
@@ -196,6 +221,27 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
     },
+    ToggleLikeCustomPopup: function($popup, $button){
+      $(".popup").hide();
+      if (!$popup.is(":visible")) {
+        $(".cust-popup").hide();
+        $(".active").removeClass("active")
+        $popup.fadeIn();
+        $button.addClass("active")
+        ActivityShell.AdjustSplitPanelsOnOpenLikeCustomPopup($popup)
+      }
+      else{
+        $(".cust-popup").hide();
+        $(".active").removeClass("active")
+        $popup.hide();
+        $button.removeClass("active")
+        ActivityShell.AdjustSplitPanelsOnCloseLikeCustomPopup($popup)
+      }
+      /* Scale Spring to fit */
+      ScreenSplitter.ScaleToFit($("#split-0"))
+      /* Scale Graph to fit */
+      ScreenSplitter.ScaleToFit($("#split-1"))
+    },
     OnOrientationChange: function(){
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
@@ -229,12 +275,13 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       //}
+      GuidedTour.OnResize();
     },
     InitToolTip: function(){
       var deviceType = ActivityShell.DeviceType();
       if (deviceType == "desktop") {
         if(!this.IsIOSDevice()){
-          $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper"), trigger: "hover" })
+          $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper"), trigger: "hover",delay: { show: 500, hide: 100 } })
         }
       }
     }
@@ -263,23 +310,43 @@ $(document).on("click", "#btn_launch", function (event) {
 });
 /*Common Popup*/
 $(document).on("click", "#btn_sheet", function (event) {
-  ActivityShell.TogglePopup($(".popup.worksheet"),$(this));
+  if($(this).hasClass("cust")){
+    ActivityShell.ToggleLikeCustomPopup($(".cust-popup.worksheet"),$(this));
+  }
+  else{
+    ActivityShell.TogglePopup($(".popup.worksheet"),$(this));
+  }
+  
 });
 $(document).on("click", "#btn_info", function (event) {
   ActivityShell.TogglePopup($(".popup.info"), $(this));
 });
 $(document).on("click", "#btn_procedure", function (event) {
-  ActivityShell.TogglePopup($(".popup.procedure"),$(this));
+  //ActivityShell.TogglePopup($(".popup.procedure"),$(this));
+  if($(this).hasClass("cust")){
+    ActivityShell.ToggleLikeCustomPopup($(".cust-popup.procedure"),$(this));
+  }
+  else{
+    ActivityShell.TogglePopup($(".popup.procedure"),$(this));
+  }
 });
 
 $(document).on("click", ".btn-close-popup", function (event) {
+  if($(this).closest(".cust-popup").length>0){
+    $(this).closest(".cust-popup").hide();
+    $(".active").removeClass("active")
+    ActivityShell.AdjustSplitPanelsOnCloseLikeCustomPopup($(this).closest(".cust-popup"))
+  }
+  else{
   $(this).closest(".popup").hide();
   $(".active").removeClass("active")
   ActivityShell.AdjustSplitPanelsOnClosePopup($(this).closest(".popup"))
+  }
   /* Scale Spring to fit */
   ScreenSplitter.ScaleToFit($("#split-0"))
   /* Scale Graph to fit */
   ScreenSplitter.ScaleToFit($("#split-1"))
+  
 });
 
 $(document).on("click", "#btn_calculations", function (event) {
