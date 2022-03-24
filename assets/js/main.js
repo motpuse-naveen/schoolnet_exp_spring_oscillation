@@ -375,3 +375,9 @@ $(document).on("click", ".btn-close-cust-popup", function (event) {
 });
 */
 /*End Common Popup Script */
+
+$(document).on('shown.bs.tooltip', function (e) {
+  setTimeout(function () {
+    $(e.target).tooltip('hide');
+  }, 1500);
+});
