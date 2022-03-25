@@ -788,7 +788,7 @@ input[type="range"]::-ms-track {
 .x-axis-arrow {
     position: absolute;
     top: -11px;
-    left: 10px;
+    left: 9px;
     width: 100%;
 }
 

@@ -7,6 +7,7 @@ var ActivityShell = (function () {
       })
       var deviceType = ActivityShell.DeviceType();
       $(".wrapper").attr("device",deviceType);
+      $("body").attr("device",deviceType);
       if(this.IsIOSDevice()){
         $("body").attr("platform","ios")
       }
@@ -292,7 +293,12 @@ $(document).ready(function () {
   ActivityShell.Init();
 });
 document.ontouchmove = function(event){
-  event.preventDefault();
+  try{
+    event.preventDefault();
+  }
+  catch(err){
+
+  }
 }
 
 $(window).bind('orientationchange', function () {
