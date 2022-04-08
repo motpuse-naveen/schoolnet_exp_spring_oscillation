@@ -762,6 +762,7 @@ input[type="range"]::-ms-track {
     font-family: 'Montserrat-SemiBold';
 }
 #myChart{margin-left: 40px;}
+
 .yAxisLine {
     position: absolute;
     width: 1px;
@@ -769,14 +770,12 @@ input[type="range"]::-ms-track {
     left: 55px;
     height: 375px;
 }
-
 .y-axis-arrow {
     position: absolute;
     top: -10px;
     left: 0px;
     height: 100%;
 }
-
 .xAxisLine {
     position: absolute;
     width: 400px;
@@ -900,152 +899,6 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
 .cls-101{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;}
 */
 
-/* Guided Tour */
-
-.overlay-gt{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: #000;
-    opacity: 0.8;
-    z-index: 1000;
-}
-.gt-instr-box{
-    position: absolute;
-    color: var(--theme-pri-text-color);
-    z-index: 1001;
-    font-style: italic;
-    font-size: 14px;
-    width: 250px;
-}
-.gt-instr-wrapper{
-    position: absolute;
-    bottom: 0px;
-}
-.gt-instr-box .gt-instr{
-    font-family: 'segoesc-regular';
-}
-.gt-button-next{
-    position: absolute;
-}
-.gt-arrow{
-    position: absolute;
-}
-.btn_Next_gt{
-    color: var(--theme-pri-text-color);
-    border: 1px solid var(--theme-pri-text-color);
-    border-radius: 20px;
-    padding: 4px 25px 4px 15px;
-    background-color: transparent;
-}
-.btn_Done_gt{
-    color: var(--theme-pri-text-color);
-    border: 1px solid var(--theme-pri-text-color);
-    border-radius: 20px;
-    padding: 4px 15px 4px 15px;
-    background-color: transparent;
-}
-.btn_skip_gt{
-    color: var(--theme-pri-text-color);
-    border: 1px solid var(--theme-pri-text-color);
-    border-radius: 20px;
-    padding: 4px 15px 4px 15px;
-    background-color: transparent;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    z-index: 1001;
-    font-size: 14px;
-}
-.btn_Next_gt{
-    background-image: url(../images/next-arrow.svg);
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-}
-.gt-instr-box[halign="right"][valign="top"]{
-    margin-top: -15px;
-}
-.gt-instr-box[halign="left"][valign="top"]{
-    margin-top: -15px;
-    margin-left: -220px;
-}
-.gt-instr-box[halign="right"][valign="bottom"]{
-    margin-top: 35px;
-    margin-left: 60px;
-}
-.gt-instr-box[halign="left"][valign="bottom"]{
-    margin-top: 95px;
-    margin-left: -250px;
-}
-
-.gt-instr-box[halign="right"][valign="top"] .gt-button-next{
-    top: -40px;
-    right: 0px;
-}
-.gt-instr-box[halign="right"][valign="top"] .gt-arrow{
-    background: url(../images/arrow-left-bottom.png) no-repeat;
-    height: 60px;
-    width: 18px;
-    left: -24px;
-    top: 20px;
-
-}
-.gt-instr-box[halign="left"][valign="top"] .gt-button-next{
-    top: -40px;
-    right: 0px;
-}
-.gt-instr-box[halign="left"][valign="top"] .gt-arrow{
-    background: url(../images/arrow-right-bottom.png) no-repeat;
-    height: 60px;
-    width: 18px;
-    right: -33px;
-    top: 20px;
-}
-.gt-instr-box[halign="left"][valign="top"] .gt-instr{
-    float: right;
-}
-.gt-instr-box[halign="left"][valign="bottom"] .gt-button-next{
-    bottom: -40px;
-    right: 0px;
-}
-.gt-instr-box[halign="left"][valign="bottom"] .gt-arrow{
-    background: url(../images/arrow-right-top.png) no-repeat;
-    height: 60px;
-    width: 48px;
-    right: -17px;
-    top: -44px;
-}
-.gt-instr-box[halign="right"][valign="bottom"] .gt-instr{
-    float: right;
-}
-.gt-instr-box[halign="right"][valign="bottom"] .gt-button-next{
-    right: 0px;
-    bottom: -40px;
-}
-.gt-instr-box[halign="right"][valign="bottom"] .gt-arrow{
-    background: url(../images/Arrow_04.png) no-repeat;
-    height: 60px;
-    width: 48px;
-    left: -18px;
-    margin-top: -50px;
-}
-
-.gt-clone{
-    position: absolute;
-    z-index: 1002;
-}
-.btn_info.gt-clone, .btn_calculations.gt-clone, .btn_stop.gt-clone, .btn_reset.gt-clone, .btn_sheet.gt-clone, .btn_procedure.gt-clone, .btn_settings.gt-clone{
-    background-color: var(--theme-pri-color);
-    pointer-events: none;
-}
-.btn_themes.gt-clone{
-    pointer-events: none;
-}
-
-/* Guided Tour */
 
 /* Best View Message*/
 #bestviewed_popup_msg{
