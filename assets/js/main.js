@@ -19,6 +19,7 @@ var ActivityShell = (function () {
       this.InitToolTip();
     },
     LaunchActivity: function () {
+      $(".wrapper").addClass("activity");
       $(".container-so.launch").fadeOut();
       $(".container-so.main").show();
       this.AdjustContainerHeight();
@@ -292,6 +293,7 @@ var ActivityShell = (function () {
 $(document).ready(function () {
   ActivityShell.Init();
 });
+/*
 document.ontouchmove = function(event){
   try{
     event.preventDefault();
@@ -300,7 +302,7 @@ document.ontouchmove = function(event){
 
   }
 }
-
+*/
 $(window).bind('orientationchange', function () {
   this.setTimeout(function () {
     ActivityShell.OnOrientationChange();
