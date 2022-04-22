@@ -59,9 +59,12 @@
 }
 .container-so.main .exp_header .header .head-pan-container{
     display: flex;
+    padding: 0px;
+    height: 72px;
 }
 .container-so.main .exp_header .header .leftpan{
     border-right: 1px solid var(--theme-popup-border);
+    min-width: 380px;
 }
 .container-so.main .exp_header .header .leftpan .title{
     font-family: 'Montserrat-Bold';
@@ -72,14 +75,17 @@
 }
 .container-so.main .exp_header .header .rightpan{
     margin-left: 1em;
+    display: table;
 }
 .container-so.main .exp_header .header .main-src-logo{
-    width: 120px;
-    margin: 1em;
+    width: 96px;
+    margin: 0.5em 1em 0.5em 0.2em;
 }
 .container-so.main .exp_header .header h1 {
-    padding: 0.2em 0px;
+    display: table-cell;
+    vertical-align: middle;
     margin: 0;
+    padding-right: 46px;
 }
 
 .container-so.main .exp_header .header h1 .title {
@@ -116,7 +122,7 @@
 .btn-theme-wrap{
     position: absolute;
     right: 0px;
-    top: 8px;
+    top: 12px;
     z-index: 20;
 }
 .btn_themes{
@@ -762,4 +768,10 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
 
 .cust-popup.procedure{
     max-height: 40%;
+}
+.activity-page-expl-logo
+{
+  height: 72px;
+  padding: 5px 10px 5px 16px;
+  background: #000;
 }

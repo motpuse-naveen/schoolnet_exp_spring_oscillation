@@ -50,7 +50,7 @@
                 <div class="header">
                     <div class="container head-pan-container">
                         <div class="leftpan">
-                            <span class="title">Exploriments<sup>&reg;</sup></span>
+                            <span class="title"><img class="activity-page-expl-logo" src="assets/images/exploriment-Logo.svg"></span>
                             <span class="sub-title"><i>by</i></span>
                             <img class="main-src-logo" src="assets/images/logo.svg">
                         </div>
@@ -73,8 +73,8 @@
                 <div class="exp_body_header"></div>
                 <div class="exp_body_content">
                     <div id="split-main" class="split">
-                        <div id="split-0">
-                            <div class="content-container spingContainer">
+                        <div id="split-0" class="pinch-zoom-parent">
+                            <div class="content-container spingContainer pinch-zoom">
                                 <div class="springCanvas">
                                     <div class="springholder">
                                         <img class="hookImage" src="assets/images/hook.svg">
@@ -89,8 +89,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="split-1">
-                            <div class="content-container graphContainer">
+                        <div id="split-1" class="pinch-zoom-parent">
+                            <div class="content-container graphContainer pinch-zoom">
                                 <div class="graphWrapper">
                                     <div id="myChart"></div>
                                 </div>
@@ -739,6 +739,7 @@
     <script src="assets/js/preloader.js"></script>
     <script src="assets/plugins/highchart/highcharts.js"></script>
     <script src="assets/plugins/splitjs/split.min.js"></script>
+    <script src="assets/plugins/pinch-zoom.umd.js"></script>
 
     <script src="assets/js/chart.js"></script>
     <script src="assets/js/themes.js"></script>

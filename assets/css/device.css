@@ -388,6 +388,7 @@ img.weightImage {
         width: 64px;
         margin: 0em 0.5em;
     }
+    
 }
 
 @media screen and (orientation: landscape) and (max-device-height: 610px) {
@@ -438,7 +439,7 @@ img.weightImage {
 
 @media screen and (orientation: portrait) and (max-device-width: 610px) {
     .container-so.main .exp_header .header .leftpan {
-        padding-top: 10px;
+        /*padding-top: 10px;*/
     }
 
     .container-so.main .exp_header .header .leftpan .title {
@@ -453,8 +454,18 @@ img.weightImage {
     .container-so.main .exp_header .header h1 .sub-title {
         font-size: 14px;
     }
+    .activity-page-expl-logo{
+        padding: 13px 10px 13px 16px;
+    }
+    .container-so.main .exp_header .header .leftpan{
+        min-width: 330px;
+    }
 }
-
+@media screen and (orientation: portrait) {
+    .container-so.main .exp_header .header h1{
+        max-width: 326px;
+    }
+}
 @media screen and (orientation: landscape) {
     .wrapper[device="mobile"] #bestviewed_popup_msg {
         display: block;
