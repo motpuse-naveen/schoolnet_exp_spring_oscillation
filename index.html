@@ -787,7 +787,11 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/activity.js"></script>
     <script>
-       /*
+        function get_distance(e) {
+            var diffX = e.touches[0].clientX - e.touches[1].clientX;
+            var diffY = e.touches[0].clientY - e.touches[1].clientY;
+            return Math.sqrt(diffX * diffX + diffY * diffY); // Pythagorean theorem
+        }
         var tracks = [];
         $('#split-1').on("touchmove", function (event) {
 
@@ -797,6 +801,7 @@
                 //track the touches, I'm setting each touch as an array inside the tracks array
                 //each touch array contains an X and Y coordinate
                 tracks.push([[event.originalEvent.touches[0].pageX, event.originalEvent.touches[0].pageY], [event.originalEvent.touches[1].pageX, event.originalEvent.touches[1].pageY]]);
+                alert(get_distance(event))
             }
         }).on("touchstart", function () {
             //start-over
@@ -804,9 +809,9 @@
         }).on("touchend", function () {
             //now you can decide the scale that the user chose
             //take the track points that are the closest and determine the difference between them and the points that are the farthest away from each other
-            alert(tracks);
+            //alert(tracks);
         });
-        */
+        
     </script>
 </body>
 
