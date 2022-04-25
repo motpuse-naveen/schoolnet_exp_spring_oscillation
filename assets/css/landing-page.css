@@ -110,7 +110,7 @@ body[platform="ios"]{
     bottom: 0px;
     left: 0px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .launch_expl_title .exploriment_title{
     padding: 1rem 0 1rem 0;
@@ -189,7 +189,7 @@ body[platform="ios"]{
         font-family: 'Montserrat-Bold';
         text-align: center;
         padding:0;
-        font-size: 50px;
+        font-size: 44px;
     }
 }
 
