@@ -778,7 +778,6 @@
     <script src="assets/js/preloader.js"></script>
     <script src="assets/plugins/highchart/highcharts.js"></script>
     <script src="assets/plugins/splitjs/split.min.js"></script>
-    <script src="assets/plugins/jquery-touchy/jquery.touchy.js"></script>
 
     <script src="assets/js/chart.js"></script>
     <script src="assets/js/themes.js"></script>
@@ -788,12 +787,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/activity.js"></script>
     <script>
-        var handleTouchyPinch = function (e, $target, data) {
-            alert(data.scale)
-            $target.css({ 'webkitTransform': 'scale(' + data.scale + ',' + data.scale + ')' });
-        };
-        $('#split-1').on('touchy-pinch', handleTouchyPinch);
-        
        /*
         var tracks = [];
         $('#split-1').on("touchmove", function (event) {

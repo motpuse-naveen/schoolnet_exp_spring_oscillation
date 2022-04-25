@@ -113,7 +113,7 @@ body[platform="ios"]{
     margin-bottom: 30px;
 }
 .launch_expl_title .exploriment_title{
-    padding: 1rem 0 1.5rem 0;
+    padding: 1rem 0 1rem 0;
 }
 .launch_expl_title .exploriment_title h1 {
     color: var(--theme-copy-text);
@@ -131,7 +131,7 @@ body[platform="ios"]{
 }
 .launch-btn-container{
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .btn_launch {
     background-color: #FFFFFF;
@@ -171,7 +171,7 @@ body[platform="ios"]{
     .launch .launch_pattern_top .launch_pattern_top_img{
         background: url(../images/Top_BG.svg);
         background-repeat: no-repeat;
-        background-position: 0px -123px;
+        background-position: 0px -148px;
         background-size: 1024px;
         width: 1024px;
         height: 311px;
@@ -181,8 +181,8 @@ body[platform="ios"]{
         z-index: -1;
     }
     .launch_expl_logo{
-        height: 135px;
-        margin-top: 40px;
+        height: 128px;
+        margin-top: 30px;
     }
     .launch_expl_title .exploriment_title h1 {
         color: var(--theme-copy-text);
