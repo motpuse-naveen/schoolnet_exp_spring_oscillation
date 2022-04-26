@@ -700,7 +700,7 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
 }
 .btn_stop:hover, .btn_settings:hover, .btn_sheet:hover, .btn_calculations:hover, 
 .btn_info:hover, .btn_procedure:hover, .btn_reset:hover{
-    outline: 1px solid var(--theme-btn-border);
+    /*outline: 1px solid var(--theme-btn-border);*/
 }
 
 /* Best View Message*/
@@ -774,4 +774,9 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
   height: 72px;
   padding: 5px 10px 5px 16px;
   background: #000;
+}
+
+.pz-parent{
+    /*position: relative;*/
+    overflow: scroll;
 }

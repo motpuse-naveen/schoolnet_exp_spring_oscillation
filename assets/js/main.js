@@ -30,6 +30,8 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
+      //new window.PinchZoom.default(document.querySelector('div.zoom1'), { });
+      new window.PinchZoom.default(document.querySelector('div.zoom2'), { });
     },
     AdjustContainerHeight: function () {
       $(".wrapper").css({
@@ -70,6 +72,7 @@ var ActivityShell = (function () {
         $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt))})
         $(".exp_body_content").css({"padding-bottom": settingPanelHt})
       }
+      
     },
     DeviceType: function () {
       /* This function needs changes in device detection logic 
@@ -222,8 +225,17 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
+      if($(".settingsCol").is(":visible")){
+        new window.PinchZoom.default(document.querySelector('.zoom3'), {});
+        $(".zoom3").closest(".pinch-zoom-container").css({"height": "164px"});
+      }
+      if($(".calculationsCol").is(":visible")){
+        new window.PinchZoom.default(document.querySelector('.zoom4'), {});
+        $(".zoom4").closest(".pinch-zoom-container").css({"height": "164px"});
+      }
     },
     ToggleLikeCustomPopup: function($popup, $button){
+      debugger;
       $(".popup").hide();
       if (!$popup.is(":visible")) {
         $(".cust-popup").hide();
