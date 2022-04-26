@@ -1,4 +1,10 @@
 const POPUP_WIDTH = 280;
+
+var zoom1 = null;
+var zoom2 = null;
+var zoom3 = null;
+var zoom4 = null;
+
 var ActivityShell = (function () {
   return {
     Init: function () {
@@ -6,13 +12,13 @@ var ActivityShell = (function () {
         "height": window.innerHeight + "px"
       })
       var deviceType = ActivityShell.DeviceType();
-      $(".wrapper").attr("device",deviceType);
-      $("body").attr("device",deviceType);
-      if(this.IsIOSDevice()){
-        $("body").attr("platform","ios")
+      $(".wrapper").attr("device", deviceType);
+      $("body").attr("device", deviceType);
+      if (this.IsIOSDevice()) {
+        $("body").attr("platform", "ios")
       }
-      else{
-        if(deviceType == "desktop"){
+      else {
+        if (deviceType == "desktop") {
           $(".wrapper").addClass("center-screen");
         }
       }
@@ -31,7 +37,9 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       //new window.PinchZoom.default(document.querySelector('div.zoom1'), { });
-      new window.PinchZoom.default(document.querySelector('div.zoom2'), { });
+      if (zoom2 == null) {
+        zoom2 = new window.PinchZoom.default(document.querySelector('div.zoom2'), {});
+      }
     },
     AdjustContainerHeight: function () {
       $(".wrapper").css({
@@ -51,14 +59,14 @@ var ActivityShell = (function () {
         if (deviceType != "mobile") {
           settingPanelHt = $(".cust-popup.settings").outerHeight();
         }
-        else{
-          $(".wrapper").attr("device","mobile");
+        else {
+          $(".wrapper").attr("device", "mobile");
           $(".cust-popup.settings").addClass("mobileview")
           $(".cust-popup.settings").hide();
           $(".btn-wrap.btn-wrap-settings").show();
 
           var calc_html = $(".popup.calculations .popupcontent .row").html()
-          if($(".cust-popup.settings .calculationsCol").length<=0){
+          if ($(".cust-popup.settings .calculationsCol").length <= 0) {
             $(".cust-popup.settings .settingsCol").after(calc_html);
             $(".cust-popup.settings .settingsCol").hide();
             $(".cust-popup.settings .calculationsCol").hide();
@@ -69,20 +77,20 @@ var ActivityShell = (function () {
           $(".btn.btn_sheet").addClass("cust");
           $(".btn.btn_procedure").addClass("cust")
         }
-        $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt))})
-        $(".exp_body_content").css({"padding-bottom": settingPanelHt})
+        $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt)) })
+        $(".exp_body_content").css({ "padding-bottom": settingPanelHt })
       }
-      
+
     },
     DeviceType: function () {
       /* This function needs changes in device detection logic 
       below code is not working for ipad it returns desktop */
       const ua = navigator.userAgent;
       if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        if(window.screen.availWidth<530 || window.screen.availHeight<530){
+        if (window.screen.availWidth < 530 || window.screen.availHeight < 530) {
           return "mobile";
         }
-        else{
+        else {
           return "tablet";
         }
       }
@@ -99,7 +107,7 @@ var ActivityShell = (function () {
           var spltWdt = $(".wrapper").width();
           $("#split-main").css({ "width": spltWdt - POPUP_WIDTH })
           settingPanelHt = $(".cust-popup.settings").outerHeight();
-          $popup.css({"padding-bottom":settingPanelHt + 10})
+          $popup.css({ "padding-bottom": settingPanelHt + 10 })
         }
         $popup.addClass("right_align_popup")
       }
@@ -109,7 +117,7 @@ var ActivityShell = (function () {
       if (deviceType != "mobile") {
         $("#split-main").css({ "width": $(".wrapper").width() })
       }
-    }, 
+    },
     AdjustSplitPanelsOnOpenCustomPopup: function () {
       var deviceType = ActivityShell.DeviceType();
       var settingPanelHt = 0;
@@ -118,7 +126,7 @@ var ActivityShell = (function () {
           var spltHeight = $(".wrapper").height();
           settingPanelHt = $(".cust-popup.settings").outerHeight();
           var footerHt = 0;
-          if($(".gutter.gutter-vertical").length>0){
+          if ($(".gutter.gutter-vertical").length > 0) {
             footerHt = 46;
           }
           $("#split-main").css({ "height": spltHeight - (settingPanelHt + footerHt) })
@@ -130,7 +138,7 @@ var ActivityShell = (function () {
       if (deviceType == "mobile") {
         $("#split-main").css({ "height": "100%" })
       }
-    }, 
+    },
     AdjustSplitPanelsOnOpenLikeCustomPopup: function ($popup) {
       var deviceType = ActivityShell.DeviceType();
       var settingPanelHt = 0;
@@ -139,7 +147,7 @@ var ActivityShell = (function () {
           var spltHeight = $(".wrapper").height();
           settingPanelHt = $popup.outerHeight();
           var footerHt = 0;
-          if($(".gutter.gutter-vertical").length>0){
+          if ($(".gutter.gutter-vertical").length > 0) {
             footerHt = 46;
           }
           $("#split-main").css({ "height": spltHeight - (settingPanelHt + footerHt) })
@@ -151,15 +159,15 @@ var ActivityShell = (function () {
       if (deviceType == "mobile") {
         $("#split-main").css({ "height": "100%" })
       }
-    }, 
-    TogglePopup: function($popup, $button){
+    },
+    TogglePopup: function ($popup, $button) {
       //debugger;
       if (!$popup.is(":visible")) {
         $(".popup").hide();
         $(".active").removeClass("active")
         var deviceType = ActivityShell.DeviceType();
         if (deviceType == "mobile") {
-          if($(".cust-popup").is(":visible")){
+          if ($(".cust-popup").is(":visible")) {
             $(".cust-popup").hide();
             $(".calculationsCol").hide();
             $(".settingsCol").hide();
@@ -180,11 +188,13 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
     },
-    ToggleCustomPopup: function($popup, panel_identifier,$button){
+    ToggleCustomPopup: function ($popup, panel_identifier, $button) {
       //debugger;
-      if(panel_identifier == "calculations"){
+
+      if (panel_identifier == "calculations") {
         if (!$(".calculationsCol").is(":visible")) {
           $(".popup").hide();
+          $(".procedure.cust-popup").hide()
           $("#btn_info.active, #btn_sheet.active, #btn_procedure.active").removeClass("active");
           $(".calculationsCol").fadeIn();
           $button.addClass("active");
@@ -192,14 +202,15 @@ var ActivityShell = (function () {
             $popup.fadeIn();
           }
         }
-        else{
+        else {
           $(".calculationsCol").hide();
           $button.removeClass("active");
         }
       }
-      if(panel_identifier == "settings"){
+      if (panel_identifier == "settings") {
         if (!$(".settingsCol").is(":visible")) {
           $(".popup").hide();
+          $(".procedure.cust-popup").hide()
           $("#btn_info.active, #btn_sheet.active, #btn_procedure.active").removeClass("active");
           $(".settingsCol").fadeIn();
           $button.addClass("active");
@@ -207,7 +218,7 @@ var ActivityShell = (function () {
             $popup.fadeIn();
           }
         }
-        else{
+        else {
           $(".settingsCol").hide();
           $button.removeClass("active");
         }
@@ -218,23 +229,27 @@ var ActivityShell = (function () {
         $(".active").removeClass("active")
         ActivityShell.AdjustSplitPanelsOnCloseCustomPopup();
       }
-      else{
+      else {
         ActivityShell.AdjustSplitPanelsOnOpenCustomPopup();
       }
       /* Scale Spring to fit */
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
-      if($(".settingsCol").is(":visible")){
-        new window.PinchZoom.default(document.querySelector('.zoom3'), {});
-        $(".zoom3").closest(".pinch-zoom-container").css({"height": "164px"});
+      if ($(".settingsCol").is(":visible")) {
+        if (zoom4 == null) {
+          zoom4 = new window.PinchZoom.default(document.querySelector('.zoom4'), {});
+          $(".zoom4").closest(".pinch-zoom-container").css({ "height": "180px" });
+        }
       }
-      if($(".calculationsCol").is(":visible")){
-        new window.PinchZoom.default(document.querySelector('.zoom4'), {});
-        $(".zoom4").closest(".pinch-zoom-container").css({"height": "164px"});
+      if ($(".calculationsCol").is(":visible")) {
+        if (zoom3 == null) {
+          zoom3 = new window.PinchZoom.default(document.querySelector('.zoom3'), {});
+          $(".zoom3").closest(".pinch-zoom-container").css({ "height": "180px" });
+        }
       }
     },
-    ToggleLikeCustomPopup: function($popup, $button){
+    ToggleLikeCustomPopup: function ($popup, $button) {
       debugger;
       $(".popup").hide();
       if (!$popup.is(":visible")) {
@@ -244,7 +259,7 @@ var ActivityShell = (function () {
         $button.addClass("active")
         ActivityShell.AdjustSplitPanelsOnOpenLikeCustomPopup($popup)
       }
-      else{
+      else {
         $(".cust-popup").hide();
         $(".active").removeClass("active")
         $popup.hide();
@@ -256,7 +271,7 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
     },
-    OnOrientationChange: function(){
+    OnOrientationChange: function () {
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
       if ($(".popup").is(":visible")) {
@@ -267,7 +282,7 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
     },
-    IsIOSDevice: function(){
+    IsIOSDevice: function () {
       if (/iPad|iPhone|iPod/.test(navigator.platform)) {
         return true;
       } else {
@@ -276,26 +291,26 @@ var ActivityShell = (function () {
           /MacIntel/.test(navigator.platform);
       }
     },
-    OnWindowResize: function(){
+    OnWindowResize: function () {
       var deviceType = this.DeviceType();
       //if(deviceType == "desktop"){
-        this.AdjustContainerHeight();
-        ScreenSplitter.InitSplitter(true);
-        if ($(".popup").is(":visible")) {
-          this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
-        }
-        /* Scale Spring to fit */
+      this.AdjustContainerHeight();
+      ScreenSplitter.InitSplitter(true);
+      if ($(".popup").is(":visible")) {
+        this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
+      }
+      /* Scale Spring to fit */
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       //}
       GuidedTour.OnResize();
     },
-    InitToolTip: function(){
+    InitToolTip: function () {
       var deviceType = ActivityShell.DeviceType();
       if (deviceType == "desktop") {
-        if(!this.IsIOSDevice()){
-          $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper"), trigger: "hover",delay: { show: 500, hide: 100 } })
+        if (!this.IsIOSDevice()) {
+          $("button[data-toggle='tooltip']").tooltip({ boundary: 'window', container: $(".wrapper"), trigger: "hover", delay: { show: 500, hide: 100 } })
         }
       }
     }
@@ -321,7 +336,7 @@ $(window).bind('orientationchange', function () {
   }, 200);
 });
 
-$(window).resize(function() {
+$(window).resize(function () {
   ActivityShell.OnWindowResize();
 });
 
@@ -330,43 +345,43 @@ $(document).on("click", "#btn_launch", function (event) {
 });
 /*Common Popup*/
 $(document).on("click", "#btn_sheet", function (event) {
-  if($(this).hasClass("cust")){
-    ActivityShell.ToggleLikeCustomPopup($(".cust-popup.worksheet"),$(this));
+  if ($(this).hasClass("cust")) {
+    ActivityShell.ToggleLikeCustomPopup($(".cust-popup.worksheet"), $(this));
   }
-  else{
-    ActivityShell.TogglePopup($(".popup.worksheet"),$(this));
+  else {
+    ActivityShell.TogglePopup($(".popup.worksheet"), $(this));
   }
-  
+
 });
 $(document).on("click", "#btn_info", function (event) {
   ActivityShell.TogglePopup($(".popup.info"), $(this));
 });
 $(document).on("click", "#btn_procedure", function (event) {
   //ActivityShell.TogglePopup($(".popup.procedure"),$(this));
-  if($(this).hasClass("cust")){
-    ActivityShell.ToggleLikeCustomPopup($(".cust-popup.procedure"),$(this));
+  if ($(this).hasClass("cust")) {
+    ActivityShell.ToggleLikeCustomPopup($(".cust-popup.procedure"), $(this));
   }
-  else{
-    ActivityShell.TogglePopup($(".popup.procedure"),$(this));
+  else {
+    ActivityShell.TogglePopup($(".popup.procedure"), $(this));
   }
 });
 
 $(document).on("click", ".btn-close-popup", function (event) {
-  if($(this).closest(".cust-popup").length>0){
+  if ($(this).closest(".cust-popup").length > 0) {
     $(this).closest(".cust-popup").hide();
     $(".active").removeClass("active")
     ActivityShell.AdjustSplitPanelsOnCloseLikeCustomPopup($(this).closest(".cust-popup"))
   }
-  else{
-  $(this).closest(".popup").hide();
-  $(".active").removeClass("active")
-  ActivityShell.AdjustSplitPanelsOnClosePopup($(this).closest(".popup"))
+  else {
+    $(this).closest(".popup").hide();
+    $(".active").removeClass("active")
+    ActivityShell.AdjustSplitPanelsOnClosePopup($(this).closest(".popup"))
   }
   /* Scale Spring to fit */
   ScreenSplitter.ScaleToFit($("#split-0"))
   /* Scale Graph to fit */
   ScreenSplitter.ScaleToFit($("#split-1"))
-  
+
 });
 
 $(document).on("click", "#btn_calculations", function (event) {
@@ -374,7 +389,7 @@ $(document).on("click", "#btn_calculations", function (event) {
   if (deviceType != "mobile") {
     ActivityShell.TogglePopup($(".popup.calculations"), $(this));
   }
-  else{
+  else {
     //NM: $(".cust-popup.settings") is parent popup as for mobile 
     //Calculations popup is moved into settings popup.
     ActivityShell.ToggleCustomPopup($(".cust-popup.settings"), "calculations", $(this));
@@ -385,7 +400,7 @@ $(document).on("click", "#btn_settings", function (event) {
   var deviceType = ActivityShell.DeviceType();
   if (deviceType != "mobile") {
   }
-  else{
+  else {
     ActivityShell.ToggleCustomPopup($(".cust-popup.settings"), "settings", $(this));
   }
 });

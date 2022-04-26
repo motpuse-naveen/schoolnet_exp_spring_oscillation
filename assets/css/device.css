@@ -331,7 +331,7 @@ img.weightImage {
     }
     
     body[device="mobile"] #bestviewed_popup_msg {
-        /*display: block;*/
+        display: block;
     }
 
     /*End Settings Panel*/
