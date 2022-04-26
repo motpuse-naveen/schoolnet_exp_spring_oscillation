@@ -217,7 +217,7 @@ body[platform="ios"]{
 }
 /*Mobile Lanscape*/
 @media screen and (orientation:landscape) and (min-device-width: 390px) and (max-device-width: 980px){
-    .btn_launch {
+    /*.btn_launch {
         background-color: #FFFFFF;
         color: purple;
         font-family: 'Montserrat-Bold';
@@ -225,7 +225,7 @@ body[platform="ios"]{
         margin: 5px;
         min-width: 130px;
         text-transform:uppercase;
-    }
+    }*/
     .titlemobilelandscape{
         display: block;
     }
@@ -268,7 +268,7 @@ body[platform="ios"]{
 }
 /*Tablet Lanscape small screen*/
 @media screen and (orientation:landscape) and (min-device-height: 620px) {
-    [device="tablet"] .btn_launch {
+    /*[device="tablet"] .btn_launch {
         background-color: #FFFFFF;
         color: red;
         font-family: 'Montserrat-Bold';
@@ -276,12 +276,12 @@ body[platform="ios"]{
         margin: 5px;
         min-width: 130px;
         text-transform:uppercase;
-    }
+    }*/
 }
 
 /*Tablet Lanscape ipad*/
 @media screen and (orientation:landscape) and (min-device-height: 760px) {
-    [device="tablet"] .btn_launch {
+    /*[device="tablet"] .btn_launch {
         background-color: #FFFFFF;
         color: green;
         font-family: 'Montserrat-Bold';
@@ -289,7 +289,7 @@ body[platform="ios"]{
         margin: 5px;
         min-width: 130px;
         text-transform:uppercase;
-    }
+    }*/
     [device="tablet"] .launch_expl_title .exploriment_title{
         padding: 1rem 0 2.5rem 0;
     }
