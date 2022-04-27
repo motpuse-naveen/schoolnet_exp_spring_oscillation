@@ -6,7 +6,7 @@
     <title>Spring Oscillation - Experimental Verification of Time Period</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/plugins/bootstrap-5.1.3-dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/fonts/font.css">
@@ -76,8 +76,8 @@
                 <div class="exp_body_header"></div>
                 <div class="exp_body_content">
                     <div id="split-main" class="split">
-                        <div id="split-0">
-                            <div class="content-container spingContainer zoom1">
+                        <div id="split-0" class="zoom1">
+                            <div class="content-container spingContainer">
                                 <div class="springCanvas">
                                     <div class="springholder">
                                         <img class="hookImage" src="assets/images/hook.svg">
@@ -92,8 +92,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="split-1">
-                            <div class="content-container graphContainer zoom2">
+                        <div id="split-1" class="zoom2">
+                            <div class="content-container graphContainer ">
                                 <div class="graphWrapper">
                                     <div id="myChart"></div>
                                 </div>
@@ -145,22 +145,24 @@
                             </div>
                             <div class="popupcontent">
                                 <div class="row">
-                                    <div class="col calculationsCol">
-                                        <div class="zoom3">
-                                        <h2>Calculations</h2>
-                                        <p>Note: The calculations given below are applicable only for zero damping</p>
-                                        <p>Amplitude (A) = <span class="spancalculate txtamplitude"></span>cm</p>
-                                        <p>Mass (m) = <span class="spancalculate txtmass"></span>kg</p>
-                                        <p>Spring constant (k) = <span class="spancalculate txtspringconst"></span>N/m
-                                        </p>
+                                    <div class="col calculationsCol zoom3">
+                                        <div class="zoom8">
+                                            <h2>Calculations</h2>
+                                            <p>Note: The calculations given below are applicable only for zero damping
+                                            </p>
+                                            <p>Amplitude (A) = <span class="spancalculate txtamplitude"></span>cm</p>
+                                            <p>Mass (m) = <span class="spancalculate txtmass"></span>kg</p>
+                                            <p>Spring constant (k) = <span
+                                                    class="spancalculate txtspringconst"></span>N/m
+                                            </p>
 
-                                        <p>
-                                        <div class="inlblock">Time Period,</div>&nbsp;<div class="inlblock"> T = 2π
-                                            <span>√</span><span class="squarerootbar"> (m / k) </span> =
-                                            <span class="spancalculate txttimeperiod"></span>sec
+                                            <p>
+                                            <div class="inlblock">Time Period,</div>&nbsp;<div class="inlblock"> T = 2π
+                                                <span>√</span><span class="squarerootbar"> (m / k) </span> =
+                                                <span class="spancalculate txttimeperiod"></span>sec
+                                            </div>
+                                            </p>
                                         </div>
-                                        </p>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -386,81 +388,82 @@
                     <div class="cust-popup settings">
                         <div class="container">
                             <div class="popupcontent">
-                                
+
                                 <div class="row">
                                     <div class="col settingsCol">
                                         <div class="zoom4">
-                                        <div class="row">
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                                <div class="sliderWrapper sliderMassWrapper">
-                                                    <div class="slider-label">Mass</div>
-                                                    <div class="sliderInnerWrapper">
-                                                        <div class="sliderContainer">
-                                                            <span class="min">0.1</span>
-                                                            <input class="slider" type="range" id="sliderMass"
-                                                                name="mass" min="0.1" max="1" step="0.1" value="0.5"
-                                                                style="background-size: 44.4444% 100%;">
-                                                            <span class="max">1</span>
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="sliderWrapper sliderMassWrapper">
+                                                        <div class="slider-label">Mass</div>
+                                                        <div class="sliderInnerWrapper">
+                                                            <div class="sliderContainer">
+                                                                <span class="min">0.1</span>
+                                                                <input class="slider" type="range" id="sliderMass"
+                                                                    name="mass" min="0.1" max="1" step="0.1" value="0.5"
+                                                                    style="background-size: 44.4444% 100%;">
+                                                                <span class="max">1</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inputContainer">
+                                                            <span class="input_box inputMass">0.5</span><span
+                                                                class="unit">kg</span>
                                                         </div>
                                                     </div>
-                                                    <div class="inputContainer">
-                                                        <span class="input_box inputMass">0.5</span><span
-                                                            class="unit">kg</span>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                                <div class="sliderWrapper sliderSCContainer">
-                                                    <div class="slider-label">Spring Constant</div>
-                                                    <div class="sliderInnerWrapper">
-                                                        <div class="sliderContainer">
-                                                            <span class="min">1</span>
-                                                            <input class="slider" type="range" id="sliderSpringConstant"
-                                                                name="springconstant" min="1" max="5" step="0.1"
-                                                                value="3" style="background-size: 50% 100%;">
-                                                            <span class="max">5</span>
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="sliderWrapper sliderSCContainer">
+                                                        <div class="slider-label">Spring Constant</div>
+                                                        <div class="sliderInnerWrapper">
+                                                            <div class="sliderContainer">
+                                                                <span class="min">1</span>
+                                                                <input class="slider" type="range"
+                                                                    id="sliderSpringConstant" name="springconstant"
+                                                                    min="1" max="5" step="0.1" value="3"
+                                                                    style="background-size: 50% 100%;">
+                                                                <span class="max">5</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inputContainer">
+                                                            <span class="input_box inputSpringConstant">3</span><span
+                                                                class="unit">N/m</span>
                                                         </div>
                                                     </div>
-                                                    <div class="inputContainer">
-                                                        <span class="input_box inputSpringConstant">3</span><span
-                                                            class="unit">N/m</span>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12">
-                                                <div class="sliderWrapper sliderDampingContainer">
-                                                    <div class="slider-label">Damping</div>
-                                                    <div class="sliderInnerWrapper">
-                                                        <div class="sliderContainer">
-                                                            <span class="min">0</span>
-                                                            <input class="slider" type="range" id="sliderDamping"
-                                                                name="damping" min="0" max="0.5" step="0.1" value="0"
-                                                                style="background-size: 0% 100%;">
-                                                            <span class="max">0.5</span>
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="sliderWrapper sliderDampingContainer">
+                                                        <div class="slider-label">Damping</div>
+                                                        <div class="sliderInnerWrapper">
+                                                            <div class="sliderContainer">
+                                                                <span class="min">0</span>
+                                                                <input class="slider" type="range" id="sliderDamping"
+                                                                    name="damping" min="0" max="0.5" step="0.1"
+                                                                    value="0" style="background-size: 0% 100%;">
+                                                                <span class="max">0.5</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="inputContainer">
+                                                            <span class="input_box inputDamping">0</span><span
+                                                                class="unit">N/m</span>
                                                         </div>
                                                     </div>
-                                                    <div class="inputContainer">
-                                                        <span class="input_box inputDamping">0</span><span
-                                                            class="unit">N/m</span>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-lg-3 col-md-3 col-sm-12 my-auto">
-                                                <div class="sliderWrapper sliderTPContainer">
-                                                    <div class="sliderInnerWrapper">
-                                                        <div class="slider-label">Time Period</div>
-                                                    </div>
-                                                    <div class="inputContainer">
-                                                        <span class="input_box inputTimePeriod"></span><span
-                                                            class="unit" style="padding-left: 6px;">Sec</span>
+                                                <div class="col-lg-3 col-md-3 col-sm-12 my-auto">
+                                                    <div class="sliderWrapper sliderTPContainer">
+                                                        <div class="sliderInnerWrapper">
+                                                            <div class="slider-label">Time Period</div>
+                                                        </div>
+                                                        <div class="inputContainer">
+                                                            <span class="input_box inputTimePeriod"></span><span
+                                                                class="unit" style="padding-left: 6px;">Sec</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
                                 </div>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -766,7 +769,8 @@
     <script src="assets/js/preloader.js"></script>
     <script src="assets/plugins/highchart/highcharts.js"></script>
     <script src="assets/plugins/splitjs/split.min.js"></script>
-
+    <script  type="text/javascript" src="assets/plugins/hammer.min.js"></script>
+    <script type="text/javascript" src="assets/js/hammer-manager.js"></script>
     <script src="assets/js/chart.js"></script>
     <script src="assets/js/themes.js"></script>
     <script src="assets/lib/guide-tour/guide-tour-data.js"></script>
@@ -775,7 +779,6 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/activity.js"></script>
     <script type="text/javascript" src="assets/plugins/pinch-zoom.umd.min.js"></script>
-    
 </body>
 
 </html>

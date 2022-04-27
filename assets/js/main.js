@@ -37,8 +37,15 @@ var ActivityShell = (function () {
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       //new window.PinchZoom.default(document.querySelector('div.zoom1'), { });
+      if (zoom1 == null) {
+        hammerIt(document.querySelector(".zoom1"));
+        zoom1 = "zoom1";
+        //new window.PinchZoom.default(document.querySelector('div.zoom2'), { });
+      }
       if (zoom2 == null) {
-        zoom2 = new window.PinchZoom.default(document.querySelector('div.zoom2'), {});
+        hammerIt(document.querySelector(".zoom2"));
+        zoom2 = "zoom2";
+        //new window.PinchZoom.default(document.querySelector('div.zoom2'), { });
       }
     },
     AdjustContainerHeight: function () {
@@ -238,14 +245,18 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-1"))
       if ($(".settingsCol").is(":visible")) {
         if (zoom4 == null) {
-          zoom4 = new window.PinchZoom.default(document.querySelector('.zoom4'), {});
-          $(".zoom4").closest(".pinch-zoom-container").css({ "height": "180px" });
+          //zoom4 = new window.PinchZoom.default(document.querySelector('.zoom4'), {});
+          //$(".zoom4").closest(".pinch-zoom-container").css({ "height": "180px" });
+          hammerIt(document.querySelector(".zoom4"))
+          zoom4 = "zoom4"
         }
       }
       if ($(".calculationsCol").is(":visible")) {
         if (zoom3 == null) {
-          zoom3 = new window.PinchZoom.default(document.querySelector('.zoom3'), {});
-          $(".zoom3").closest(".pinch-zoom-container").css({ "height": "180px" });
+          //zoom3 = new window.PinchZoom.default(document.querySelector('.zoom3'), {});
+          //$(".zoom3").closest(".pinch-zoom-container").css({ "height": "180px" });
+          hammerIt(document.querySelector(".zoom3"))
+          zoom3 = "zoom3"
         }
       }
     },
