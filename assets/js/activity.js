@@ -52,6 +52,7 @@ $(".springWeight").draggable({
   axis: "y",
   cursor: "move",
   drag: function (event, ui) {
+    ui.position.left = nm_initialLeft;
     springOscillationPaused = false;
     clearInterval(springAnnimInterval);
     springAnnimInterval = 0;
@@ -76,7 +77,7 @@ $(".springWeight").draggable({
     $(".springWrapper").css({ "height": springOrigHeight + (displacementMass) })
   },
   start: function (event, ui) {
-    
+    nm_initialLeft = ui.position.left;
   },
   stop: function (event, ui) {
     SpringOscillationChart.clearSeriesData();
