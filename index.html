@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Spring Oscillation - Experimental Verification of Time Period</title>
-    <meta name = "viewport" content = "width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -76,26 +76,30 @@
                 <div class="exp_body_header"></div>
                 <div class="exp_body_content">
                     <div id="split-main" class="split">
-                        <div id="split-0" class="zoom1">
-                            <div class="content-container spingContainer">
-                                <div class="springCanvas">
-                                    <div class="springholder">
-                                        <img class="hookImage" src="assets/images/hook.svg">
-                                    </div>
-                                    <div class="springWrapper">
-                                        <img class="springImage" src="assets/images/spring.png">
-                                        <div id="springWeightDiv" class="springWeight">
-                                            <img class="weightImage" src="assets/images/weight.svg">
-                                            <span class="weightDispText"></span>
+                        <div id="split-0">
+                            <div class="zoom1" style="width: 100%; height: 100%;">
+                                <div class="content-container spingContainer">
+                                    <div class="springCanvas">
+                                        <div class="springholder">
+                                            <img class="hookImage" src="assets/images/hook.svg">
+                                        </div>
+                                        <div class="springWrapper">
+                                            <img class="springImage" src="assets/images/spring.png">
+                                            <div id="springWeightDiv" class="springWeight">
+                                                <img class="weightImage" src="assets/images/weight.svg">
+                                                <span class="weightDispText"></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="split-1" class="zoom2">
-                            <div class="content-container graphContainer ">
-                                <div class="graphWrapper">
-                                    <div id="myChart"></div>
+                        <div id="split-1">
+                            <div class="zoom2" style="width: 100%; height: 100%;">
+                                <div class="content-container graphContainer ">
+                                    <div class="graphWrapper">
+                                        <div id="myChart"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -145,8 +149,8 @@
                             </div>
                             <div class="popupcontent">
                                 <div class="row">
-                                    <div class="col calculationsCol zoom3">
-                                        <div class="zoom8">
+                                    <div class="col calculationsCol">
+                                        <div class="zoom3">
                                             <h2>Calculations</h2>
                                             <p>Note: The calculations given below are applicable only for zero damping
                                             </p>

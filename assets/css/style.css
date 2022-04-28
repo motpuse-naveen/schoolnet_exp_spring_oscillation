@@ -780,3 +780,10 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
     /*position: relative;*/
     overflow: scroll;
 }
+
+#split-0, #split-1{
+    overflow: hidden;
+}
+.settingsCol, .calculationsCol {
+    overflow: hidden;
+}
