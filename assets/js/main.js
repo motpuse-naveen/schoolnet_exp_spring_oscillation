@@ -23,6 +23,7 @@ var ActivityShell = (function () {
         }
       }
       this.InitToolTip();
+      this.AdjustSmallTablet();
     },
     LaunchActivity: function () {
       $(".wrapper").addClass("activity");
@@ -52,6 +53,7 @@ var ActivityShell = (function () {
       $(".wrapper").css({
         "height": window.innerHeight + "px"
       })
+
       if ($(".container-so.main").is(":visible")) {
         var headerHt = $(".container-so.main .exp_header").outerHeight();
         var footerHt = $(".container-so.main .exp_footer").outerHeight();
@@ -87,7 +89,16 @@ var ActivityShell = (function () {
         $(".exp_body_content").css({ "height": (mainHt - (headerHt + footerHt)) })
         $(".exp_body_content").css({ "padding-bottom": settingPanelHt })
       }
+      
 
+    },
+    AdjustSmallTablet: function(){
+      $(".wrapper").removeClass("small-height-landscape").removeClass("extra-small-height-landscape")
+      var bodyHt = $("body").height()
+      bodyHt = Number(bodyHt)
+      if(bodyHt<440){
+        $(".wrapper").addClass("small-height-landscape")
+      }
     },
     DeviceType: function () {
       /* This function needs changes in device detection logic 
@@ -292,6 +303,7 @@ var ActivityShell = (function () {
       ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
+      this.AdjustSmallTablet();
     },
     IsIOSDevice: function () {
       if (/iPad|iPhone|iPod/.test(navigator.platform)) {

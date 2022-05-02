@@ -145,6 +145,10 @@ body[platform="ios"]{
 .btn_launch:hover {
     color: #004f8c;
 }
+.btn_launch:active {
+    color: #004f8c;
+    opacity: 0.9;
+}
 
 .launch .launch_copyrighttext {
     font-size: 11px;
@@ -279,6 +283,7 @@ body[platform="ios"]{
     }*/
 }
 
+
 /*Tablet Lanscape ipad*/
 @media screen and (orientation:landscape) and (min-device-height: 760px) {
     /*[device="tablet"] .btn_launch {
@@ -329,4 +334,39 @@ body[platform="ios"]{
         text-align: center;
         padding-bottom: 10rem;
     }
+}
+
+@media screen and (orientation:landscape){
+    .small-height-landscape[device="tablet"] .launch .launch_pattern_top .launch_pattern_top_img{
+        background: url(../images/Top_BG.svg);
+        background-repeat: no-repeat;
+        background-position: -21px -214px;
+        background-size: 1024px;
+        height: 225px;
+    }
+    .small-height-landscape[device="tablet"] .launch_expl_logo {
+        height: 90px;
+        margin-top: 20px;
+    }
+    .small-height-landscape[device="tablet"] .launch_expl_title .exploriment_title{
+        padding: 1rem 0 0.5rem 0;
+    }
+    .small-height-landscape[device="tablet"] .launch-btn-container {
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .small-height-landscape[device="tablet"] .launch .exp_header {
+        height: 70px;
+    }
+    .small-height-landscape[device="tablet"] .launch .exp_header img.logo {
+        margin: 12px;
+        height: 45px;
+    }
+    .small-height-landscape[device="tablet"] .titledesktop{
+        display: none !important;
+    }
+    .small-height-landscape[device="tablet"] .titlemobilelandscape{
+        display: block !important;
+    }
+    
 }

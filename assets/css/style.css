@@ -698,10 +698,24 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
 .btn_info.active, .btn_procedure.active, .btn_reset.active{
     background-color: var(--theme-pri-text-color);
 }
-.btn_stop:hover, .btn_settings:hover, .btn_sheet:hover, .btn_calculations:hover, 
-.btn_info:hover, .btn_procedure:hover, .btn_reset:hover{
-    /*outline: 1px solid var(--theme-btn-border);*/
+
+.btn_settings:active svg .cls-1, .btn_settings:active svg .cls-2, .btn_settings:hover svg .cls-3, 
+.btn_sheet:active svg .cls-1, .btn_sheet:active svg .cls-2, .btn_sheet:hover svg .cls-3,
+.btn_calculations:active svg .cls-1, .btn_calculations:active svg .cls-2, .btn_calculations:hover svg .cls-3,
+.btn_info:active svg .cls-1, .btn_info:active svg .cls-2, .btn_info:hover svg .cls-3,
+.btn_procedure:active svg .cls-1, .btn_procedure:active svg .cls-2, .btn_procedure:hover svg .cls-3,
+.btn_stop:active svg .cls-1,.btn_stop:active svg .cls-2, .btn_stop:active svg .cls-3,
+.btn_reset:active svg .cls-1,.btn_reset:active svg .cls-2, .btn_reset:active svg .cls-3
+{
+    stroke:var(--theme-pri-color);
 }
+ 
+.btn_settings:active, .btn_sheet:active, .btn_calculations:active, .btn_info:active, .btn_procedure:active, 
+.btn_stop:active, .btn_reset:active{
+    opacity: 0.8;
+    background-color: var(--theme-pri-text-color);
+}
+
 
 /* Best View Message*/
 #bestviewed_popup_msg{
