@@ -299,7 +299,7 @@ img.weightImage {
 
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (orientation:landscape) and  (min-width: 960px) {
     #split-0, #split-1 {
         min-height: 100px;
         height: 100% !important;
@@ -316,7 +316,6 @@ img.weightImage {
     .btn-theme-wrap {
         z-index: 11;
     }
-
 }
 
 /*@media screen and (orientation: landscape) and (min-device-width: 380px)and (max-device-width: 990px) and (max-device-height:590px) {*/

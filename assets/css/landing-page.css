@@ -1,7 +1,17 @@
+html,body{
+    touch-action: pan-x pan-y;
+}
 html{
     position: fixed;
     width: 100%;
     height: 100%;
+    -webkit-text-size-adjust: none
+}
+section.main-section{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 body {
     font-family: 'Montserrat-Regular';
@@ -11,10 +21,12 @@ body {
     width: 100%;
     height: 100%;
     background: padding-box var(--body-background);
-    overscroll-behavior-y: contain;
+    /*overscroll-behavior-y: contain;
+    touch-action: pan-y pan-x; */
 }
-body[platform="ios"]{
-    
+.bodyWrapper{
+    display: flex;
+    height: 100%;
 }
 .bold {
     font-family: 'Montserrat-Bold';

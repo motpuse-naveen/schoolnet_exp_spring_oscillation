@@ -4,6 +4,8 @@ var zoom1 = null;
 var zoom2 = null;
 var zoom3 = null;
 var zoom4 = null;
+var zoomhtml = null;
+var zoombody = null;
 
 var ActivityShell = (function () {
   return {
@@ -342,17 +344,25 @@ var ActivityShell = (function () {
 
 $(document).ready(function () {
   ActivityShell.Init();
+  
+  document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+  });
+  document.addEventListener('touchmove', function (e) {
+    e.preventDefault();
+  });
+  
+  if (zoomhtml == null) {
+    hammerIt(document.querySelector("html"),1);
+    zoomhtml = "zoomhtml";
+  }
+  if (zoombody == null) {
+    hammerIt(document.querySelector("body"),1);
+    zoombody = "zoombody";
+  }
+  
 });
-/*
-document.ontouchmove = function(event){
-  try{
-    event.preventDefault();
-  }
-  catch(err){
 
-  }
-}
-*/
 $(window).bind('orientationchange', function () {
   this.setTimeout(function () {
     ActivityShell.OnOrientationChange();
