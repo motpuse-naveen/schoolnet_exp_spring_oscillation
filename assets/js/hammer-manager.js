@@ -41,6 +41,10 @@ function hammerIt(elm, p_maxScale) {
         }*/
 
         //pan    
+        if ( ev.type === 'panstart' ) {
+            last_posX = transform.translateX;
+            last_posX = transform.translateY;
+        }
         if (scale != 1) {
             posX = last_posX + ev.deltaX;
             posY = last_posY + ev.deltaY;

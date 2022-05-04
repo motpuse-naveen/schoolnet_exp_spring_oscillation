@@ -66,6 +66,9 @@ body {
     height: 100%;
 }
 
+.popup{
+    touch-action: none;
+}
 
 /* launch Screen*/
 .launch .exp_header {
