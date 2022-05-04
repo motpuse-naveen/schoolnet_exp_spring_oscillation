@@ -1,7 +1,7 @@
 function hammerIt(elm, p_maxScale) {
     hammertime = new Hammer(elm, {
-        prevent_default: true,
-        touchAction: "pan"
+        prevent_default: true
+        //touchAction: "pan"
     });
     hammertime.get('pinch').set({
         enable: true
@@ -16,6 +16,7 @@ function hammerIt(elm, p_maxScale) {
         max_pos_y = 0,
         transform = "",
         el = elm;
+
 
     if(typeof p_maxScale == 'undefined')
         p_maxScale = 4
@@ -40,11 +41,8 @@ function hammerIt(elm, p_maxScale) {
             transform = "";
         }*/
 
-        //pan    
-        if ( ev.type === 'panstart' ) {
-            last_posX = transform.translateX;
-            last_posX = transform.translateY;
-        }
+        //pan  
+        //alert(ev.type);
         if (scale != 1) {
             posX = last_posX + ev.deltaX;
             posY = last_posY + ev.deltaY;

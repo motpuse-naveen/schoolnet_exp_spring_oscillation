@@ -67,7 +67,7 @@ body {
 }
 
 .popup{
-    touch-action: none;
+    touch-action: pan-x pan-y;
 }
 
 /* launch Screen*/
