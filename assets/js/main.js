@@ -10,6 +10,7 @@ var zoombody = null;
 var ActivityShell = (function () {
   return {
     Init: function () {
+      //this.CheckAndLaunchFullscreen();
       $(".wrapper").css({
         "height": window.innerHeight + "px"
       })
@@ -27,6 +28,22 @@ var ActivityShell = (function () {
       this.InitToolTip();
       this.AdjustSmallTablet();
     },
+    CheckAndLaunchFullscreen: function(){
+      var Android = /(android)/i.test(navigator.userAgent);
+      if(Android) {
+          ActivityShell.OpenFullScreen()
+      }
+    },
+    OpenFullScreen: function(){
+      var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+          elem.msRequestFullscreen();
+        }
+    },
     LaunchActivity: function () {
       $(".wrapper").addClass("activity");
       $(".container-so.launch").fadeOut();
@@ -36,7 +53,7 @@ var ActivityShell = (function () {
       GuidedTour.Init();
       SpringOscillation.LaunchActivity();
       /* Scale Spring to fit */
-      ScreenSplitter.ScaleToFit($("#split-0"))
+      //ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       //new window.PinchZoom.default(document.querySelector('div.zoom1'), { });
@@ -302,7 +319,7 @@ var ActivityShell = (function () {
         this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
       }
       /* Scale Spring to fit */
-      ScreenSplitter.ScaleToFit($("#split-0"))
+      //ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       this.AdjustSmallTablet();
@@ -325,7 +342,7 @@ var ActivityShell = (function () {
         this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
       }
       /* Scale Spring to fit */
-      ScreenSplitter.ScaleToFit($("#split-0"))
+      //ScreenSplitter.ScaleToFit($("#split-0"))
       /* Scale Graph to fit */
       ScreenSplitter.ScaleToFit($("#split-1"))
       //}

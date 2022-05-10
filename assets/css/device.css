@@ -21,24 +21,24 @@
 
 /*BOB Style*/
 img.hookImage {
-    height: 30px;
+    height: 50px;
 }
 
 .springWrapper {
-    height: 95px;
+    height: 130px;
 }
 
 img.springImage {
     height: 100%;
-    width: 20px;
-    margin-top: -13px;
-    margin-left: 2px;
+    width: 28px;
+    margin-top: -19px;
+    margin-left: 3px;
 }
 
 .springWeight {
     height: 0px;
     position: absolute;
-    top: 95px;
+    top: 130px;
     cursor: pointer;
     opacity: 1;
     width: 100%;
@@ -46,9 +46,9 @@ img.springImage {
 }
 
 img.weightImage {
-    height: 33px;
-    margin-top: -28px;
-    margin-left: 2px;
+    height: 40px;
+    margin-top: -38px;
+    margin-left: 3px;
 }
 
 .weightDispText {
@@ -59,6 +59,10 @@ img.weightImage {
     font-size: 14px;
     font-family: 'Montserrat-SemiBold';
 
+}
+
+.wrapper[device="mobile"] .graphContainer{
+    margin-left: -55px;
 }
 
 /*END BOB Style*/
@@ -462,11 +466,97 @@ img.weightImage {
 }
 @media screen and (orientation: portrait) {
     .container-so.main .exp_header .header h1{
-        max-width: 326px;
+        /*max-width: 326px;*/
     }
 }
 @media screen and (orientation: landscape) {
     .wrapper[device="mobile"] #bestviewed_popup_msg {
         display: block;
+    }
+}
+
+
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    img.hookImage {
+        height: 80px;
+    }
+
+    .springWrapper {
+        height: 250px;
+    }
+
+    img.springImage {
+        height: 100%;
+        width: 50px;
+        margin-top: -34px;
+        margin-left: 6px;
+    }
+
+    .springWeight {
+        height: 0px;
+        position: absolute;
+        top: 250px;
+        cursor: pointer;
+        opacity: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    img.weightImage {
+        height: 70px;
+        margin-top: -46px;
+        margin-left: 6px;
+    }
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 1366px) 
+  and (max-device-width: 1366px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    img.hookImage {
+        height: 80px;
+    }
+
+    .springWrapper {
+        height: 250px;
+    }
+
+    img.springImage {
+        height: 100%;
+        width: 50px;
+        margin-top: -34px;
+        margin-left: 6px;
+    }
+
+    .springWeight {
+        height: 0px;
+        position: absolute;
+        top: 250px;
+        cursor: pointer;
+        opacity: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    img.weightImage {
+        height: 70px;
+        margin-top: -46px;
+        margin-left: 6px;
     }
 }

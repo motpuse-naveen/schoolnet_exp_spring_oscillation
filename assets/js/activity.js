@@ -304,6 +304,7 @@ $(document).on("click", "#btn_stop", function (event) {
 });
 $(document).on("click", "#btn_reset", function (event) {
   OnResetButton();
+  ScreenSplitter.ResetSplit();
 });
 
 

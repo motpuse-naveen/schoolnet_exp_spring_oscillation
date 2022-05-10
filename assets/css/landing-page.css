@@ -355,9 +355,10 @@ body {
     .small-height-landscape[device="tablet"] .launch .launch_pattern_top .launch_pattern_top_img{
         background: url(../images/Top_BG.svg);
         background-repeat: no-repeat;
-        background-position: -21px -214px;
-        background-size: 1024px;
-        height: 225px;
+        background-position: 0px -198px;
+        background-size: 100%;
+        height: 240px;
+        width: 100%;
     }
     .small-height-landscape[device="tablet"] .launch_expl_logo {
         height: 90px;

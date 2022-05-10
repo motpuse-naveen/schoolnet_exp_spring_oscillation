@@ -50,7 +50,8 @@ var ScreenSplitter = (function () {
             }
             //NM: Specific to SpringOscillation.
             var sprcontht = $(".spingContainer").height();
-            $(".spingContainer").css({"height":sprcontht + "px"})
+            //$(".spingContainer").css({"height":sprcontht + "px"})
+            $(".springCanvas").css({"height":sprcontht + "px"})
         },
         HorizontalSplit: function () {
             $(".gutter").remove();
@@ -62,7 +63,7 @@ var ScreenSplitter = (function () {
                 gutterSize: 1,
                 onDrag: function (sizes) {
                     /* Scale Spring to fit */
-                    ScreenSplitter.ScaleToFit($("#split-0"))
+                    //ScreenSplitter.ScaleToFit($("#split-0"))
                     /* Scale Graph to fit */
                     ScreenSplitter.ScaleToFit($("#split-1"))
                 },
@@ -114,7 +115,10 @@ var ScreenSplitter = (function () {
                 wrapperSize.width/elmSize.width,
                 wrapperSize.height/elmSize.height
             );
-            if (scale < 1) {
+            $element.css({
+                transform: "scale(" + scale + ")"
+            });
+            /*if (scale < 1) {
                 $element.css({
                     transform: "scale(" + scale + ")"
                 });
@@ -124,8 +128,13 @@ var ScreenSplitter = (function () {
                 $element.css({
                     "transform": "scale(" + scale + ")"
                 });
-            }
-            $element.attr("scale",scale);
+            }*/
+            $element.addClass("split-scaled").attr("scale",scale);
+        },
+        ResetSplit: function(){
+            $(".split-scaled").removeAttr("scale").removeAttr("style").removeClass("split-scaled");
+            this.InitSplitter();
+            ScreenSplitter.ScaleToFit($("#split-1"))
         }
     }
 })();

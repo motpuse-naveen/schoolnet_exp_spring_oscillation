@@ -64,7 +64,7 @@
 }
 .container-so.main .exp_header .header .leftpan{
     border-right: 1px solid var(--theme-popup-border);
-    min-width: 380px;
+    min-width: 428px;
 }
 .container-so.main .exp_header .header .leftpan .title{
     font-family: 'Montserrat-Bold';
@@ -576,6 +576,7 @@ input[type="range"]::-ms-track {
     display: inline-block;
     position: relative;
     padding-top: 5px;
+    transform-origin: center top;
 }
 .spingContainer {
     height: 100%;
@@ -589,7 +590,7 @@ input[type="range"]::-ms-track {
     height: 410px;
     padding-top: 3em;
     padding-bottom: 3em;
-    transform-origin: left top;
+    transform-origin: center top;
     margin: 0 auto;
 }
 
@@ -602,7 +603,7 @@ input[type="range"]::-ms-track {
 .highcharts-axis-title {
     font-family: 'Montserrat-SemiBold';
 }
-#myChart{margin-left: 40px;}
+#myChart{padding-left: 40px;}
 
 .yAxisLine {
     position: absolute;
@@ -800,4 +801,9 @@ svg .cls-101{fill:none;stroke:var(--theme-pri-text-color);stroke-linecap:round;s
 }
 .settingsCol, .calculationsCol {
     overflow: hidden;
+}
+
+.h-split-main .graphContainer{
+    transform-origin: top left;
+    margin: 0;
 }
