@@ -76,6 +76,8 @@
 .container-so.main .exp_header .header .rightpan{
     margin-left: 1em;
     display: table;
+    display: flex;
+    align-items: center;
 }
 .container-so.main .exp_header .header .main-src-logo{
     width: 96px;
