@@ -23,7 +23,7 @@ var ScreenSplitter = (function () {
     </g>
 </svg>
     </div>`;
-
+    var g_SplitContentSize = [];
     return {
         InitSplitter: function (whenresize) {
             $("#split-main").removeClass("v-split-main").removeClass("h-split-main");
@@ -54,11 +54,12 @@ var ScreenSplitter = (function () {
             $(".springCanvas").css({"height":sprcontht + "px"})
         },
         HorizontalSplit: function () {
+            var minsizes = this.GetMinSizeLimits_Horz();
             $(".gutter").remove();
             $("#split-0").removeAttr("style");
             $("#split-1").removeAttr("style");
             split_instance = Split(['#split-0', '#split-1'], {
-                minSize: 200,
+                minSize: minsizes,
                 sizes: [40, 60],
                 gutterSize: 1,
                 onDrag: function (sizes) {
@@ -71,11 +72,13 @@ var ScreenSplitter = (function () {
             $(".gutter").append(horizontalHandle)
         },
         VerticalSplit: function () {
+            var minsizes = this.GetMinSizeLimits();
             $(".gutter").remove();
             $("#split-0").removeAttr("style");
             $("#split-1").removeAttr("style");
             split_instance = Split(['#split-0', '#split-1'], {
                 sizes: [50, 50],
+                minSize: minsizes,
                 direction: 'vertical',
                 gutterSize: 1,
                 onDrag: function (sizes) {
@@ -87,6 +90,99 @@ var ScreenSplitter = (function () {
             })
             $(".gutter").append(verticalHandle)
         },
+        GetMinSizeLimits: function(){
+            var minsizes = [200, 200]
+            //debugger
+            g_SplitContentSize = [
+                $("#split-0").height(),
+                $("#split-1").height()
+            ]
+            if (g_SplitContentSize.length == 2) {
+                
+                var totalHt = $("#split-main").height();
+                //var partOfTotal0 = Math.trunc(totalHt / g_SplitContentSize[0]);
+                var partOfTotal0 = totalHt / g_SplitContentSize[0];
+                if (partOfTotal0 >= 4) {
+                    partOfTotal0 = 3.5
+                }
+                else if(partOfTotal0 >= 3 ){
+                    partOfTotal0 = 3;
+                }
+                else if(partOfTotal0>=2){
+                    partOfTotal0 = 3;
+                }
+                else{
+                    partOfTotal0 = 2.5;
+                }
+                //var partOfTotal1 = Math.trunc(totalHt / g_SplitContentSize[1]);
+                var partOfTotal1 = totalHt / g_SplitContentSize[1];
+                if (partOfTotal1 >= 4) {
+                    partOfTotal1 = 3.5
+                }
+                else if(partOfTotal1 >= 3){
+                    partOfTotal1 = 3.2;
+                }
+                else if(partOfTotal1>=2){
+                    partOfTotal1 = 3.2;
+                }
+                else{
+                    partOfTotal1 = 2.5;
+                }
+                minsizes = [
+                    g_SplitContentSize[0] / 4 * partOfTotal0,
+                    g_SplitContentSize[1] / 4 * partOfTotal1,
+                ]
+            }
+
+            return minsizes;
+        },
+        GetMinSizeLimits_Horz: function(){
+            var minsizes = [200, 300]
+            //debugger
+            g_SplitContentSize = [
+                $("#split-0").width(),
+                $("#split-1").width()
+            ]
+            if (g_SplitContentSize.length == 2) {
+                
+                var totalWdt = $("#split-main").width();
+                //var partOfTotal0 = Math.trunc(totalHt / g_SplitContentSize[0]);
+                var partOfTotal0 = totalWdt / g_SplitContentSize[0];
+                if (partOfTotal0 >= 4) {
+                    partOfTotal0 = 3
+                }
+                else if(partOfTotal0 >= 3 ){
+                    partOfTotal0 = 3;
+                }
+                else if(partOfTotal0>=2){
+                    partOfTotal0 = 3;
+                }
+                else{
+                    partOfTotal0 = 2.5;
+                }
+                //var partOfTotal1 = Math.trunc(totalHt / g_SplitContentSize[1]);
+                var partOfTotal1 = totalWdt / g_SplitContentSize[1];
+                if (partOfTotal1 >= 4) {
+                    partOfTotal1 = 3.5
+                }
+                else if(partOfTotal1 >= 3){
+                    partOfTotal1 = 3.2;
+                }
+                else if(partOfTotal1>=2){
+                    partOfTotal1 = 3;
+                }
+                else{
+                    partOfTotal1 = 2.5;
+                }
+                minsizes = [
+                    g_SplitContentSize[0] / 4 * partOfTotal0,
+                    g_SplitContentSize[1] / 4 * partOfTotal1,
+                ]
+            }
+
+            return minsizes;
+        },
+        
         ScaleToFit: function ($wrapper,$element, deltaWidth, deltaHeight) {
             if($element==null || $element == undefined){
                 $element = $wrapper.find(".content-container")

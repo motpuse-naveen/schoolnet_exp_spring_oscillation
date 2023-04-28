@@ -50,6 +50,7 @@ var ActivityShell = (function () {
       $(".container-so.main").show();
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
+      ScreenSplitter.InitSplitter();//Called Again to set exact height or with of split panels.
       GuidedTour.Init();
       SpringOscillation.LaunchActivity();
       /* Scale Spring to fit */
@@ -291,7 +292,7 @@ var ActivityShell = (function () {
       }
     },
     ToggleLikeCustomPopup: function ($popup, $button) {
-      debugger;
+      //debugger;
       $(".popup").hide();
       if (!$popup.is(":visible")) {
         $(".cust-popup").hide();
@@ -315,6 +316,7 @@ var ActivityShell = (function () {
     OnOrientationChange: function () {
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter();
+      ScreenSplitter.InitSplitter();//Called Again to set exact height or with of split panels.
       if ($(".popup").is(":visible")) {
         this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
       }
@@ -338,6 +340,7 @@ var ActivityShell = (function () {
       //if(deviceType == "desktop"){
       this.AdjustContainerHeight();
       ScreenSplitter.InitSplitter(true);
+      ScreenSplitter.InitSplitter(true);//Called Again to set exact height or with of split panels.
       if ($(".popup").is(":visible")) {
         this.AdjustSplitPanelsOnOpenPopup($(".popup:visible"))
       }
